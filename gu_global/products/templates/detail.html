@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- section.product-detail -->
+<section class="product-detail">
+    <div class="detail-img-wrap">
+        <div class="detail-img main-img">
+            <img src="/static/images/detail1.png" alt="">
+        </div>
+        <div class="img-group">
+            <div class="detail-img sub-img">
+                <img src="/static/images/detail2.png" alt="">
+            </div>
+            <div class="detail-img sub-img">
+                <img src="/static/images/detail3.png" alt="">
+            </div>
+            <div class="detail-img sub-img">
+                <img src="/static/images/detail4.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="detail-text-wrap">
+        <div class="line"></div>
+        <div class="text-box">
+            <p class="category">Yealink</p>
+            <p class="description-1">스마트 화상 회의 Endpoint</p>
+            <h2 class="title">
+                VC200 <span class="description-2">for small and huddle room</span>
+            </h2>
+            <div class="btn-group">
+                <a href="javascript:void(0)" class="btn-item">브로슈어</a>
+                <a href="javascript:void(0)" class="btn-item">메뉴얼</a>
+                <a href="javascript:void(0)" class="btn-item">규격서</a>
+                <a href="javascript:void(0)" class="btn-item">문의하기</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="detail-full-image">
+    <img src="/static/images/detail_full.png" alt="">
+</div>
+
+<section class="detail-bottom">
+    <div onclick="" class="btn-img" style="background-image: url(/static/images/bottom_img1.png);">
+        <div class="overlay">
+            <h2>회사소개</h2>
+            <p>Company Introduation</p>
+        </div>
+    </div>
+    <div onclick="" class="btn-img" style="background-image: url(/static/images/bottom_img2.png);">
+        <div class="overlay">
+            <h2>브로슈어</h2>
+            <p>Brochure</p>
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,5 @@
+/* section.company-intro */
+section.company-intro .img-wrap,
+section.company-intro .img-wrap img {
+  width: 100%;
+}
