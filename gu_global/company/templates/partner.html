@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/company.css">
+{% endblock extraheads %}
+
+{% block content %}
+
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
+<!-- section.company-intro -->
+<div class="tab-menu tab-menu--partner">
+  <div class="tab-box">
+    <a href="javascript:void(0)" class="btn-tab active">파트너사</a>
+    <div class="line-vertical"></div>
+    <a href="javascript:void(0)" class="btn-tab">고객사</a>
+    <div class="line-vertical"></div>
+    <a href="javascript:void(0)" class="btn-tab">시/정부기관</a>
+    <div class="line-vertical"></div>
+    <a href="javascript:void(0)" class="btn-tab">협력사</a>
+  </div>
+</div>
+<section class="company-intro partner content">
+    <div class="img-wrap">
+        <img class="history-img" src="/static/images/partner (1).png" alt="">
+    </div>
+</section>
+{% endblock content %}
+
+
+{% block extrascripts %}
+<script>
+  $('.tab-menu--partner .btn-tab').click(function() {
+    var idx = $(this).index();
+    console.log(idx);
+    if($(this).hasClass('active') == false) {
+      $('.history-img').attr('src', '/static/images/partner (' + (idx / 2 + 1) + ').png');
+      $('.btn-tab').removeClass('active');
+      $(this).addClass('active');
+    }
+  });
+</script>
+{% endblock extrascripts %}

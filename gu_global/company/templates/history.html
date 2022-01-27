@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/company.css">
+{% endblock extraheads %}
+
+{% block content %}
+
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
+<!-- section.company-intro -->
+<div class="tab-menu">
+  <div class="tab-box">
+    <a href="javascript:void(0)" class="btn-tab active 2010">2010’s</a>
+    <div class="line-vertical"></div>
+    <a href="javascript:void(0)" class="btn-tab 2000">2000’s</a>
+  </div>
+</div>
+<section class="company-intro content">
+    <div class="img-wrap">
+        <img class="history-img" src="/static/images/img_history1.png" alt="">
+    </div>
+</section>
+{% endblock content %}
+
+
+{% block extrascripts %}
+<script>
+  $('.btn-tab').click(function() {
+    if($(this).hasClass('active') == false) {
+      if($(this).hasClass('2000') == true) {
+        $('.history-img').attr('src', '/static/images/img_history2.png');
+        $('.btn-tab').removeClass('active');
+        $(this).addClass('active');
+      } else if($(this).hasClass('2010') == true) {
+        $('.history-img').attr('src', '/static/images/img_history1.png');
+        $('.btn-tab').removeClass('active');
+        $(this).addClass('active');
+      }
+    }
+  });
+</script>
+{% endblock extrascripts %}

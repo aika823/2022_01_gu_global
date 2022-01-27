@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/company.css">
+{% endblock extraheads %}
+
+{% block content %}
+
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
+<!-- section.company-intro -->
+<section class="company-intro content">
+    <div class="img-wrap">
+        <img class="history-img" src="/static/images/support/certification.png" alt="">
+    </div>
+</section>
+{% endblock content %}
+
+
+{% block extrascripts %}
+<script>
+  $('.btn-tab').click(function() {
+    if($(this).hasClass('active') == false) {
+      if($(this).hasClass('2000') == true) {
+        $('.history-img').attr('src', '/static/images/img_history2.png');
+        $('.btn-tab').removeClass('active');
+        $(this).addClass('active');
+      } else if($(this).hasClass('2010') == true) {
+        $('.history-img').attr('src', '/static/images/img_history1.png');
+        $('.btn-tab').removeClass('active');
+        $(this).addClass('active');
+      }
+    }
+  });
+</script>
+<script>
+  $(function() {
+    $('.sub-banner').css('background-image', "url('/static/images/support/support_bg2.png')")
+  });
+</script>
+{% endblock extrascripts %}

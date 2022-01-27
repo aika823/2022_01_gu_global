@@ -3,3 +3,39 @@ section.company-intro .img-wrap,
 section.company-intro .img-wrap img {
   width: 100%;
 }
+
+/* .tab-menu */
+.tab-menu {
+  background-color: #F3F3F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-menu .tab-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-menu .tab-box .line-vertical {
+  height: 20px;
+  width: 2px;
+  margin: 0 15px;
+  background-color: #D4D1D1;
+}
+.tab-menu .tab-box a.btn-tab {
+  padding: 25px 10px;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 21px;
+  line-height: 34px;
+}
+.tab-menu .tab-box a.btn-tab.active {
+  color: #1A32C6;
+  font-weight: 600;
+  border-bottom: 2px solid #1A32C6;
+}
+
+
+section.company-intro.partner {
+  margin: 240px 0 350px;
+}

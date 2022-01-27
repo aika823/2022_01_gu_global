@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/company.css">
+{% endblock extraheads %}
+
 {% block content %}
+
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
 <!-- section.company-intro -->
 <section class="company-intro content">
     <div class="img-wrap">

@@ -153,12 +153,17 @@ header.main-header .menu p {
   font-weight: 600;
   cursor: pointer;
 }
-header .menu .btn-menu.color {
+header .menu .btn-menu a {
+  color: #fff;
+}
+header .menu .btn-menu.color a {
   color: #313030;
 }
 header .menu .btn-menu.active {
-  color: #1A32C6;
   position: relative;
+}
+header .menu .btn-menu.active a {
+  color: #1A32C6;
 }
 header .menu .btn-menu.active::after {
   position: absolute;

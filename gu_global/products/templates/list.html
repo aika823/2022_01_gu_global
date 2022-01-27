@@ -1,63 +1,82 @@
 {% extends "base.html" %}
 
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/product.css">
+{% endblock extraheads %}
+
+
 {% block content %}
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
+
 <!-- section.product_list -->
 <section class="product-list">
     <div class="product-item">
         <div class="product-img">
-            <img src="/static/images/p_sample1.png" alt="">
+            <img src="/static/images/product/p_sample1.png" alt="">
         </div>
         <h2 class="product-title">[Yealink] UVC84</h2>
         <p class="product-description">4K UHD 비디오 카메라</p>
     </div>
     <div class="product-item">
         <div class="product-img">
-            <img src="/static/images/p_sample2.png" alt="">
+            <img src="/static/images/product/p_sample2.png" alt="">
         </div>
         <h2 class="product-title">[Yealink] UVC84</h2>
         <p class="product-description">4K UHD 비디오 카메라</p>
     </div>
     <div class="product-item">
         <div class="product-img">
-            <img src="/static/images/p_sample3.png" alt="">
+            <img src="/static/images/product/p_sample3.png" alt="">
         </div>
         <h2 class="product-title">[Yealink] UVC84</h2>
         <p class="product-description">4K UHD 비디오 카메라</p>
     </div>
     <div class="product-item">
         <div class="product-img">
-            <img src="/static/images/p_sample4.png" alt="">
+            <img src="/static/images/product/p_sample4.png" alt="">
         </div>
         <h2 class="product-title">[Yealink] UVC84</h2>
         <p class="product-description">4K UHD 비디오 카메라</p>
     </div>
     <div class="product-item">
         <div class="product-img">
-            <img src="/static/images/p_sample1.png" alt="">
+            <img src="/static/images/product/p_sample1.png" alt="">
         </div>
         <h2 class="product-title">[Yealink] UVC84</h2>
         <p class="product-description">4K UHD 비디오 카메라</p>
     </div>
     <div class="product-item">
         <div class="product-img">
-            <img src="/static/images/p_sample2.png" alt="">
+            <img src="/static/images/product/p_sample2.png" alt="">
         </div>
         <h2 class="product-title">[Yealink] UVC84</h2>
         <p class="product-description">4K UHD 비디오 카메라</p>
     </div>
     <div class="product-item">
         <div class="product-img">
-            <img src="/static/images/p_sample3.png" alt="">
+            <img src="/static/images/product/p_sample3.png" alt="">
         </div>
         <h2 class="product-title">[Yealink] UVC84</h2>
         <p class="product-description">4K UHD 비디오 카메라</p>
     </div>
     <div class="product-item">
         <div class="product-img">
-            <img src="/static/images/p_sample4.png" alt="">
+            <img src="/static/images/product/p_sample4.png" alt="">
         </div>
         <h2 class="product-title">[Yealink] UVC84</h2>
         <p class="product-description">4K UHD 비디오 카메라</p>
     </div>
 </section>
 {% endblock content %}
+
+
+{% block extrascripts %}
+<script>
+  $(function() {
+    $('.sub-banner').css('background-image', "url('/static/images/product/product_bg.png')")
+  });
+</script>
+{% endblock extrascripts %}
