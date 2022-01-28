@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="right-panel" class="right-panel">
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+
+
+
+                <div class="col-xs-6 col-sm-3">
+                    <div class="card">
+                        <form action="" method="post">
+
+                            {% csrf_token %}
+                            <input type="hidden" name="action" value="set">
+                            <div class="card-header">
+                                <strong>성수기 설정</strong>
+                            </div>
+                            <div class="card-body card-block">
+                                <div class="form-group">
+                                    <label class=" form-control-label">시작일</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                        <input name="start" type="date" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class=" form-control-label">종료일</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                        <input name="end" type="date" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm">설정하기</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-sm-3">
+                    <div class="card">
+                        <form action="" method="post">
+
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="delete">
+
+                            <div class="card-header">
+                                <strong>성수기 해제</strong>
+                            </div>
+                            <div class="card-body card-block">
+                                <div class="form-group">
+                                    <label class=" form-control-label">시작일</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                        <input name="start" type="date" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class=" form-control-label">종료일</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                        <input name="end" type="date" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm">해제하기</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <strong class="card-title">{{room.name}} 성수기</strong>
+                        </div>
+
+                        <div class="card-body">
+                            <table id="dataTable" class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">날짜</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for date in peak_season %}
+                                    <tr>
+                                        <td>{{date.date | date:'Y-m-d'}}</th>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extrascripts %}
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable({
+            "order": [
+                [0, "desc"]
+            ]
+        });
+    });
+</script>
+{% endblock extrascripts %}

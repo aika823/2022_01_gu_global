@@ -1,0 +1,164 @@
+<div id="right-panel" class="right-panel">
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div class="card">
+
+                        {% if function == "update" %}
+                        <form id="deleteForm" action="/admin/delete" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="table" value="type">
+                            <input type="hidden" name="id" value="{{item.id}}">
+                        </form>
+                        {% endif %}
+
+                        <form id="productCreateForm" action="/admin/create" method="post" enctype="multipart/form-data"
+                            class="form-horizontal">
+
+                            {% csrf_token %}
+                            <input type="hidden" name='table' value="type">
+
+                            {% if function == "create" %}
+                            <input type="hidden" name='action' value="create">
+                            {% elif function == "update" %}
+                            <input type="hidden" name='action' value="update">
+                            <input type="hidden" name='id' value="{{item.id}}">
+                            {% endif %}
+
+                            <div class="card-header">
+                                <strong>객실 타입 {{item.name}}</strong>
+                            </div>
+
+                            <div class="card-body card-block">
+
+                                <!-- name -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">이름</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="name" class="form-control" value="{{item.name}}"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <!-- people_num_min -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">최소인원</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="number" name="people_num_min" class="form-control"
+                                            value="{{item.people_num_min}}" />
+                                    </div>
+                                </div>
+
+                                <!-- people_num_max -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">최대인원</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="number" name="people_num_max" class="form-control"
+                                            value="{{item.people_num_max}}" />
+                                    </div>
+                                </div>
+
+                                <!-- detail1 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">설명</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="detail1" class="form-control">{{item.detail1}}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- detail2 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">설명</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="detail2" class="form-control">{{item.detail2}}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- detail3 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">설명</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="detail3" class="form-control">{{item.detail3}}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- garden -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">garden</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="garden" class="form-control">{{item.garden}}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- garden -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">bedroom</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="bedroom" class="form-control">{{item.bedroom}}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- kitchen -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">kitchen</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="kitchen" class="form-control">{{item.kitchen}}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- bathroom -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">bathroom</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="bathroom" class="form-control">{{item.bathroom}}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- livingroom -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">livingroom</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="livingroom" class="form-control">{{item.livingroom}}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- image -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <img id="productImage1" src="" alt="" onclick="open_image_input(1)">
+                                        <label for="imageInput1" class=" form-control-label">대표이미지</label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <img src="/media/{{item.image}}" alt="">
+                                        <input type="file" id="imageInput1" name="image" class="form-control-file">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- footer -->
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm" form="productCreateForm">
+                                    {% if function == "create" %}
+                                    추가하기
+                                    {% elif function == "update" %}
+                                    수정하기
+                                    {% endif %}
+                                </button>
+                                {% if function == "update" %}
+                                <button type="submit" class="btn btn-outline-danger btn-sm"
+                                    form="deleteForm">삭제하기</button>
+                                {% endif%}
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
