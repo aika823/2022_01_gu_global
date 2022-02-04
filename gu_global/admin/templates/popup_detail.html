@@ -1,0 +1,123 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div id="right-panel" class="right-panel">
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div class="card">
+
+                        {% if popup %}
+                        <form id="deleteForm" action="/admin/delete" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="table" value="popup">
+                            <input type="hidden" name="id" value="{{popup.id}}">
+                        </form>
+                        {% endif %}
+
+                        <form id="popupCreateForm" action="/admin/create" method="post" enctype="multipart/form-data"
+                            class="form-horizontal">
+
+                            {% csrf_token %}
+                            <input type="hidden" name='table' value="popup">
+
+                            {% if popup %}
+                            <input type="hidden" name='action' value="update">
+                            <input type="hidden" name='id' value="{{popup.id}}">
+                            <input type="hidden" name="class" value="popup">
+                            {% else %}
+                            <input type="hidden" name='action' value="create">
+                            {% endif %}
+
+                            <div class="card-header">
+                                <strong>팝업</strong>
+                            </div>
+
+                            <div class="card-body card-block">
+
+                                <!-- 시작일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">시작일</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="date" name="start" class="form-control"
+                                            value="{{popup.start | date:'Y-m-d'}}" required>
+                                    </div>
+                                </div>
+
+                                <!-- 종료일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">종료일</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="date" name="end" class="form-control"
+                                            value="{{popup.end | date:'Y-m-d'}}" required>
+                                    </div>
+                                </div>
+
+                                <!-- 제목 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">제목</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="title" class="form-control" value="{{popup.title}}"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <!-- 내용 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">내용</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="content" class="form-control" cols="30" rows="10"
+                                            required>{{popup.content}}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 이미지 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">이미지</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" name="image" class="form-control" >
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- footer -->
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm" form="popupCreateForm">
+                                    {% if popup %}
+                                    수정
+                                    {% else %}
+                                    추가
+                                    {% endif %}
+                                </button>
+                                {% if popup %}
+                                <button type="submit" class="btn btn-outline-danger btn-sm"
+                                    form="deleteForm">삭제</button>
+                                {% endif%}
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+
+                {% if popup %}
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>미리보기</strong>
+                        </div>
+                        <div class="card-body card-block">
+                            <img src="/media/{{popup.image}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    {% endblock content %}

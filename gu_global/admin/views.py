@@ -2,7 +2,7 @@ from multiprocessing import context
 from django.shortcuts import redirect, render
 from products.models import Category, Product, ProductDetailImage, ProductImage
 
-from support.models import Notice
+from support.models import Contact, Download, Notice, Popup, Video
 from .models import Admin
 from django.contrib.auth.hashers import make_password, check_password
 
@@ -67,21 +67,22 @@ def products_view(request,id):
 
 
 # 문의사항 관리
-
 def contact(request):
-    context = {}
-    return render(request, "contact.html")
+    context = {'contact_list':Contact.objects.all()}
+    return render(request, "contact.html", context=context)
+def contact_create(request):
+    return render(request, "contact_detail.html")    
+def contact_view(request, id):
+    context = {'contact':Contact.objects.get(id=id)}
+    return render(request, "contact_detail.html", context=context)
 
 
 # 공지사항 관리
-
 def notice(request):
     context = {'notice_list':Notice.objects.all()}
     return render(request, "notice.html", context=context)
-
 def create_notice(request):
     return render(request, "notice_detail.html")    
-
 def view_notice(request, id):
     context = {'notice':Notice.objects.get(id=id)}
     return render(request, "notice_detail.html", context=context)
@@ -95,17 +96,46 @@ def download(request):
 
 
 # 동영상 관리
-
 def video(request):
-    context = {}
-    return render(request, "video.html")
+    context = {'video_list':Video.objects.all()}
+    return render(request, "video.html", context=context)
+def video_create(request):
+    return render(request, "video_detail.html")    
+def video_view(request, id):
+    context = {'video':Video.objects.get(id=id)}
+    return render(request, "video_detail.html", context=context)
 
 
 # 팝업 관리
-
 def popup(request):
-    context = {}
-    return render(request, "popup.html")
+    context = {'popup_list':Popup.objects.all()}
+    return render(request, "popup.html", context=context)
+def popup_create(request):
+    return render(request, "popup_detail.html")    
+def popup_view(request, id):
+    context = {'popup':Popup.objects.get(id=id)}
+    return render(request, "popup_detail.html", context=context)
+
+
+# 다운로드 관리
+def download(request):
+    context = {'download_list':Download.objects.all()}
+    return render(request, "download.html", context=context)
+def download_create(request):
+    context = {'product_list':Product.objects.all()}
+    return render(request, "download_detail.html", context=context)    
+def download_view(request, id):
+    download = Download.objects.get(id=id)
+    context = {
+        'product_list':Product.objects.all(),
+        'download':download,
+        'selected':{
+            'brochure': 'selected' if download.category=='brochure' else None,
+            'manual': 'selected' if download.category=='manual' else None,
+            'sheet': 'selected' if download.category=='sheet' else None,
+        }
+    }
+    return render(request, "download_detail.html", context=context)
 
 
 # 관리자 기능 함수
@@ -124,6 +154,37 @@ def create(request):
             elif action == 'create':
                 item = Notice()
         
+        if table == 'contact':
+            if id:
+                item = Contact.objects.get(id=id)
+            elif action == 'create':
+                item = Contact()
+
+        if table == 'video':
+            if id:
+                item = Video.objects.get(id=id)
+            elif action == 'create':
+                item = Video()
+        
+        if table == 'popup':
+            if id:
+                item = Popup.objects.get(id=id)
+            elif action == 'create':
+                item = Popup()
+            print(request.FILES.get('image'))
+            item.image = request.FILES.get('image')
+
+        if table == 'download':
+            if id:
+                item = Download.objects.get(id=id)
+            elif action == 'create':
+                item = Download()
+            
+            item.product = Product.objects.get(id=request.POST.get('product'))
+            if request.FILES.get('file'):
+                item.file = request.FILES.get('file')
+
+
         if table == 'product':
             if id:
                 item = Product.objects.get(id=id)
@@ -139,7 +200,8 @@ def create(request):
 
         for key in request.POST:
             try:
-                setattr(item, key, request.POST.get(key))
+                if key not in ['image', 'file']:
+                    setattr(item, key, request.POST.get(key))
             except:
                 pass
         item.save()
@@ -149,6 +211,14 @@ def create(request):
 def delete(request):
     table = request.POST.get('table')
     id = request.POST.get('id')
+
+    if table == 'video':
+        Video.objects.get(id=id).delete()
+        return redirect("/admin/video")
+    
+    if table == 'download':
+        Download.objects.get(id=id).delete()
+        return redirect("/admin/download")
 
     if table == 'product':
         Product.objects.get(id=id).delete()

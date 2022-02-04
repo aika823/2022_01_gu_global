@@ -1,0 +1,60 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div id="right-panel" class="right-panel">
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+
+                        <div class="card-header">
+                            <strong class="card-title">공지사항</strong>
+                        </div>
+
+                        <div class="card-body">
+                            <table id="dataTable" class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">제품</th>
+                                        <th scope="col">카테고리</th>
+                                        <th scope="col">파일명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for download in download_list %}
+                                    <tr onclick="location.href='/admin/download/{{download.id}}'">
+                                        <td>{{download.product.name}}</td>
+                                        <td>{{download.category}}</td>
+                                        <td><a href="/admin/download/{{download.id}}">{{download.file}}</a></th>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-primary" onclick="location.href='/admin/download/create'">추가</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block extrascripts %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable({
+            "order": [
+                [0, "desc"]
+            ]
+        });
+    });
+</script>
+{% endblock extrascripts %}
