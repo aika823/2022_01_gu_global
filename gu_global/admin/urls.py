@@ -7,8 +7,11 @@ app_name = "admin"
 urlpatterns = [
     path('', views.index),
     path('login', views.login),
+    
+    path('product', views.products),
+    path('product/create', views.products_create),
+    path('product/<int:id>', views.products_view),
 
-    path('products', views.products),
     path('contact', views.contact),
     
     path('notice', views.notice),
@@ -19,21 +22,10 @@ urlpatterns = [
     path('video', views.video),
     path('popup', views.popup),
 
-    
-
     path('create', views.create),
 
+    path('update_image', views.update_image),
+    path('update_detail_image', views.update_detail_image),
 
-    # path('create/<str:table>', views.create_type),
-    # path('create/<str:table>/<int:id>', views.create_room),
-    
-    # path('update_image', views.update_image),
-    
-    # path('<str:table>/<str:id>', views.detail),
-
-    # path('reservation/room/<int:room_id>', views.reservation),
-
-    # path('peak_season', views.peak_season),
-    # path('notification', views.notification),
-    # path('delete', views.delete),
+    path('delete', views.delete)
 ]

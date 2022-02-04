@@ -26,6 +26,7 @@
                             {% if notice %}
                             <input type="hidden" name='action' value="update">
                             <input type="hidden" name='id' value="{{notice.id}}">
+                            <input type="hidden" name="class" value="Notice">
                             {% else %}
                             <input type="hidden" name='action' value="create">
                             {% endif %}

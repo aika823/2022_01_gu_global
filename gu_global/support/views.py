@@ -1,10 +1,6 @@
 from django.shortcuts import render
 
 def notice(request):
-  # context = {
-  #   'title_list':[''],
-  #   'sub_title_list':
-  # }
   return render(request, "notice.html")
 
 

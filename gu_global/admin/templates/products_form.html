@@ -1,0 +1,273 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div id="right-panel" class="right-panel">
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+
+                <div class="col-lg-4">
+
+                    <div class="card">
+
+                        {% if product %}
+                        <form id="deleteForm" action="/admin/delete" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="table" value="product">
+                            <input type="hidden" name="id" value="{{product.id}}">
+                        </form>
+                        {% endif %}
+
+                        <form id="productCreateForm" action="/admin/create" method="post" enctype="multipart/form-data"
+                            class="form-horizontal">
+
+                            {% csrf_token %}
+                            <input type="hidden" name='table' value="product">
+
+                            {% if product %}
+                            <input type="hidden" name='action' value="update">
+                            <input type="hidden" name='id' value="{{product.id}}">
+                            {% else %}
+                            <input type="hidden" name='action' value="create">
+                            {% endif %}
+
+                            <div class="card-header">
+                                <strong>제품 정보</strong>
+                            </div>
+
+                            <div class="card-body card-block">
+
+                                <!-- 카테고리 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">카테고리</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="category" class="form-control" list="categoryList"
+                                            value="{{product.category.name}}" />
+
+                                        <datalist id="categoryList">
+                                            {% for category in category_list %}
+                                            <option value="{{category.name}}">{{category.name}}</option>
+                                            {% endfor %}
+                                        </datalist>
+                                    </div>
+                                </div>
+
+                                <!-- 이름 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">이름</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="name" class="form-control" value="{{product.name}}"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <!-- 제목 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">제목</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="title" class="form-control" value="{{product.title}}"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <!-- 부제목 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">부제목</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="sub_title" class="form-control"
+                                            value="{{product.sub_title}}" required>
+                                    </div>
+                                </div>
+
+                                <!-- 내용 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">내용</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="content" class="form-control" cols="30" rows="10"
+                                            required>{{product.content}}</textarea>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <!-- footer -->
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm" form="productCreateForm">
+                                    {% if product %}
+                                    수정
+                                    {% else %}
+                                    추가
+                                    {% endif %}
+                                </button>
+                                {% if product %}
+                                <button type="submit" class="btn btn-outline-danger btn-sm"
+                                    form="deleteForm">삭제</button>
+                                {% endif%}
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+                {% if product %}
+                <div class="col-lg-4">
+
+                    <div class="card">
+
+                        <!-- 이미지 삭제 -->
+                        <form id="deleteImageForm" action="/admin/delete" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="table" value="product_image">
+                            <input type="hidden" name="id" value="">
+                        </form>
+
+                        <!-- 이미지 수정 -->
+                        <form id="imageForm" action="/admin/update_image" method="post" enctype="multipart/form-data"
+                            class="form-horizontal">
+
+                            {% csrf_token %}
+                            <input type="hidden" name='table' value="product">
+                            <input type="hidden" name='action' value="update">
+                            <input type="hidden" name='id' value="{{product.id}}">
+
+                            <div class="card-header">
+                                <strong>제품 이미지</strong>
+                            </div>
+
+                            <div class="card-body card-block">
+
+                                <!-- image -->
+                                <div class="row form-group">
+
+                                    {% for image in image_list %}
+                                    <div class="col col-md-4">
+
+                                        <input type="hidden" name="update_image_id[]" class="update-image-id" value="" data-id="{{image.id}}">
+                                        
+                                        <input type="file" name="update_image[]" style="opacity:0"
+                                            class="input-update-image" onchange="onChangeImage({{image.id}})" data-id="{{image.id}}">
+
+                                        <img src="/media/{{image.image}}" class="image-changable" alt=""
+                                            onclick="openImageUpdateInput({{forloop.counter0}}, 'input-update-image')" data-id="{{image.id}}">
+
+                                        <button type="button" style="width:100%" class="btn btn-outline-danger btn-sm"
+                                            onclick="deleteImage({{image.id}})">
+                                            삭제
+                                        </button>
+
+                                    </div>
+                                    {% endfor %}
+
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="multipleImageInput" class=" form-control-label">이미지 추가 </label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" id="multipleImageInput" name="image_list"
+                                            class="form-control-file" multiple>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- footer -->
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm"
+                                    form="imageForm">수정하기</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="card">
+
+                        <!-- 제품 상세 이미지 삭제 -->
+                        <form id="deleteDetailImageForm" action="/admin/delete" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="table" value="product_detail_image">
+                            <input type="hidden" name="id" value="">
+                        </form>
+
+                        <!-- 제품 상세 이미지 수정 -->
+                        <form id="detailImageForm" action="/admin/update_detail_image" method="post" enctype="multipart/form-data"
+                            class="form-horizontal">
+
+                            {% csrf_token %}
+                            <input type="hidden" name='table' value="product">
+                            <input type="hidden" name='action' value="update">
+                            <input type="hidden" name='id' value="{{product.id}}">
+
+                            <div class="card-header">
+                                <strong>제품 상세 이미지</strong>
+                            </div>
+
+                            <div class="card-body card-block">
+
+                                <!-- image -->
+                                <div class="row form-group">
+
+                                    {% for image in detail_image_list %}
+                                    <div class="col col-md-4">
+
+                                        <input type="hidden" name="update_image_id[]" class="update-detail-image-id" value=""
+                                            data-id="{{image.id}}">
+
+                                        <input type="file" name="update_image[]" style="opacity:0"
+                                            class="input-update-detail-image" onchange="onChangeImage({{image.id}}, true)"
+                                            data-id="{{image.id}}">
+
+                                        <img src="/media/{{image.image}}" class="detail-image-changable" alt=""
+                                            onclick="openImageUpdateInput({{forloop.counter0}}, 'input-update-detail-image')" data-id="{{image.id}}">
+
+                                        <button type="button" style="width:100%" class="btn btn-outline-danger btn-sm"
+                                            onclick="deleteImage({{image.id}}, true)">
+                                            삭제
+                                        </button>
+
+                                    </div>
+                                    {% endfor %}
+
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="multipleImageInput" class=" form-control-label">이미지 추가 </label>
+                                    </div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" id="multipleImageInput" name="image_list"
+                                            class="form-control-file" multiple>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- footer -->
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm"
+                                    form="detailImageForm">수정하기</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+
+                {% endif %}
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -92,4 +92,9 @@ STATICFILES_DIRS = [
     "static/images",
 ]
 
+MEDIA_URL = "/media/"
+MEDIAFILES_DIRS = [
+    os.path.join(BASE_DIR, "media"),
+]
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

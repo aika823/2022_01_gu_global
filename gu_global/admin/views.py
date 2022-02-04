@@ -1,10 +1,13 @@
 from multiprocessing import context
 from django.shortcuts import redirect, render
+from products.models import Category, Product, ProductDetailImage, ProductImage
 
 from support.models import Notice
 from .models import Admin
 from django.contrib.auth.hashers import make_password, check_password
+
 from api.decorators import admin_required
+import api.api_image
 
 
 @admin_required
@@ -13,13 +16,15 @@ def index(request):
     return render(request, "index.html", context=context)
 
 
+# 로그인 
+
 def login(request):
+    
     # admin = Admin()
     # admin.username = "1234"
     # admin.password = make_password("1234")
     # admin.save()
 
-    print(Admin.objects.all())
     if request.method == "POST":
         try:
             admin = Admin.objects.get(username=request.POST.get('username'))
@@ -37,114 +42,77 @@ def login(request):
     return render(request, "login.html")
 
 
+# 제품 관리
 
 def products(request):
-    context = {}
-    return render(request, "products.html")
+    context = {
+        'product_list':Product.objects.all()
+    }
+    return render(request, "products.html", context=context)
 
+def products_create(request):
+    context = {
+        'category_list': Category.objects.all()
+    }
+    return render(request, "products_form.html", context=context)
+
+def products_view(request,id):
+    context = {
+        'product':Product.objects.get(id=id),
+        'category_list': Category.objects.all(),
+        'image_list':ProductImage.objects.filter(product=Product.objects.get(id=id)),
+        'detail_image_list':ProductDetailImage.objects.filter(product=Product.objects.get(id=id))
+    }
+    return render(request, "products_form.html", context=context)
+
+
+# 문의사항 관리
 
 def contact(request):
     context = {}
     return render(request, "contact.html")
 
 
+# 공지사항 관리
+
 def notice(request):
     context = {'notice_list':Notice.objects.all()}
     return render(request, "notice.html", context=context)
 
 def create_notice(request):
-    return render(request, "notice_detail.html", context=context)
-    return render(request, "notice_detail.html")
+    return render(request, "notice_detail.html")    
+
 def view_notice(request, id):
     context = {'notice':Notice.objects.get(id=id)}
     return render(request, "notice_detail.html", context=context)
 
+
+# 자료실 파일 관리
 
 def download(request):
     context = {}
     return render(request, "download.html")
 
 
+# 동영상 관리
+
 def video(request):
     context = {}
     return render(request, "video.html")
 
+
+# 팝업 관리
 
 def popup(request):
     context = {}
     return render(request, "popup.html")
 
 
-
-
-# @admin_required
-# def reservation(request, room_id):
-#     room = Room.objects.get(id=room_id)
-#     room_reservation_list = RoomReservation.objects.filter(room=room)
-#     context = {
-#         "room":room,
-#         "room_reservation_list": room_reservation_list,
-#         "type_list" : get_type_list(),
-#         "room_list" : Room.objects.all()
-#     }
-
-#     if request.method == "POST":
-#         confirm_reservation(request.POST.get('id'))
-    
-#     return render(request, "manage_reservation.html", context=context)
-
-
-# @admin_required
-# def peak_season(request):
-#     if request.method == "POST":
-    
-#         start = request.POST.get("start")
-#         end = request.POST.get("end")
-#         action = request.POST.get("action")
-
-#         start_date = str_to_date(start)
-#         end_date = str_to_date(end)
-#         delta = end_date - start_date  
-#         date_list = list()
-#         for i in range(delta.days+1): 
-#             day = start_date + timedelta(days=i)
-#             date_list.append(day)
-        
-#         if action == "set":
-#             for date in date_list:
-#                 try:
-#                     peak_season = PeakSeoson.objects.get(date=date)
-#                 except:
-#                     peak_season = PeakSeoson()
-#                     peak_season.date = date
-#                     peak_season.save()
-
-#         if action == "delete":
-#             for date in date_list:
-#                 try:
-#                     peak_season = PeakSeoson.objects.get(date=date)
-#                     peak_season.delete()
-#                 except:
-#                     pass
-    
-#     peak_season = PeakSeoson.objects.all()
-#     context = {
-#         "peak_season": peak_season,
-#         "type_list" : get_type_list(),
-#         "room_list" : Room.objects.all()
-#     }
-#     return render(request, "peak_season.html", context=context)
-
-
-
+# 관리자 기능 함수
 
 def create(request):
 
     if request.method == "POST":
-
-        print(request.POST)
-        for i in request.POST:
-            print(request.POST.get(i))
 
         table = request.POST.get('table')
         action = request.POST.get('action')
@@ -153,152 +121,59 @@ def create(request):
         if table == 'notice':
             if id:
                 item = Notice.objects.get(id=id)
-            elif action == 'update':
+            elif action == 'create':
                 item = Notice()
-            item.order = request.POST.get('order')
-            item.title = request.POST.get('title')
-            item.content = request.POST.get('content')
-            item.author = request.POST.get('author')
-            item.views = request.POST.get('views')
+        
+        if table == 'product':
+            if id:
+                item = Product.objects.get(id=id)
+            elif action == 'create':
+                item = Product()
 
-        
-        
+            try:
+                category = Category.objects.get(name=request.POST.get('category'))
+            except:
+                category = Category(name=request.POST.get('category'))
+                category.save()
+            setattr(item, 'category', category)
+
+        for key in request.POST:
+            try:
+                setattr(item, key, request.POST.get(key))
+            except:
+                pass
         item.save()
 
         return redirect("/admin/{}/{}".format(table, item.id))
 
+def delete(request):
+    table = request.POST.get('table')
+    id = request.POST.get('id')
 
+    if table == 'product':
+        Product.objects.get(id=id).delete()
+        return redirect("/admin/product")
 
-# def update_image(request):
-
-#     if request.method == "POST":
-
-#         room_id = request.POST.get('room_id')
-#         room = Room.objects.get(id=room_id)
-
-#         image_list = request.FILES.getlist('image_list')
-#         room_image_id_list = request.POST.getlist('room_image_id[]') 
-#         room_image_index_list = list()
-#         for index in request.POST.getlist('room_image_index[]'):
-#             if index:
-#                 room_image_index_list.append(int(index))
-        
-#         update_image_list = request.FILES.getlist('image_update[]') 
-        
-#         if image_list:
-#             for img in image_list:
-#                 image = Image(image=img)
-#                 image.save()
-#                 room_image = RoomImage(room=room, image=image)
-#                 room_image.save()
-                
-#         if room_image_id_list:
-#             i=0
-#             for idx in range(len(room_image_id_list)):
-#                 if idx in room_image_index_list:
-#                     room_image = RoomImage.objects.get(id=room_image_id_list[idx])
-#                     room_image.image.image.delete()
-#                     room_image.image.image = update_image_list[i]
-#                     i+=1
-#                     room_image.image.save()
-
-#         return redirect("/admin/room/{}".format(room_id))
-
-
-# @admin_required
-# def create_type(request, table):
-#     context = {
-#         "category": table,
-#         "function":"create",
-#         "type_list" : get_type_list(),
-#         "room_list" : Room.objects.all()
-#     }
-#     return render(request, "create.html", context=context)
-
-
-# @admin_required
-# def create_room(request, table, id):
-#     type = Type.objects.get(id=id)
-#     context = {
-#         "category": 'room',
-#         "function":"create",
-#         "type_list" : get_type_list(),
-#         "room_list" : Room.objects.all(),
-#         "type" : type
-#     }
-#     return render(request, "create.html", context=context)
-
-
-# @admin_required
-# def detail(request, table, id):
-
-#     if table == "type":
-#         item = Type.objects.get(id=id)
-#     elif table == "room":
-#         item = Room.objects.get(id=id)
-#         item.image_list = RoomImage.objects.filter(room=item)
-#         item.checkin_time = item.checkin_time.strftime('%H:%M')
-#         item.checkout_time = item.checkout_time.strftime('%H:%M')
+    if table == 'product_image':
+        product_id = ProductImage.objects.get(id=id).product.id
+        ProductImage.objects.get(id=id).delete()
+        return redirect("/admin/{}/{}".format('product', product_id))
     
-#     context = {
-#         "category":table,
-#         "id":id,
-#         "item":item,
-#         "function":"update",
-#         "type_list" : get_type_list(),
-#         "room_list" : Room.objects.all()
-#     }
-        
-#     return render(request, "create.html", context=context)
+    if table == 'product_detail_image':
+        print(id)
+        product_id = ProductDetailImage.objects.get(id=id).product.id
+        ProductDetailImage.objects.get(id=id).delete()
+        return redirect("/admin/{}/{}".format('product', product_id))
 
+def update_image(request):
+    api.api_image.update_image(request)
+    table = request.POST.get('table')
+    id = request.POST.get('id')
+    return redirect("/admin/{}/{}".format(table, id))
 
-# def delete(request):
-    
-#     if request.method == "POST":
-        
-#         table = request.POST.get('table')
-#         id = request.POST.get('id')
-#         room_id = request.POST.get('room_id')
-        
-#         if table == "type":
-#             item = Type.objects.get(id=id)
-#             item.delete()
-
-#             return redirect("/admin/")
-        
-#         if table == "room":
-#             item = Room.objects.get(id=id)
-#             item.delete()
-
-#             return redirect("/admin/")
-
-#         if table == "room_image":
-            
-#             room_image_id = request.POST.get('room_image_id')
-            
-#             item = RoomImage.objects.get(id=room_image_id)
-#             room_id = item.room.id
-#             image_item = item.image
-#             image = image_item.image
-
-#             image.delete()
-#             image_item.delete()
-#             item.delete()
-
-#             return redirect("/admin/room/{}".format(room_id))
-
-
-# @admin_required
-# def notification(request):
-#     if request.method == "POST":
-#         id_list = request.POST.getlist('notification_id[]')
-#         for i in range(0, len(id_list)):
-#             notification = Notification.objects.get(id=id_list[i])
-#             notification.name = request.POST.getlist('notification_name[]')[i]
-#             notification.content = request.POST.getlist('notification_content[]')[i]
-#             notification.save()
-
-#     context = {
-#         'notification_list':Notification.objects.all()
-#     }
-#     return render(request, 'notification.html', context=context)
+def update_detail_image(request):
+    print(request.POST)
+    api.api_image.update_detail_image(request)
+    table = request.POST.get('table')
+    id = request.POST.get('id')
+    return redirect("/admin/{}/{}".format(table, id))

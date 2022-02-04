@@ -9,61 +9,39 @@
                     <div class="card">
 
                         <div class="card-header">
-                            <strong class="card-title">{{room.name}} 객실 예약 정보</strong>
+                            <strong class="card-title">공지사항</strong>
                         </div>
 
                         <div class="card-body">
                             <table id="dataTable" class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">예약번호</th>
-                                        <th scope="col">객실</th>
-                                        <th scope="col">체크인</th>
-                                        <th scope="col">체크아웃</th>
-                                        <th scope="col">예약자</th>
-                                        <th scope="col">연락처</th>
-                                        <th scope="col">요청사항</th>
-                                        <th scope="col">총 결제금액</th>
-                                        <th scope="col">상태</th>
+                                        <th scope="col">순번</th>
+                                        <th scope="col">제품명</th>
+                                        <th scope="col">타이틀</th>
+                                        <th scope="col">서브타이틀</th>
+                                        <th scope="col">내용</th>
+                                        <th scope="col">생성일</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for room_reservation in room_reservation_list %}
-                                    <tr>
-                                        <td>{{room_reservation.code}}</th>
-                                        <td>{{room_reservation.room.name}}</th>
-                                        <td>{{room_reservation.start | date:"Y-m-d"}}</td>
-                                        <td>{{room_reservation.end | date:"Y-m-d"}}</td>
-                                        <td>{{room_reservation.user_name}}</td>
-                                        <td>{{room_reservation.user_contact}}</td>
-                                        <td>{{room_reservation.user_request}}</td>
-                                        <td>{{room_reservation.total_price}}</td>
-                                        <td>
-
-                                            {% if room_reservation.cancelled %}
-
-                                            취소됨 ({{room_reservation.cancelled_at}})
-
-                                            {% else %}
-
-                                            {% if room_reservation.is_paid %}
-                                            예약완료
-                                            {% else %}
-                                            <form action="" method="post">
-                                                {% csrf_token %}
-                                                <input type="hidden" name="id" value="{{room_reservation.id}}">
-                                                <button type="submit" class="btn btn-outline-primary btn-sm">입금
-                                                    확인</button>
-                                            </form>
-                                            {% endif %}
-
-                                            {% endif %}
-                                        </td>
+                                    {% for product in product_list %}
+                                    <tr onclick="location.href='/admin/product/{{product.id}}'">
+                                        <td>{{product.order}}</th>
+                                        <td><a href="/admin/product/{{product.id}}">{{product.name}}</a></th>
+                                        <td>{{product.title}}</td>
+                                        <td>{{product.sub_title}}</td>
+                                        <td>{{product.content}}</td>
+                                        <td>{{product.created_at | date:'Y-m-d'}}</td>
                                     </tr>
                                     {% endfor %}
-
                                 </tbody>
                             </table>
+
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-primary"
+                                onclick="location.href='/admin/product/create'">추가</button>
                         </div>
                     </div>
                 </div>
