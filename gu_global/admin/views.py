@@ -42,20 +42,24 @@ def login(request):
     return render(request, "login.html")
 
 
+# 문의사항 관리
+def category(request):
+    context = {'category_list':Category.objects.all()}
+    return render(request, "category.html", context=context)
+def category_create(request):
+    return render(request, "category_detail.html")    
+def category_view(request, id):
+    context = {'category':Category.objects.get(id=id)}
+    return render(request, "category_detail.html", context=context)
+
+
 # 제품 관리
-
 def products(request):
-    context = {
-        'product_list':Product.objects.all()
-    }
+    context = {'product_list':Product.objects.all()}
     return render(request, "products.html", context=context)
-
 def products_create(request):
-    context = {
-        'category_list': Category.objects.all()
-    }
+    context = {'category_list': Category.objects.all()}
     return render(request, "products_form.html", context=context)
-
 def products_view(request,id):
     context = {
         'product':Product.objects.get(id=id),
@@ -153,6 +157,12 @@ def create(request):
                 item = Notice.objects.get(id=id)
             elif action == 'create':
                 item = Notice()
+
+        if table == 'category':
+            if id:
+                item = Category.objects.get(id=id)
+            elif action == 'create':
+                item = Category()
         
         if table == 'contact':
             if id:

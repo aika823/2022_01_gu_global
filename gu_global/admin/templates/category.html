@@ -17,22 +17,18 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">메인 카테고리</th>
+                                        <th scope="col">순번</th>
                                         <th scope="col">카테고리</th>
-                                        <th scope="col">제품명</th>
-                                        <th scope="col">타이틀</th>
-                                        <th scope="col">서브타이틀</th>
                                         <th scope="col">내용</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for product in product_list %}
-                                    <tr onclick="location.href='/admin/product/{{product.id}}'">
-                                        <td>{{product.category.main_category}}</td>
-                                        <td>{{product.category.name}}</td>
-                                        <td><a href="/admin/product/{{product.id}}">{{product.name}}</a></th>
-                                        <td>{{product.title}}</td>
-                                        <td>{{product.sub_title}}</td>
-                                        <td>{{product.content}}</td>
+                                    {% for category in category_list %}
+                                    <tr onclick="location.href='/admin/category/{{category.id}}'">
+                                        <th>{{category.main_category}}</th>
+                                        <td>{{category.order}}</td>
+                                        <td><a href="/admin/category/{{category.id}}">{{category.name}}</a></th>
+                                        <td>{{category.detail}}</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
@@ -40,8 +36,7 @@
 
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-outline-primary"
-                                onclick="location.href='/admin/product/create'">추가</button>
+                            <button class="btn btn-outline-primary" onclick="location.href='/admin/category/create'">추가</button>
                         </div>
                     </div>
                 </div>

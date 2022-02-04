@@ -3,6 +3,8 @@ from django.db.models.deletion import CASCADE
 
 
 class Category(models.Model):
+    main_category = models.CharField(db_column="main_category", max_length=50, null=True)
+    order = models.PositiveIntegerField(db_column="order", null=False, default=1)
     name = models.CharField(db_column="name", max_length=50)
     detail = models.CharField(db_column="detail", max_length=200)
     class Meta:

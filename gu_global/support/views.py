@@ -9,12 +9,12 @@ def certification(request):
 
 
 def download(request):
-  return render(request, "download.html")
+  return render(request, "support_download.html")
 
 
 def video(request):
-  return render(request, "video.html")
+  return render(request, "support_video.html")
 
 
 def contact(request):
-  return render(request, "contact.html")
+  return render(request, "support_contact.html")

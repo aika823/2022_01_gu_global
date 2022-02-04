@@ -8,6 +8,10 @@ urlpatterns = [
     path('', views.products),
     path('login', views.login),
     
+    path('category', views.category),
+    path('category/create', views.category_create),
+    path('category/<int:id>', views.category_view),
+
     path('product', views.products),
     path('product/create', views.products_create),
     path('product/<int:id>', views.products_view),
@@ -20,8 +24,6 @@ urlpatterns = [
     path('notice/create', views.create_notice),
     path('notice/<int:id>', views.view_notice),
 
-    path('download', views.download),
-    
     path('video', views.video),
     path('video/create', views.video_create),
     path('video/<int:id>', views.video_view),
@@ -36,9 +38,8 @@ urlpatterns = [
 
 
     path('create', views.create),
+    path('delete', views.delete),
 
     path('update_image', views.update_image),
     path('update_detail_image', views.update_detail_image),
-
-    path('delete', views.delete)
 ]

@@ -1,0 +1,103 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div id="right-panel" class="right-panel">
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div class="card">
+
+                        {% if function == "update" %}
+                        <form id="deleteForm" action="/admin/delete" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="table" value="category">
+                            <input type="hidden" name="id" value="{{category.id}}">
+                        </form>
+                        {% endif %}
+
+                        <form id="categoryCreateForm" action="/admin/create" method="post" enctype="multipart/form-data"
+                            class="form-horizontal">
+
+                            {% csrf_token %}
+                            <input type="hidden" name='table' value="category">
+
+                            {% if category %}
+                            <input type="hidden" name='action' value="update">
+                            <input type="hidden" name='id' value="{{category.id}}">
+                            <input type="hidden" name="class" value="category">
+                            {% else %}
+                            <input type="hidden" name='action' value="create">
+                            {% endif %}
+
+                            <div class="card-header">
+                                <strong>공지사항</strong>
+                            </div>
+
+                            <div class="card-body card-block">
+
+                                <!-- 순번 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">메인 카테고리</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <select name="main_category" class="form-control">
+                                            <option value="Yealink">Yealink</option>
+                                            <option value="SONY">SONY</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- 순번 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">순번</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="number" name="order" class="form-control"
+                                            value="{{category.order}}" required>
+                                    </div>
+                                </div>
+
+                                <!-- 이름 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">이름</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="name" class="form-control" value="{{category.name}}"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <!-- 내용 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">내용</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="detail" class="form-control" cols="30" rows="10">{{category.detail}}</textarea>
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                            <!-- footer -->
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm" form="categoryCreateForm">
+                                    {% if category %}
+                                    수정
+                                    {% else %}
+                                    추가
+                                    {% endif %}
+                                </button>
+                                {% if category %}
+                                <button type="submit" class="btn btn-outline-danger btn-sm"
+                                    form="deleteForm">삭제</button>
+                                {% endif%}
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
