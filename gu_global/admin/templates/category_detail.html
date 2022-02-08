@@ -9,7 +9,7 @@
 
                     <div class="card">
 
-                        {% if function == "update" %}
+                        {% if category %}
                         <form id="deleteForm" action="/admin/delete" method="post">
                             {% csrf_token %}
                             <input type="hidden" name="table" value="category">

@@ -2,29 +2,23 @@
     <div class="product-category category-box">
         <div class="category-list">
             <p>Yealink</p>
-            <a href="">화상회의 Codec</a>
-            <a href="">USB 화상회의</a>
-            <a href="">MS Teams (Video)</a>
-            <a href="">MS Teams (Phone)</a>
-            <a href="">Zoom Room</a>
-            <a href="">개인용 & BYOD</a>
-            <a href="">협업 & 스마트워크</a>
-            <a href="">SIP Phone</a>
-            <a href="">헤드셋</a>
+            {% for yealink in yealink_list %}
+            <a href="/products/Yealink/{{yealink.name}}">{{yealink.name}}</a>
+            {% endfor %}
         </div>
         <div class="line-vertical"></div>
         <div class="category-list">
             <p>SONY</p>
-            <a href="">PTZ 화상회의 카메라</a>
-            <a href="">EDGE</a>
-            <a href="">MAS</a>
-            <a href="">EFP 카메라 & 캠코더</a>
+            {% for sony in sony_list %}
+            <a href="/products/SONY/{{sony.name}}">{{sony.name}}</a>
+            {% endfor %}
         </div>
         <div class="line-vertical"></div>
         <div class="category-list">
             <p>Other</p>
-            <a href="">카메라 추적 시스템</a>
-            <a href="">Kramer</a>
+            {% for other in other_list %}
+            <a href="/products/Other/{{other.name}}">{{other.name}}</a>
+            {% endfor %}
         </div>
     </div>
 

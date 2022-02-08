@@ -13,6 +13,18 @@
 
 <!-- section.product_list -->
 <section class="product-list">
+
+    {% for product in product_list %}
+    <div class="product-item" onclick="location.href='/products/detail/{{product.name}}'">
+        <div class="product-img">
+            <img src="/media/{{product.thumbnail}}" alt="">
+        </div>
+        <h2 class="product-title">[{{product.category.main_category}}] {{product.name}}</h2>
+        <p class="product-description">{{product.title}}</p>
+    </div>
+    {% endfor %}
+
+<!--
     <div class="product-item">
         <div class="product-img">
             <img src="/static/images/product/p_sample1.png" alt="">
@@ -69,14 +81,16 @@
         <h2 class="product-title">[Yealink] UVC84</h2>
         <p class="product-description">4K UHD 비디오 카메라</p>
     </div>
+-->
+
 </section>
 {% endblock content %}
 
 
 {% block extrascripts %}
 <script>
-  $(function() {
-    $('.sub-banner').css('background-image', "url('/static/images/product/product_bg.png')")
-  });
+    $(function () {
+        $('.sub-banner').css('background-image', "url('/static/images/product/product_bg.png')")
+    });
 </script>
 {% endblock extrascripts %}

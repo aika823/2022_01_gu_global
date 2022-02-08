@@ -230,6 +230,10 @@ def delete(request):
         Download.objects.get(id=id).delete()
         return redirect("/admin/download")
 
+    if table == 'category':
+        Category.objects.get(id=id).delete()
+        return redirect("/admin/category")
+
     if table == 'product':
         Product.objects.get(id=id).delete()
         return redirect("/admin/product")
