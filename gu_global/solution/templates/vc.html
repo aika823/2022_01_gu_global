@@ -2,7 +2,7 @@
 
 {% block extraheads %}
 <link rel="stylesheet" href="/static/css/subpage.css">
-<link rel="stylesheet" href="/static/css/company.css">
+<link rel="stylesheet" href="/static/css/solution.css">
 {% endblock extraheads %}
 
 {% block content %}
@@ -10,19 +10,255 @@
 <!-- section.sub-banner -->
 {% include "sub_banner.html" %}
 
-<!-- section.company-intro -->
-<section class="company-intro content">
-    <div class="img-wrap">
-        <img class="history-img" src="/static/images/solution/vc.png" alt="">
+<!-- section.solution.box-1 -->
+<section class="solution box-1 content page-start">
+  <h2>(㈜지유글로벌의 Yealink 비즈니스 화상회의 솔루션</h2>
+  <p>Yealink 솔루션은 H/W와 S/W가 결합되어 업무의 효율성을 향상시키는 비즈니스 화상회의 솔루션입니다.</p>
+  <div class="grid-3">
+    <div class="grid-item">
+      <div class="item-header">
+        <p>For Enterprise / VCaas</p>
+      </div>
+      <div class="item-content">
+        <img src="/static/images/solution/yms.png" alt="">
+        <p>
+          <span>Yealink Meeting Server</span> : 올인원 미팅 서버로 
+          <br>VC 기기, SIP 폰, VC데스크톱/모바일 등
+          <br>통합하는 Yealink만의 전용 회의 서버
+        </p>
+      </div>
     </div>
+    <div class="grid-item first">
+      <div class="item-header">
+        <p>For SMB / SME</p>
+      </div>
+      <div class="item-content flex-wrap">
+        <div class="item-content-flex">
+          <img src="/static/images/solution/solution_item2.png" alt="">
+          <p>
+            <span>VC800</span>
+            <br>(Built-in MCU)
+          </p>
+        </div>
+        <div class="item-content-flex">
+          <img src="/static/images/solution/solution_item.png" alt="">
+          <p>
+            <span>Yealink Cloud Management Service</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="grid-item first">
+      <div class="item-header">
+        <p>Yealink VC Main Products</p>
+      </div>
+      <div class="item-content flex-wrap">
+        <div class="item-content-flex">
+          <img src="/static/images/solution/solution_item3.png" alt="">
+          <p>
+            Small and Huddle
+            <br><span>VC200</span>
+          </p>
+        </div>
+        <div class="item-content-flex">
+          <img src="/static/images/solution/solution_item4.png" alt="">
+          <p>
+            Small and Medium
+            <br><span>VC500</span>
+          </p>
+        </div>
+        <div class="item-content-flex">
+          <img src="/static/images/solution/solution_item6.png" alt="">
+          <p>
+            Medium and Large
+            <br><span>VC800</span>
+          </p>
+        </div>
+        <div class="item-content-flex">
+          <img src="/static/images/solution/solution_item5.png" alt="">
+          <p>
+            Extra Large Integration
+            <br><span>VC880</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+
+<!-- section.solution.box-2 -->
+<section class="solution box-2">
+  <div class="text-box">
+    <h2>Yealink VC 솔루션</h2>
+    <h3>차별 포인트</h3>
+  </div>
+</section>
+
+
+<!-- section.solution.box-3 -->
+<section class="solution box-3 content">
+  <div class="text-box">
+    <h3>01 최신 기술 및 트렌드 반영과 협업 지원</h3>
+    <p>
+      - H.265/H.264 High, 최대 4K 지원
+      <br>- Black Board/CMS/추적형 시스템 협업 지원
+    </p>
+    <h3>02 타사 코덱 및 클라우드와 완벽한 호환성</h3>
+    <p>
+      - Cisco, SONY, Poly 등 기존 제품 호환
+      <br>- MS-Teams, Zoom, Yealink Meeting Server,
+      <br>StarLeaf, Pexip, Mind, BlueJeans 등 응용 솔루션 호환
+    </p>
+    <h3>03 화상회의 솔루션 브랜드 중 최신 범용성</h3>
+    <p>
+      - 표준 UTP-LAN 케이블 연결 시공
+      - 최신 영상/음성/신호전송 시스템 제공
+    </p>
+  </div>
+  <div class="image-box">
+    <img src="/static/images/solution/solution-onestop.png" alt="">
+  </div>
+</section>
+
+
+<!-- section.solution.box-4 -->
+<section class="solution box-4 content">
+  <div class="text-box">
+    <h2>Yealink VC 솔루션 최신 기술</h2>
+  </div>
+  <div class="grid-tech">
+    <div class="tech-item">
+      <div class="tech-icon">
+        <img src="/static/images/solution/icon1.png" alt="" class="">
+      </div>
+      <div class="tech-content">
+        <p>
+          <span class="tech-title">다자간 연결</span>
+          Control PC가 불필요하며,
+          <br>간단한 리모컨 조작으로 참석자 불러오기 가능
+        </p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">
+        <img src="/static/images/solution/icon2.png" alt="" class="">
+      </div>
+      <div class="tech-content">
+        <p>
+          <span class="tech-title">회의 녹화</span>
+          기존 USB-Memory를 이용한 간편한 녹화 가능
+          <br>(녹화 금지, 수동 녹화, 자동 녹화 기능)
+          <br>Video + Content를 동시 녹화
+          <br>Content를 즉시 활용 <span class="blue">[세계적인 기능 내장]</span>
+        </p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">
+        <img src="/static/images/solution/icon3.png" alt="" class="">
+      </div>
+      <div class="tech-content">
+        <p>
+          <span class="tech-title">
+            국내 유일 Codec 내장형 MCU
+            <br>최대 24Port 지원
+          </span>
+          고객 요구에 따른 8/16/24/ Port 화상장비
+          <br>내장형 MCU를 활용 가능
+          <br>(24port 이상의 YMS(MCU) 구축형 옵션 사용)
+        </p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">
+        <img src="/static/images/solution/icon4.png" alt="" class="">
+      </div>
+      <div class="tech-content">
+        <p>
+          <span class="tech-title">회의실 잠금</span>
+          Control PC가 불필요하며,
+          <br>간단한 리모컨 조작으로 DND 기능 설정 가능
+          <br>(회의 개설 후 더 이상의 참석자 진입을 차단)
+        </p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">
+        <img src="/static/images/solution/icon5.png" alt="" class="">
+      </div>
+      <div class="tech-content">
+        <p>
+          <span class="tech-title">최대 9개의 카메라 사용 가능</span>
+          9개의 카메라 연동 가능
+          <br>화면에 9개의 Camera를 한 번에 송출 <span class="blue">[세계 유일]</span>
+          <br>각각의 카메라를 위치 조정하는 것보다
+          <br>안정적인 화면 전송
+        </p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">
+        <img src="/static/images/solution/icon6.png" alt="" class="">
+      </div>
+      <div class="tech-content">
+        <p>
+          <span class="tech-title">전자칠판 호환</span>
+          전자칠판(Smart Board)를 이용한 판서 기능 지원
+          <br>범용 USB Cable 연결로
+          <br>판서 기능 지원을 상대방에게 전송 가능 
+        </p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">
+        <img src="/static/images/solution/icon7.png" alt="" class="">
+      </div>
+      <div class="tech-content">
+        <p>
+          <span class="tech-title">예약 회의</span>
+          예약 회의 기능으로 모든 참석자(H/W Codec, PC,
+          <br>Mobile)를 불러올 수 있고, 예약된 회의를
+          <br>초기 화면에서 확인할 수 있는 최신 기능
+        </p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">
+        <img src="/static/images/solution/icon8.png" alt="" class="">
+      </div>
+      <div class="tech-content">
+        <p>
+          <span class="tech-title">Whitelist Blacklist 기능</span>
+          받을 수 있는 참가자 수를 제한하거나,
+          블랙리스트를 지정하여 화상회의의 안정정 확보
+        </p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <div class="tech-icon">
+        <img src="/static/images/solution/icon9.png" alt="" class="">
+      </div>
+      <div class="tech-content">
+        <p>
+          <span class="tech-title">다양한 주변기기</span>
+          화상장비 전용 무선 마이크 옵션
+          <br>화상장비 전용 무선 Content 공유기(최대 4화면 출력)
+          <br>국내 유일 일반 랜선을 이용한 주변기기 연장으로
+          <br>설치 및 보수 비용 절감
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock content %}
 
 
 {% block extrascripts %}
 <script>
   $(function() {
-    $('.sub-banner').css('background-image', "url('/static/images/solution/solution_bg.png')")
+    $('.sub-banner').css('background-image', "url('/static/images/solution/solution_bg.png')");
   });
 </script>
 {% endblock extrascripts %}

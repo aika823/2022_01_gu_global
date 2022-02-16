@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/company.css">
+{% endblock extraheads %}
+
+{% block content %}
+
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
+<!-- section.contact-form -->
+<section class="contact-form">
+  <h1>Contact Us</h1>
+  <p>문의 내용을 남겨주시면 담당자가 자세하게 안내를 도와드리겠습니다.</p>
+  <div class="form-wrap">
+    <form action="">
+      <div></div>
+      <div class="input-wrap">
+        <div class="form-row">
+          <!-- <select name="" id="">
+            <option value="">문의 유형을 선택해 주세요.</option>
+            <option value="제품 문의">제품문의</option>
+            <option value="자료 요청">자료요청 (인증서, 시방서, 규격서) 문의</option>
+            <option value="구축 문의">구축 문의</option>
+          </select> -->
+          <a href="javascript:void(0)" class="select-dropdown">
+            <span class="type-name">문의 유형을 선택해 주세요.</span>
+            <span class="material-icons">arrow_drop_down</span>
+            </a>
+          <div class="select-content">
+            <a href="javascript:void(0)" class="select-item">제품문의</a>
+            <a href="javascript:void(0)" class="select-item">자료요청 (인증서, 시방서, 규격서) 문의</a>
+            <a href="javascript:void(0)" class="select-item">구축 문의</a>
+          </div>
+        </div>
+        <input type="text" class="select-value" id="type" value=""/>
+        <div class="form-row">
+          <label for="">제목</label>
+          <input type="text"/>
+        </div>
+        <div class="form-row">
+          <label for="">이메일</label>
+          <input type="text"/>
+        </div>
+        <div class="form-row">
+          <label for="">문의 내용</label>
+          <input type="text"/>
+        </div>
+        <div class="checkbox-wrap">
+          <input type="checkbox">
+          <span>위 내용에 동의합니다.</span>
+        </div>
+        <div class="table-wrap">
+          <div class="table-header">
+            <p>수집항목</p>
+            <p>수집목적</p>
+            <p>보유기간</p>
+          </div>
+          <div class="line"></div>
+          <div class="table-body">
+            <p>이메일 주소</p>
+            <p>문의•요청•불편사항 및 처리결과 회신</p>
+            <p>문의 민원 해결 이후 파기</p>
+          </div>
+        </div>
+        <button type="" href="javascript:void(0)" class="btn-submit">문의하기</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock content %}
+
+
+{% block extrascripts %}
+<script>
+  $('.select-dropdown').click(function() {
+    $('.select-content').slideToggle();
+    if($(this).find('.material-icons').text() == "arrow_drop_down") {
+      $(this).find('.material-icons').text("arrow_drop_up");
+    } else {
+      $(this).find('.material-icons').text("arrow_drop_down");
+    }
+  });
+
+  $('.select-item').click(function() {
+    $('.select-value').val($(this).text());
+    $('.select-content').slideToggle();
+    $('.select-dropdown .type-name').text($(this).text())
+  });
+</script>
+{% endblock extrascripts %}

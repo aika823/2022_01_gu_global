@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/solution.css">
+{% endblock extraheads %}
+
+{% block content %}
+
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
+<!-- section.solution.box-2 -->
+<section class="solution yms box-2 page-start">
+  <div class="text-box">
+    <h2>Yealink Meeting Server (YMS)</h2>
+    <h5>HD 화상회의 협업을 위해 설계된
+      <br>분산형 클라우드 기반 화상 회의의 인프라</h5>
+    <p>
+      선명한 오디오, HD 비디오, 컨텐츠 및 웹 협업과 연결하여 모든 장치의 위치를 연결하여
+      <br>회의가 편리하고 간단해지며 비용을 절감하고 업무의 효율성을 향상시킵니다.
+    </p>
+    <a href="" class="more">
+      자세히보기 
+      <span class="material-icons-outlined">navigate_next</span>
+      </a>
+  </div>
+</section>
+
+
+<!-- section.yms-map -->
+<section class="yms-map content">
+  <h2>Yealink Meeting Server</h2>
+  <h2 class="subtitle">광범위한 통합 및 상호 운용성</h2>
+  <p>
+    YMS는 MCU, 등록자 서버, 디렉토리 서버, 탐색 서버, 회의 및 장치 관리 서버, SIP 트렁크, WebRTC 서버, GK & H.460 서버,
+    <br>Microsoft SfB(Lync) 게이트웨이, 녹화 기능 서버와 공동 작업 서버를 함께 사용하여 사용자에게 효율적 회의 환경을 제공합니다.
+    <br>또한, 회의실 시스템, 비디오 폰, 휴대 전화 및 개인용 컴퓨터 등 여러 장치와 연결하여 언제 어디서든 버튼 하나로 회의 환경을 구축합니다.
+  </p>
+  <div class="image-wrap">
+    <img src="/static/images/solution/yms-image.png" alt="">
+  </div>
+</section>
+
+
+<!-- section.yms-function -->
+<section class="yms-function content">
+  <h2>Yealink Meeting Server의 주요 기능</h2>
+  <p class="subtitle">YMS (Yealink Meeting Server)의 주요기능을 소개합니다.</p>
+  <div class="function-wrap">
+    <div class="function-item">
+      <h3>
+        <img src="/static/images/solution/dot.png" alt="">
+        회의 생성을 위한 다양한 모드
+      </h3>
+      <p>
+        YMS는 P2P 통화, ad-hoc 및 회의 예약, 교육 모드 등 다양한 기능을 
+        <br>제공하여 여러 화상 회의 모드를 지원합니다. OA 기능과 통합되어 
+        <br>PC 클라이언트, 웹 또는 Microsoft Outlook을 통해 화상 회의와 
+        <br>회의실을 동시에 예약할 수 있습니다. 빠른 사용자 참여를 위해 
+        <br>엔드포인트에 회의 알림 및 원터치 회의 참여가 가능합니다.
+      </p>
+      <div class="img-wrap">
+        <img src="/static/images/solution/function1.png" alt="">
+      </div>
+    </div>
+    <div class="function-item">
+      <h3>
+        <img src="/static/images/solution/dot.png" alt="">
+        시공간의 제약없이 연결 되는 비즈니스
+      </h3>
+      <p>
+        YMS는 회의에 참여할 수 있는 여러 가지 방법을 지원하므로, 실시간 
+        <br>참여가 가능해지고, 일반적인 네트워크 및 회의 문제가해결됩니다. 
+        <br>사무실에서는 룸 시스템 덕분에 간단하게 HD 화상 회의가 가능해집니다. 
+        <br>이동 중에도 PC나 모바일 기기 소프트웨어로 회의에 참여할 수 있으며, 
+        <br>웹 브라우저를 사용하여 회의 참여가 가능합니다.
+      </p>
+      <div class="img-wrap">
+        <img src="/static/images/solution/function2.png" alt="">
+      </div>
+    </div>
+    <div class="function-item">
+      <h3>
+        <img src="/static/images/solution/dot.png" alt="">
+        맞춤형 회의 환경
+      </h3>
+      <p>
+        YMS는 음소거/음소거 해제, 카메라 켜기/끄기, 회의 정보 공유, 녹음, 
+        <br>참가자별 회의 영상 레이아웃 사용자 지정 등을 포함한 다양한 
+        <br>회의 제어 기능으로 다양한 회의 시나리오에 최적화된 환경을 지원합니다.
+        <br>또한 YMS는 콘텐츠 공유, 화이트보드 및 주석 기능을 통해 협업 환경에서도 
+        <br>회의 효율성을 크게 향상시킵니다.
+      </p>
+      <div class="img-wrap">
+        <img src="/static/images/solution/function3.png" alt="">
+      </div>
+    </div>
+    <div class="function-item">
+      <h3>
+        <img src="/static/images/solution/dot.png" alt="">
+        회의 통계 및 분석
+      </h3>
+      <p>
+        회의, MCU 리소스 및 통화 세부 정보를 그래픽으로 표시하여
+        <br>관리자를 위한 리소스 통계 및 분석을 효과적으로 나타냅니다. 
+        <br>원격 진단 및 관리는 YMS 플랫폼의 관리 효율성을 향상시킵니다. 
+        <br>외부 녹화 서버를 추가하면 미디어 녹화, 저장 및 주문형 학습이 가능합니다.
+        <span style="margin:0; visibility: hidden; display: block;">.</span>
+      </p>
+      <div class="img-wrap">
+        <img src="/static/images/solution/function4.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- section.yms-function -->
+<section class="yms-function content">
+  <h2>Yealink Meeting Server의 장점</h2>
+  <p class="subtitle">YMS (Yealink Meeting Server)의 장점을 소개합니다.</p>
+  <div class="advantages">
+    <div class="advantages-wrap">
+      <div class="img-wrap">
+        <img src="/static/images/solution/advantage1.png" alt="">
+      </div>
+      <div class="text-wrap">
+        <p>
+          MCU, RegistrationRar Server, Traversal Server, Meeting and Device 
+          <br>Management Server, Enterprise Directory Server, SIP Trunk Server를 
+          <br>가져오고,WebRTC 서버, GK & H.460 서버, Microsoft SfB(Lync) 게이트웨이 
+          <br>서버, 기록 서버 및 협업 서버를 함께 사용합니다.
+        </p>
+      </div>
+    </div>
+    <div class="advantages-wrap">
+      <div class="img-wrap">
+        <img src="/static/images/solution/advantage2.png" alt="">
+      </div>
+      <div class="text-wrap">
+        <p>
+          H.323/SIP 프로토콜 및 임베디드 GK & H.460 서버를 사용하는 YMS는 
+          <br>메인스트림 엔드포인트 및 MCU 제품과 호환됩니다. 또한 YMS는 Microsoft 
+          <br>SfB와의 상호 운용성을 지원합니다.오디오, 비디오 및 콘텐츠 공유를 위한 
+          <br>(Lync) 클라이언트입니다.
+        </p>
+      </div>
+    </div>
+    <div class="advantages-wrap">
+      <div class="img-wrap">
+        <img src="/static/images/solution/advantage3.png" alt="">
+      </div>
+      <div class="text-wrap">
+        <p>
+          고급 분산 아키텍처 및 서버 클러스터 기술을 기반으로 YMS는 다중 호스트 
+          <br>핫 스탠바이 및 노드 관리를 구현하고, 강력한 FEC & 대역폭 동적 적응을 제공합니다.
+          <br>조정은 네트워크 환경이 약한 경우에도 실시간 통신을 보장합니다.
+        </p>
+      </div>
+    </div>
+    <div class="advantages-wrap">
+      <div class="img-wrap">
+        <img src="/static/images/solution/advantage4.png" alt="">
+      </div>
+      <div class="text-wrap">
+        <p>
+          YMS는 다양한 대규모 회의 솔루션을 제공합니다. 페더레이션 캐스케이딩 솔루션은 
+          <br>멀티 레벨 정부 조직에 적합하고, 독자적인 양방향 회의 솔루션은 웨비나에 
+          <br>최대 1500명의 참가자를 지원합니다. YMS는 또한 10,000명 이상의 온라인 
+          <br>시청자가 RTMP Live 미팅을 동시 시청이 가능합니다.
+        </p>
+      </div>
+    </div>
+    <div class="advantages-wrap">
+      <div class="img-wrap">
+        <img src="/static/images/solution/advantage5.png" alt="">
+      </div>
+      <div class="text-wrap">
+        <p>
+          Rest API, PC 및 Mobile Soft Client SDK는 타사 개발자에게 공개되어 
+          <br>시스템 통합 커스터마이징을 지원합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock content %}
+
+
+{% block extrascripts %}
+<script>
+  $(function() {
+    $('.sub-banner').css('background-image', "url('/static/images/solution/solution_bg.png')");
+  });
+</script>
+{% endblock extrascripts %}

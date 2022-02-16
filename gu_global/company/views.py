@@ -25,3 +25,7 @@ def partner(request):
 def works(request):
     context = api_common.get_common_context()
     return render(request, "works.html", context=context)
+
+def contact(request):
+    context = api_common.get_common_context()
+    return render(request, "contact_page.html", context=context)

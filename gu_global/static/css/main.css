@@ -22,6 +22,13 @@ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
 src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'KoPubDotumMedium';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/KoPubDotumMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* 
 font-family: 'Montserrat', sans-serif;
 font-family: 'Nanum Myeongjo', serif;
@@ -104,13 +111,17 @@ h1, h2, h3, h4, h5, h6 { margin: 0;}
   box-sizing: border-box;
 }
 
+br.mobile {
+  display: none;
+}
+
 /* header */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 130px;
+  /* height: 130px; */
   z-index: 20;
   transition: all .5s;
   background: transparent;
@@ -125,6 +136,9 @@ header .header-top {
   gap: 100px;
 }
 header.down {
+  background: #000;
+}
+header.black {
   background: #000;
 }
 header .logo {
@@ -280,6 +294,10 @@ header .btn-wrapper .btn-item.btn-item--green {
   display: none;
 }
 
+header.down {
+
+}
+
 /* footer */
 footer {
   width: 100%;
@@ -381,6 +399,193 @@ footer .sns-wrap img {
 .modal_wrap .modal_cnt .modal_body iframe { width: 600px; height: 350px;}
 .fake_sjwidth {overflow: scroll; position: absolute; top: -99999px; width: 60px; height: 60px;}
 
+
+@media all and (max-width:1580px) {
+  header .menu {
+    font-size: 20px;
+  }
+  header .header-top {
+    gap: 50px;
+  }
+}
+
+@media all and (max-width: 1440px) {
+  header .menu .btn-menu.menu-company .company-category, 
+  header .menu .btn-menu.menu-support .support-category {
+    width: 150px;
+  }
+
+  .header-content .solution-category a {
+    font-size: 18px;
+  }
+
+  .content {
+    padding: 150px 80px;
+  }
+
+  footer .footer-content p {
+    font-size: 16px;
+  }
+  footer.content {
+    padding: 170px 50px 100px;
+  }
+}
+@media all and (max-width: 1280px) {
+  header {
+    padding: 25px 50px;
+  }
+
+  footer .sns-wrap {
+    right: 20px;
+    gap: 5px;
+    bottom: 30px;
+  }
+  footer .sns-wrap img {
+    width: 10%;
+  }
+}
+
+@media all and (max-width: 1080px) {
+  header .logo {
+    width: 200px;
+  }
+  header .btn-wrapper {
+    width: 200px;
+    gap: 10px;
+  }
+  header .btn-wrapper .btn-item {
+    font-size: 15px;
+  }
+  header .menu {
+    font-size: 16px;
+  }
+  header .menu .btn-menu.active::after {
+    content: initial;
+  }
+  .header-content {
+    padding: 130px 20px;
+  }
+  .header-content .product-category {
+    padding: 0;
+  }
+}
+@media all and (max-width: 900px) {
+  header {
+    padding: 25px 20px;
+  }
+  header .header-top {
+    gap: 30px;
+  }
+  .header-content .solution-category a {
+    font-size: 16px;
+  }
+
+  footer {
+    display: block;
+    height: auto;
+  }
+  footer.content {
+    padding: 100px 50px 100px;
+  }
+  footer .logo-wrap {
+    width: 30%;
+    margin: 30px;
+  }
+}
+@media all and (max-width: 768px) {
+  header {
+    padding: 25px 10px;
+  }
+  header .menu {
+    font-size: 14px;
+  }
+  header .header-top {
+    gap: 10px;
+  }
+  header .logo {
+    width: 100px;
+  }
+  header .btn-wrapper {
+    width: 120px;
+    gap: 5px;
+  }
+  header .btn-wrapper .btn-item {
+    font-size: 12px;
+  }
+  .header-content .solution-category {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: flex-start;
+    column-gap: 20px;
+  }
+  .header-content .solution-category a {
+    padding: 20px 0;
+    font-size: 14px;
+  }
+
+  footer .logo-wrap {
+    width: 50%;
+    margin: 30px;
+  }
+}
 @media all and (max-width: 650px) {
   .modal_wrap .modal_cnt .modal_body iframe { width: 300px; height: 180px;}
+  header .menu .btn-menu.menu-company .company-category a,
+  header .menu .btn-menu.menu-support .support-category a {
+    font-size: 16px;
+    padding-top: 20px;
+  }
+
+  .header-content .category-list p {
+    font-size: 18px;
+    font-family: 'KoPubDotumMedium';
+  }
+  .header-content .category-list a {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 550px) {
+  header .menu .btn-menu.menu-company,
+  header .menu .btn-menu.menu-support {
+    position: initial;
+  }
+  header .menu .btn-menu.menu-company .company-category,
+  header .menu .btn-menu.menu-support .support-category {
+    left: 50px;
+  }
+  header .logo {
+    width: 150px;
+  }
+  header .menu {
+    font-size: 10px;
+    width: auto;
+    gap: 10px;
+  }
+  header .btn-wrapper .btn-item {
+    font-size: 12px;
+  }
+  header .header-top {
+    position: relative;
+  }
+  header .btn-wrapper {
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    z-index: 1;
+    width: 140px;
+  }
+
+  footer .logo-wrap {
+    width: 70%;
+  }
+  footer .footer-content p {
+    font-size: 13px;
+  }
+
+  footer.content {
+    padding: 50px 50px 100px;
+  }
+  
+  .header-content .category-list a {
+    font-size: 12px;
+  }
 }
