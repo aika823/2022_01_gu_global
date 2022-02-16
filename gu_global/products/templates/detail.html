@@ -7,7 +7,7 @@
 
 {% block content %}
 <!-- section.product-detail -->
-<section class="product-detail">
+<section class="product-detail page-start">
     <div class="detail-img-wrap">
         <div class="detail-img main-img">
             <img src="/media/{{thumbnail.image}}" alt="">
@@ -59,3 +59,10 @@
     </div>
 </section>
 {% endblock content %}
+
+
+{% block extrascripts %}
+<script>
+  $('header').addClass('black');
+</script>
+{% endblock extrascripts %}

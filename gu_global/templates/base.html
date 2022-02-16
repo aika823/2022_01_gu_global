@@ -59,6 +59,24 @@
 
     <script src="/static/js/navgation.js"></script>
 
+    <script>
+      $(function () {
+        var $header = $('header'); 
+        var $page = $('.page-start');
+        var $window = $(window);
+        var pageOffsetTop = $page.offset().top;
+
+        $window.resize(function () { 
+          pageOffsetTop = $page.offset().top;
+        });
+
+        $window.on('scroll', function () {
+          var scrolled = $window.scrollTop() >= pageOffsetTop;
+          $header.toggleClass('down', scrolled); 
+        });
+      });
+    </script>
+
     {% block extrascripts %}{% endblock extrascripts %}
 </body>
 

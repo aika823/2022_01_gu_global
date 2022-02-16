@@ -7,4 +7,7 @@ app_name = "solution"
 urlpatterns = [
     path('', views.vc),
     path('ym', views.ym),
+    path('ms', views.ms),
+    path('yms', views.yms),
+    path('sony', views.sony),
 ]

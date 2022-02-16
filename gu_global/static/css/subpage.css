@@ -77,3 +77,83 @@ section.sub-banner .navbar .category-wrap p.next-arrow {
   font-size: 36px;
   color: rgba(234, 234, 234, 0.5);
 }
+
+
+/* 반응형 */
+@media all and (max-width: 1440px) {
+  section.sub-banner .title-wrap .sub-title {
+    font-size: 45px;
+  }
+  section.sub-banner .title-wrap .sub-subtitle {
+    font-size: 23px;
+  }
+  section.sub-banner .navbar {
+    padding: 0 100px;
+  }
+  section.sub-banner .navbar .category-wrap .category-item p {
+    font-size: 23px;
+  }
+}
+@media all and (max-width: 1080px) {
+  section.sub-banner .title-wrap .sub-title {
+    font-size: 35px;
+  }
+  section.sub-banner .title-wrap .sub-subtitle {
+    font-size: 20px;
+  }
+  section.sub-banner .navbar {
+    padding: 0 50px;
+  }
+  section.sub-banner .navbar .category-wrap .category-item p {
+    font-size: 18px;
+    font-family: 'KoPubDotumMedium';
+  }
+  section.sub-banner .navbar .category-wrap .category-item {
+    padding: 15px 20px;
+  }
+  section.sub-banner .navbar .home-icon {
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 768px) {
+  section.sub-banner {
+    height: 300px;
+  }
+  section.sub-banner .navbar .category-wrap .category-item {
+    padding: 0px 10px;
+    align-items: center;
+  }
+  section.sub-banner .navbar {
+    padding: 0;
+  }
+  section.sub-banner .title-wrap .sub-title {
+    font-size: 28px;
+  }
+  section.sub-banner .title-wrap .sub-subtitle {
+    font-size: 18px;
+  }
+  section.sub-banner .navbar .category-wrap .category-item p {
+    font-size: 16px;
+  }
+  section.sub-banner .navbar .category-wrap .category-item span {
+    font-size: 24px;
+  }
+  section.sub-banner .navbar .category-wrap p.next-arrow {
+    font-size: 20px;
+  }
+  section.sub-banner .navbar .home-icon {
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 500px) {
+  section.sub-banner .navbar .category-wrap .category-item p {
+    font-size: 12px;
+  }
+  section.sub-banner .navbar .category-wrap {
+    grid-template-columns: 1fr 15px 1fr 15px 1fr;
+  }
+  section.sub-banner .navbar .category-wrap .category-item span {
+    font-size: 18px;
+  }
+}

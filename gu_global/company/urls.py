@@ -10,4 +10,5 @@ urlpatterns = [
     path('history', views.history),
     path('partner', views.partner),
     path('works', views.works),
+    path('contact', views.contact),
 ]

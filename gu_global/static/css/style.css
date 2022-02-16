@@ -28,6 +28,7 @@ section.main .slide .slick-track .slide-bg .title-wrap {
   transform: translate(-50%, -50%);
   color: #fff;
   text-align: center;
+  width: 100%;
 }
 section.main .slide .slick-track .slide-bg .title-wrap h1 {
   font-size: 75px;
@@ -160,6 +161,7 @@ section.business .slide-business .grid-wrap .text-wrap p {
   word-break: keep-all;
   line-height: 24px;
   font-weight: 400;
+  line-height: 28px;
 }
 section.business .slide-business .grid-wrap .text-wrap .more {
   color: #656565;
@@ -285,4 +287,387 @@ section.product .slide-product .slick-dots li.slick-active button:before {
 section.product .slide-product .slick-dots li button:before {
   color: #777777;
   font-size: 18px;
+}
+
+
+
+/* section.contact-form */
+section.contact-form {
+  background-image: url('/static/images/ask_bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 120px 260px;
+  box-sizing: border-box;
+  color: #fff;
+}
+section.contact-form h1 {
+  font-size: 43px;
+  text-align: center;
+}
+section.contact-form p {
+  font-size: 21px;
+  margin-top: 20px;
+  text-align: center;
+}
+section.contact-form .form-wrap,
+section.contact-form .form-wrap form {
+  width: 100%;
+}
+section.contact-form .form-wrap {
+  margin-top: 100px;
+}
+section.contact-form .form-wrap form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  gap: 20px;
+}
+section.contact-form .form-wrap form .form-row {
+  margin: 20px 0 30px;
+}
+section.contact-form .form-wrap form .form-row label {
+  font-size: 23px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+section.contact-form .form-wrap form .form-row input,
+section.contact-form .form-wrap form .form-row select {
+  background-color: transparent;
+  font-size: 18px;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+section.contact-form .form-wrap form .form-row .select-dropdown {
+  background-color: transparent;
+  font-size: 18px;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+section.contact-form .form-wrap form .form-row .select-content {
+  display: none;
+}
+section.contact-form .form-wrap form .form-row .select-item {
+  font-size: 18px;
+  padding: 15px 20px;
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  color: #000;
+  box-sizing: border-box;
+}
+section.contact-form .form-wrap form .form-row .select-item:hover {
+  background-color: #c2c2c2;
+  color: #000;
+}
+section.contact-form .form-wrap form input.select-value {
+  visibility: hidden;
+  position: absolute;
+}
+section.contact-form .form-wrap form .form-row select option {
+  color: #000;
+  padding: 10px;
+  box-sizing: border-box;
+}
+section.contact-form .form-wrap form .form-row input:focus {
+  outline: none;
+}
+section.contact-form .form-wrap form .checkbox-wrap {
+  margin: 10px 0 35px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+section.contact-form .form-wrap form .checkbox-wrap input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background-color: #898C9D;
+  border-radius: 5px;
+}
+section.contact-form .form-wrap form button.btn-submit {
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  padding: 10px 0;
+  width: 260px;
+  float: right;
+  background-color: transparent;
+  transition: all .5s;
+  cursor: pointer;
+}
+section.contact-form .form-wrap form button.btn-submit:hover {
+  background-color: #1A32C6;
+  border: 1px solid #1A32C6;
+  color: #fff;
+}
+section.contact-form .form-wrap form .table-wrap {
+  text-align: center;
+  border-top: 1px solid #878787;
+  border-bottom: 1px solid #878787;
+  margin-bottom: 20px;
+}
+section.contact-form .form-wrap form .table-wrap .table-header,
+section.contact-form .form-wrap form .table-wrap .table-body {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  justify-items: center;
+  align-items: center;
+}
+section.contact-form .form-wrap form .table-wrap .table-header p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+section.contact-form .form-wrap form .table-wrap .table-body p {
+  font-size: 12px;
+  margin: 20px 0 30px;
+}
+section.contact-form .form-wrap form .table-wrap .line {
+  height: 1px;
+  background-color: #878787;
+  width: 100%;
+}
+
+/* 반응형 */
+@media all and (max-width: 1440px) {
+  section.business .slide-business .wide-wrap .business-content p {
+    font-size: 16px;
+  }
+  section.business .slide-business .grid-wrap .text-wrap h3 {
+    font-size: 21px;
+    margin-top: 17px;
+  }
+  section.business .slide-business .grid-wrap .text-wrap p {
+    font-size: 16px;
+    word-break: break-all;
+  }
+  section.business .slide-business .grid-wrap .text-wrap p br {
+    display: none;
+  }
+  section.business .slide-business .grid-wrap .text-wrap .more {
+    margin-top: 30px;
+  }
+  section.solution .solution-grid .solution-wrap {
+    height: 350px;
+  }
+  section.news .grid-wrap .news-item p {
+    word-break: keep-all;
+  }
+  section.news .grid-wrap {
+    gap: 30px;
+  }
+  section.product .slide-product .product-img {
+    height: 500px;
+  }
+}
+@media all and (max-width:1080px) {
+  section.main .slide .slick-track .slide-bg .title-wrap h1 {
+    font-size: 55px;
+  }
+  section.main .slide .slick-track .slide-bg .title-wrap h3 {
+    font-size: 20px;
+  }
+  section.business .slide-business .wide-wrap {
+    height: 400px;
+  }
+  section.business .slide-business .grid-wrap .img-wrap {
+    height: 175px;
+  }
+  section.solution .solution-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section.news .section-subtitle {
+    font-size: 18px;
+    word-break: keep-all;
+  }
+  section.news .grid-wrap .news-item .news-title h3 {
+    font-size: 16px;
+  }
+  section.news .grid-wrap .news-item p {
+    font-size: 15px;
+  }
+
+  section.product .slide-product .product-img {
+    height: 300px;
+  }
+}
+@media all and (max-width:900px) {
+  br.mobile {
+    display: block;
+  }
+  section.business .slide-business .wide-wrap .business-content {
+    width: 50%;
+  }
+}
+@media all and (max-width: 768px) {
+  section.main .slide .slick-track .slide-bg .title-wrap h1 {
+    font-size: 40px;
+  }
+  section.main .slide .slick-track .slide-bg .title-wrap h3 {
+    font-size: 18px;
+  }
+
+  section.business .slide-business .wide-wrap {
+    height: 400px;
+  }
+  section.business .slide-business .grid-wrap .img-wrap {
+    height: 175px;
+  }
+  section.business .slide-business .wide-wrap .business-content .logo-wrap {
+    width: 180px;
+    margin-top: 15px;
+  }
+  section.business .slide-business .wide-wrap .business-content p {
+    margin-top: 20px;
+    word-break: keep-all;
+  }
+  .content {
+    padding: 150px 20px;
+  }
+  section.business .slide-business .grid-wrap .text-wrap h3 {
+    font-size: 15px;
+  }
+  section.business .slide-business .grid-wrap .text-wrap p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  section.business .slide-business .wide-wrap {
+    height: 300px;
+  }
+
+  .section-title {
+    font-size: 27px;
+  }
+  .section-subtitle {
+    font-size: 18px;
+    word-break: keep-all;
+  }
+
+
+  section.news .grid-wrap {
+    display: block;
+  }
+  section.news .grid-wrap .news-item .news-title {
+    grid-template-columns: 1fr 16px;
+    gap: 20px;
+  }
+  section.news .grid-wrap .news-item {
+    margin-bottom: 100px;
+  }
+
+  section.product .slide-product .product-img {
+    height: 200px;
+  }
+  section.product .slide-product .slick-dots {
+    bottom: 10px;
+  }
+}
+@media all and (max-width: 650px) {
+  section.news .news-header {
+    gap: 20px;
+  }
+  section.news .news-header .btn-wrap {
+    width: 250px;
+  }
+  section.news .news-header .btn-wrap a.btn-link {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+@media all and (max-width: 600px) {
+  section.business .slide-business .wide-wrap .business-content {
+    width: 70%;
+  }
+  section.business .slide-business .grid-wrap .img-wrap {
+    height: 100px;
+  }
+  section.business .slide-business .grid-wrap {
+    gap: 10px;
+  }
+  section.business .slide-business .grid-wrap .text-wrap .more {
+    font-size: 12px;
+  }
+  section.solution .solution-grid .solution-wrap {
+    height: 250px;
+  }
+
+  .content {
+    padding: 80px 20px;
+  }
+  section.news {
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+}
+@media all and (max-width: 500px) {
+  section.news .news-header {
+    display: block;
+  }
+  section.news .news-header .btn-wrap {
+    margin-top: 20px;
+  }
+  section.news .grid-wrap {
+    margin-top: 50px;
+  }
+  section.news .grid-wrap .news-item {
+    margin-bottom: 65px;
+  }
+}
+@media all and (max-width: 450px) {
+  section.main .slide .slick-track .slide-bg .title-wrap h1 {
+    font-size: 40px;
+  }
+  section.main .slide .slick-track .slide-bg .title-wrap h3 {
+    font-size: 16px;
+  }
+  section.business .slide-business .wide-wrap .business-content {
+    width: 85%;
+  }
+  section.business .slide-business .wide-wrap .business-content h4 {
+    font-size: 18px;
+  }
+  section.business .slide-business .wide-wrap .business-content p {
+    font-size: 16px;
+  }
+  section.solution .solution-grid .solution-wrap {
+    height: 200px;
+  }
+  section.solution .solution-grid .solution-wrap:nth-child(2n) {
+    margin-top: 40px;
+  }
+  section.solution .solution-grid {
+    margin-top: 60px;
+  }
+  .section-subtitle {
+    font-size: 16px;
+    word-break: keep-all;
+  }
+
+  section.product .slide-product .product-img {
+    height: 150px;
+  }
+}
+@media all and (max-width: 400px) {
+  section.business .slide-business .wide-wrap .business-content {
+    width: 92%;
+  }
+  section.business .slide-business .grid-wrap .text-wrap .more {
+    font-size: 10px;
+  }
+  section.business .slide-business .grid-wrap .text-wrap h3 {
+    font-size: 12px;
+  }
 }
