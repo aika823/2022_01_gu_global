@@ -326,6 +326,28 @@ section.contact-form .form-wrap form {
 section.contact-form .form-wrap form .form-row {
   margin: 20px 0 30px;
 }
+section.contact-form .form-wrap form .form-row label.btn-file {
+  border: 1px solid #fff;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  transition: all .5s;
+}
+section.contact-form .form-wrap form .form-row label.btn-file:hover {
+  background-color: #fff;
+  color: #1A32C6;
+}
+input[type="file"]#MailFile {
+  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  /* overflow: hidden; */
+  clip: rect(0, 0, 0, 0);
+}
 section.contact-form .form-wrap form .form-row label {
   font-size: 23px;
   font-weight: 600;
