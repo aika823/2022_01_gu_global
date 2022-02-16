@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/company.css">
+{% endblock extraheads %}
+
+{% block content %}
+
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
+<!-- section.portfolio -->
+<section class="portfolio">
+  <h3 class="section-intro-title">Philosophy</h3>
+  <div class="portfolio-wrap">
+    <div class="portfolio-description">
+      <h2>
+        한국원자력환경공단 (KORAD)
+        <br>화상회의 시스템 구축
+      </h2>
+      <p>
+        한국원자력환경공단
+        <br>클라우드 기반 스마트회의실 구축
+      </p>
+      <div class="line"></div>
+      <h2>구성장비</h2>
+      <h3>VC880 | VC800 | VCC22</h3>
+    </div>
+    <img src="/static/images/example.png" alt="">
+  </div>
+</section>
+
+
+<!-- section.example -->
+<section class="example">
+  <h2>시공사례</h2>
+  <div class="example-wrap">
+    <div class="example-item">
+      <div class="ex-type">
+        <div class="type-icon">
+          <img src="/static/images/example-icon1.png" alt="">
+        </div>
+        <p>교육기관</p>
+      </div>
+      <div class="ex-company">
+        <img src="/static/images/example1.png" alt="">
+      </div>
+      <div class="ex-text">
+        <h3>고려대학교 화상회의 시스템 구축</h3>
+        <p><span>•</span> 고려대학교 의학대학
+          <br><span class="space">&nbsp;&nbsp;&nbsp;&nbsp;</span>전용 스튜디오 내 원격수업 시스템 도입</p>
+        <p><span>•</span> 구성장비 : VC800 ｜ WPP20 ｜ VC Desktop</p>
+      </div>
+      <div class="ex-img">
+        <img src="/static/images/example-img3.png" alt="">
+      </div>
+      <div class="ex-logo">
+        <img src="/static/images/example_logo.png" alt="">
+      </div>
+    </div>
+    
+    <div class="example-item">
+      <div class="ex-type">
+        <div class="type-icon">
+          <img src="/static/images/example-icon1.png" alt="">
+        </div>
+        <p>교육기관</p>
+      </div>
+      <div class="ex-company">
+        <img src="/static/images/example2.png" alt="">
+      </div>
+      <div class="ex-text">
+        <h3>연세대학교 화상회의 시스템 구축</h3>
+        <p><span>•</span> 연세대학교 의료원 산학협력단
+          <br><span class="space">&nbsp;&nbsp;&nbsp;&nbsp;</span>캠퍼스 간 원격수업 시스템 도입 (본교/송도 캠퍼스)</p>
+        <p><span>•</span> 구성장비 : VC880 ｜ VC800 ｜ VCC22</p>
+      </div>
+      <div class="ex-img">
+        <img src="/static/images/example-img2.png" alt="">
+      </div>
+      <div class="ex-logo">
+        <img src="/static/images/example_logo.png" alt="">
+      </div>
+    </div>
+
+    <div class="example-item">
+      <div class="ex-type">
+        <div class="type-icon">
+          <img src="/static/images/example-icon2.png" alt="">
+        </div>
+        <p>기업</p>
+      </div>
+      <div class="ex-company">
+        <img src="/static/images/example3.png" alt="">
+      </div>
+      <div class="ex-text">
+        <h3>키움증권 화상회의 시스템 구축</h3>
+        <p><span>•</span> 키움증권 본사 회의실
+          <br><span class="space">&nbsp;&nbsp;&nbsp;&nbsp;</span>규모별(대/중/소형) 화상회의실 도입</p>
+        <p><span>•</span> 구성장비 : VC800 ｜ VCC22 ｜ CP960 ｜ VP59｜ WPP20 </p>
+      </div>
+      <div class="ex-img">
+        <img src="/static/images/example-img1.png" alt="">
+      </div>
+      <div class="ex-logo">
+        <img src="/static/images/example_logo.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

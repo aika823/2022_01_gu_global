@@ -471,6 +471,10 @@ section.contact-form .form-wrap form .table-wrap .line {
   section.product .slide-product .product-img {
     height: 500px;
   }
+
+  section.contact-form {
+    padding: 120px 100px;
+  }
 }
 @media all and (max-width:1080px) {
   section.main .slide .slick-track .slide-bg .title-wrap h1 {
@@ -502,6 +506,14 @@ section.contact-form .form-wrap form .table-wrap .line {
 
   section.product .slide-product .product-img {
     height: 300px;
+  }
+
+  section.contact-form {
+    padding: 120px 50px;
+  }
+  section.contact-form .form-wrap form {
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 @media all and (max-width:900px) {
@@ -574,6 +586,25 @@ section.contact-form .form-wrap form .table-wrap .line {
   section.product .slide-product .slick-dots {
     bottom: 10px;
   }
+
+  section.contact-form h1 {
+    font-size: 25px;
+  }
+  section.contact-form p {
+    font-size: 12px;
+    word-break: keep-all;
+  }
+  section.contact-form .form-wrap {
+    margin-top: 50px;
+  }
+  section.contact-form .form-wrap form .form-row label {
+    font-size: 16px;
+  }
+  section.contact-form .form-wrap form button.btn-submit {
+    float: initial;
+    display: block;
+    margin: 0 auto;
+  }
 }
 @media all and (max-width: 650px) {
   section.news .news-header {
@@ -624,6 +655,10 @@ section.contact-form .form-wrap form .table-wrap .line {
   }
   section.news .grid-wrap .news-item {
     margin-bottom: 65px;
+  }
+
+  section.contact-form {
+    padding: 100px 20px;
   }
 }
 @media all and (max-width: 450px) {

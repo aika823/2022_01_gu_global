@@ -39,3 +39,433 @@ section.company-intro .img-wrap img {
 section.company-intro.partner {
   margin: 240px 0 350px;
 }
+
+
+section.company-intro {
+  padding-bottom: 0;
+}
+section.company-intro .intro-wrap {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+  gap: 65px;
+}
+h3.section-intro-title {
+  font-size: 25px;
+  color: #D4D4D4;
+  margin-bottom: 60px;
+  font-family: "Noto Sans KR", "san-serif";
+  font-weight: 900;
+}
+section.company-intro .intro-wrap .intro-text h3 {
+  font-family: 'ChosunKm';
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+section.company-intro .intro-wrap .intro-text h3 span {
+  color: #1A32C6;
+}
+section.company-intro .intro-wrap .intro-text h1 {
+  font-family: 'ChosunKm';
+  font-size: 45px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+section.company-intro .intro-wrap .intro-text p {
+  font-family: 'KoPubDotumMedium';
+  font-size: 21px;
+  color: #535353;
+  line-height: 30px;
+}
+section.company-intro .intro-wrap .intro-text p span {
+  color: #1A32C6;
+  background-color: #EBECF8;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+section.company-intro .intro-wrap .intro-text p span img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.img-bg,
+.img-bg img {
+  width: 100%;
+  display: block;
+}
+
+/* section.philosophy */
+section.philosophy {
+  margin: 200px 150px;
+}
+section.philosophy .philosophy-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 100px;
+}
+section.philosophy .philosophy-wrap .img-wrap {
+  justify-self: right;
+  width: 100%;
+}
+section.philosophy .philosophy-wrap .img-wrap img {
+  width: 100%;
+}
+section.philosophy .philosophy-wrap .text-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  gap: 50px;
+}
+section.philosophy .philosophy-wrap .text-row .icon-wrap,
+section.philosophy .philosophy-wrap .text-row .icon-wrap img {
+  width: 100%;
+}
+section.philosophy .philosophy-wrap .text-row .text-box h3 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+section.philosophy .philosophy-wrap .text-row .text-box p {
+  font-size: 20px;
+}
+
+/* section.ci */
+section.ci {
+  margin: 200px 150px;
+}
+section.ci h3.section-intro-title {
+  margin: 0;
+}
+section.ci .ci-wrap {
+  margin-bottom: 80px;
+  display: flex;
+  gap: 150px;
+}
+section.ci .ci-wrap .ci-description {
+  margin-top: 5px;
+  font-family: 'KoPubDotumMedium';
+}
+section.ci .ci-wrap .ci-description h2 {
+  font-weight: 400;
+}
+section.ci .ci-wrap .ci-description h2 span {
+  font-weight: 600;
+}
+section.ci .ci-wrap .ci-description p {
+  font-size: 18px;
+  color: #535353;
+  font-family: 'Noto Sans KR';
+  margin-top: 20px;
+}
+section.ci .ci-img,
+section.ci .ci-img img {
+  width: 100%;
+}
+
+
+section.company-intro.partner {
+  margin: 150px 0 150px;
+  padding: 0;
+}
+
+
+
+/* section.portfolio */
+section.portfolio {
+  margin: 150px;
+}
+section.portfolio .portfolio-wrap {
+  width: 100%;
+  position: relative;
+  margin-top: 400px;
+  display: flex;
+  justify-content: right;
+}
+section.portfolio .portfolio-wrap .portfolio-description {
+  position: absolute;
+  bottom: 100px;
+  left: 0px;
+  width: 580px;
+  height: 775px;
+  padding: 110px 40px;
+  box-sizing: border-box;
+  background-color: #072DD6;
+  color: #fff;
+}
+section.portfolio .portfolio-wrap .portfolio-description h2 {
+  font-size: 32px;
+}
+section.portfolio .portfolio-wrap .portfolio-description p {
+  font-size: 23px;
+  margin: 30px 0 60px;
+}
+section.portfolio .portfolio-wrap .portfolio-description h3 {
+  font-size: 26px;
+  margin: 20px 0 0;
+}
+section.portfolio .portfolio-wrap .portfolio-description .line {
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  margin: 0 0 20px;
+}
+section.portfolio .portfolio-wrap img {
+  width: 90%;
+}
+
+
+/* section.example */
+section.example {
+  margin: 150px;
+}
+section.example h2 {
+  font-size: 38px;
+  letter-spacing: 8px;
+  text-align: center;
+}
+section.example .example-wrap {
+  margin-top: 70px;
+}
+section.example .example-wrap .example-item {
+  border: 3px solid #c2c2c2;
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  grid-template-columns: 15% 1fr 15%;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 50px 170px;
+  gap: 50px;
+  margin: 20px 0;
+}
+section.example .example-wrap .example-item .ex-text h3 {
+  font-size: 28px;
+  font-family: "Noto Sans KR";
+  margin-bottom: 40px;
+}
+section.example .example-wrap .example-item .ex-text p {
+  color: #535353;
+  font-size: 25px;
+  margin: 10px 0;
+}
+section.example .example-wrap .example-item .ex-text p span {
+  color: #1A32C6;
+  font-size: 30px;
+}
+section.example .example-wrap .example-item .ex-type {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 180px;
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  align-items: flex-end;
+  gap: 10px;
+}
+section.example .example-wrap .example-item .ex-type p {
+  letter-spacing: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ababab;
+}
+section.example .example-wrap .example-item .ex-logo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 440px;
+}
+section.example .example-wrap .example-item img {
+  width: 100%;
+}
+
+
+/* 반응형 */
+@media all and (max-width: 1920px) {
+  section.portfolio .portfolio-wrap .portfolio-description {
+    width: 480px;
+    height: 575px;
+  }
+}
+@media all and (max-width: 1440px) {
+  section.philosophy {
+    margin: 150px 50px;
+  }
+  section.philosophy .philosophy-wrap {
+    gap: 50px;
+  }
+  section.philosophy .philosophy-wrap .text-row .text-box h3 {
+    font-size: 22px;
+  }
+  section.philosophy .philosophy-wrap .text-row .text-box p {
+    font-size: 16px;
+    word-break: keep-all;
+  }
+  section.ci .ci-wrap  {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  section.portfolio .portfolio-wrap .portfolio-description {
+    width: 380px;
+    height: 475px;
+  }
+  section.portfolio .portfolio-wrap .portfolio-description h2 {
+    font-size: 23px;
+  }
+  section.portfolio .portfolio-wrap .portfolio-description p {
+    font-size: 19px;
+  }
+  section.portfolio .portfolio-wrap .portfolio-description h3 {
+    font-size: 20px;
+  }
+
+  section.example h2 {
+    font-size: 32px;
+  }
+  section.example .example-wrap .example-item .ex-text h3 {
+    font-size: 20px;
+  }
+  section.example .example-wrap .example-item .ex-text p {
+    font-size: 18px;
+    font-family: "Noto Sans KR";
+  }
+}
+@media all and (max-width: 1080px) {
+  section.company-intro .intro-wrap {
+    grid-template-columns: 100%;
+  }
+  section.philosophy .philosophy-wrap {
+    grid-template-columns: 100%;
+  }
+  section.philosophy .philosophy-wrap .img-wrap {
+    justify-self: center;
+    width: 50%;
+  }
+  section.philosophy .philosophy-wrap .text-wrap {
+    justify-self: center;
+  }
+  section.ci .ci-wrap .ci-description p {
+    word-break: keep-all;
+  }
+  section.ci .ci-wrap .ci-description p br {
+    display: none;
+  }
+  section.ci {
+    margin: 150px 50px;
+  }
+  section.ci .ci-wrap .ci-description h2 span {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  section.portfolio {
+    margin: 150px 50px;
+  }
+
+  section.example {
+    margin: 150px 50px;
+  }
+}
+@media all and (max-width: 768px) {
+  section.company-intro .intro-wrap .intro-text p {
+    font-size: 16px;
+    word-break: keep-all;
+  }
+  section.company-intro .intro-wrap .intro-text p br {
+    display: none;
+  }
+  section.philosophy .philosophy-wrap .text-row {
+    grid-template-columns: 100%;
+    gap: 10px;
+  }
+  section.philosophy .philosophy-wrap .text-row {
+    margin: 25px 0;
+  }
+  section.philosophy .philosophy-wrap .text-row .icon-wrap {
+    width: 50px;
+  }
+  section.ci .ci-wrap .ci-description h2 {
+    font-size: 18px;
+  }
+  section.ci .ci-wrap .ci-description h2 span {
+    font-size: 21px;
+  }
+  section.ci {
+    margin: 150px 20px;
+  }
+  .tab-menu .tab-box a.btn-tab {
+    font-size: 16px;
+  }
+  .tab-menu .tab-box .line-vertical {
+    display: none;
+  }
+
+  section.portfolio .portfolio-wrap .portfolio-description {
+    width: 280px;
+    height: 375px;
+    padding: 50px 30px;
+  }
+  section.portfolio .portfolio-wrap .portfolio-description h2 {
+    font-size: 17px;
+    font-family: 'Noto Sans KR';
+  }
+  section.portfolio .portfolio-wrap .portfolio-description p {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 30px 0;
+  }
+  section.portfolio .portfolio-wrap .portfolio-description h3 {
+    font-size: 18px;
+  }
+
+  section.example .example-wrap .example-item {
+    grid-template-columns: 100%;
+    padding: 100px 20px;
+  }
+  section.example .example-wrap .example-item .ex-company img {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+  section.example .example-wrap .example-item .ex-text h3 {
+    margin-bottom: 8px;
+  }
+
+  section.example .example-wrap .example-item .ex-logo {
+    width: 240px;
+  }
+
+  section.example .example-wrap .example-item .ex-text p {
+    word-break: keep-all;
+  }
+  section.example .example-wrap .example-item .ex-text p span.space {
+    display: none;
+  }
+}
+@media all and (max-width: 450px) {
+  section.portfolio {
+    margin: 100px 20px;
+  }
+  section.portfolio .portfolio-wrap {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  section.portfolio .portfolio-wrap .portfolio-description {
+    position: initial;
+    width: 100%;
+  }
+  section.portfolio .portfolio-wrap img {
+    width: 100%;
+  }
+  section.portfolio .portfolio-wrap .portfolio-description h2 {
+    font-size: 18px;
+  }
+
+  section.example {
+    margin: 150px 20px;
+  }
+}
