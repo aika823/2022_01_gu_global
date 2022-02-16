@@ -588,6 +588,9 @@ section.ym-product .product-wrap {
   gap: 150px;
   padding: 0 200px;
 }
+section.ym-product .product-wrap .product-item {
+  height: 380px;
+}
 section.ym-product .product-wrap .product-item .product-img,
 section.ym-product .product-wrap .product-item .product-img img {
   width: 100%;
@@ -842,6 +845,13 @@ section.area .text-box p {
   section.yms-function .advantages .advantages-wrap .text-wrap p br {
     display: none;
   }
+
+  section.pricing .price-wrap .price-item {
+    padding: 100px 20px 50px;
+  }
+  section.pricing .price-wrap {
+    gap: 50px;
+  }
 }
 @media all and (max-width: 1440px) {
   section.solution.box-1 .grid-3 .grid-item .item-content {
@@ -958,6 +968,28 @@ section.area .text-box p {
   section.yms-function .advantages .advantages-wrap {
     font-size: 18px;
   }
+
+  section.ym-product .product-wrap {
+    gap: 50px;
+    padding: 0 50px;
+  }
+  section.ym-product .product-wrap .product-item {
+    height: auto;
+  }
+
+  section.pricing .price-wrap {
+    gap: 25px;
+  } 
+  section.pricing .price-wrap .price-item .contain p {
+    font-size: 16px;
+  }
+  section.pricing .price-wrap .price-item h3.price {
+    font-size: 21px;
+  }
+  section.pricing .price-wrap .price-item .type {
+    font-size: 16px;
+    top: -42px;
+  }
 }
 @media all and (max-width: 1080px) {
   section.solution.box-1 h2 {
@@ -1058,6 +1090,18 @@ section.area .text-box p {
   }
   section.yms-function .advantages {
     margin-top: 50px;
+  }
+
+  section.ym-product .product-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section.pricing .price-wrap {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 80px;
+  }
+  section.pricing .price-wrap .price-item .contain p {
+    font-size: 18px;
   }
 }
 @media all and (max-width: 900px) {
@@ -1226,6 +1270,23 @@ section.area .text-box p {
     word-break: keep-all;
   }
   section.yms-function p.subtitle {
+    font-size: 18px;
+  }
+
+  section.ym-product .product-wrap {
+    grid-template-columns: 100%;
+  }
+  section.ym-product .product-wrap {
+    gap: 30px;
+  }
+
+  section.pricing .price-wrap {
+    grid-template-columns: 100%;
+  }
+  section.pricing h2 {
+    font-size: 23px;
+  }
+  section.pricing p {
     font-size: 18px;
   }
 }
