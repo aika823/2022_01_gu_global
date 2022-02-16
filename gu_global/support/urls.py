@@ -11,5 +11,4 @@ urlpatterns = [
     path('video', views.video),
     path('contact', views.contact),
     path('notice', views.notice),
-    path('test', views.test)
 ]
