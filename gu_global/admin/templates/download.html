@@ -24,7 +24,7 @@
                                 <tbody>
                                     {% for download in download_list %}
                                     <tr onclick="location.href='/admin/download/{{download.id}}'">
-                                        <td>{{download.product.name}}</td>
+                                        <td>{{download.product}}</td>
                                         <td>{{download.category}}</td>
                                         <td><a href="/admin/download/{{download.id}}">{{download.file}}</a></th>
                                     </tr>

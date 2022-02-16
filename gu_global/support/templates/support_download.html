@@ -13,31 +13,33 @@
 
 <div class="tab-menu tab-menu--partner page-start">
   <div class="tab-box">
-    <a href="javascript:void(0)" class="btn-tab active">코덱</a>
+    <a href="/support/download?type=codec" class="btn-tab {{active.codec}}">코덱</a>
     <div class="line-vertical"></div>
-    <a href="javascript:void(0)" class="btn-tab">카메라</a>
+    <a href="/support/download?type=camera" class="btn-tab {{active.camera}}">카메라</a>
     <div class="line-vertical"></div>
-    <a href="javascript:void(0)" class="btn-tab">스피커폰</a>
+    <a href="/support/download?type=speaker_phone" class="btn-tab {{active.speaker_phone}}">스피커폰</a>
     <div class="line-vertical"></div>
-    <a href="javascript:void(0)" class="btn-tab">사용자 가이드</a>
+    <a href="/support/download?type=guide" class="btn-tab {{active.guide}}">사용자 가이드</a>
     <div class="line-vertical"></div>
-    <a href="javascript:void(0)" class="btn-tab">소프트웨어</a>
+    <a href="/support/download?type=software" class="btn-tab {{active.software}}">소프트웨어</a>
   </div>
 </div>
 
 
 <!-- section.search -->
 <section class="search">
-  <select name="" id="">
-    <option value="">전체</option>
-    <option value="">코덱</option>
-    <option value="">카메라</option>
-    <option value="">스피커폰</option>
-    <option value="">사용자 가이드</option>
-    <option value="">소프트웨어</option>
-  </select>
-  <input type="text"/>
-  <div class="search-icon">
+  <form action="" id="searchForm">
+    <select name="type">
+      <option value="all">전체</option>
+      <option value="codec">코덱</option>
+      <option value="camera">카메라</option>
+      <option value="speaker_phone">스피커폰</option>
+      <option value="guide">사용자 가이드</option>
+      <option value="software">소프트웨어</option>
+    </select>
+    <input type="text" name="keyword"/>
+  </form>
+  <div class="search-icon" onclick="document.getElementById('searchForm').submit();">
     <i class="fas fa-search"></i>
   </div>
 </section>
@@ -45,94 +47,69 @@
 
 <!-- section.support -->
 <section class="support download">
-  <p class="total">Total <span>12</span></p>
+  <p class="total">Total <span>{{download_list.count}}</span></p>
   <div class="support-table download-table">
     <div class="table-body">
-      <!-- 반복문 시작 -->
+
+
+      {% for download in download_list %}
       <div class="table-row">
-        <p>1</p>
+        <p>{{forloop.counter}}</p>
         <div class="download-title">
-          <p>VC200</p>
+          <p>{{download.product}}</p>
           <div class="category-download">
             <span>Product</span>
             <span>｜</span>
-            <span>Codec</span>
+            <span>{{download.type}}</span>
           </div>
         </div>
-        <p>2020-05-03</p>
+        <p>{{download.created_at|date:'Y-m-d'}}</p>
         <p class="dropdown-icon">
           <i class="fas fa-chevron-down"></i>
         </p>
       </div>
       <div class="download-wrap">
         <div class="btn-wrap">
-          <a href="download:">
-            브로슈어
-            <span class="material-icons-outlined">file_download</span>              
-          </a>
-          <a href="download:">
-            메뉴얼
-            <span class="material-icons-outlined">file_download</span>              
-          </a>
-          <a href="download:">
-            규격서
-            <span class="material-icons-outlined">file_download</span>              
-          </a>
+
+          {% if download.brochure %}
+          <a href="/media/{{download.brochure}}" download>브로슈어<span
+              class="material-icons-outlined">file_download</span></a>
+          {% endif %}
+
+          {% if download.manual %}
+          <a href="/media/{{download.manual}}" download>메뉴얼<span
+              class="material-icons-outlined">file_download</span></a>
+          {% endif %}
+
+          {% if download.sheet %}
+          <a href="/media/{{download.sheet}}" download>규격서<span class="material-icons-outlined">file_download</span></a>
+          {% endif %}
+
         </div>
       </div>
-      <!-- 반복문 끝 -->
-      
-       <!-- 반복문 시작 -->
-       <div class="table-row">
-        <p>2</p>
-        <div class="download-title">
-          <p>VC200</p>
-          <div class="category-download">
-            <span>Product</span>
-            <span>｜</span>
-            <span>Codec</span>
-          </div>
-        </div>
-        <p>2020-05-03</p>
-        <p class="dropdown-icon">
-          <i class="fas fa-chevron-down"></i>
-        </p>
-      </div>
-      <div class="download-wrap">
-        <div class="btn-wrap">
-          <a href="download:">
-            브로슈어
-            <span class="material-icons-outlined">file_download</span>              
-          </a>
-          <a href="download:">
-            메뉴얼
-            <span class="material-icons-outlined">file_download</span>              
-          </a>
-          <a href="download:">
-            규격서
-            <span class="material-icons-outlined">file_download</span>              
-          </a>
-        </div>
-      </div>
-      <!-- 반복문 끝 -->
+      {% endfor %}
+
     </div>
   </div>
 </section>
+
+{% include "paginator.html" %}
+
 {% endblock content %}
 
 
 {% block extrascripts %}
 <script>
-  $(function() {
+  $(function () {
     $('.sub-banner').css('background-image', "url('/static/images/support/support_bg3.png')")
   });
 </script>
 
 <script>
-  $('.table-row').click(function(){
+  $('.table-row').click(function () {
     $(this).next().slideToggle(500);
     $(this).toggleClass('active');
-    if($(this).hasClass('active') == true) {
+    if ($(this).hasClass('active') == true) {
       $(this).find('.dropdown-icon i').attr('class', 'fas fa-chevron-up');
     } else {
       $(this).find('.dropdown-icon i').attr('class', 'fas fa-chevron-down');

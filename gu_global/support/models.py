@@ -29,6 +29,7 @@ class Notice(models.Model):
 
     class Meta:
         db_table = "notice"
+        ordering = ['-id']
 
 
 # 동영상
@@ -39,6 +40,8 @@ class Video(models.Model):
     content = models.CharField(db_column="content", null=False, max_length=500)
     created_at = models.DateTimeField(db_column="created_at", null=False, auto_now_add=True)
     link = models.CharField(db_column="link", null=False, max_length=500)
+    image = models.ImageField(upload_to="media/images/video", db_column="image", null=True)
+
 
     class Meta:
         db_table = "video"
@@ -59,9 +62,16 @@ class Popup(models.Model):
 
 # 다운로드
 class Download(models.Model):
-    product = models.ForeignKey(to=Product, db_column="product", on_delete=CASCADE)
+    # product = models.ForeignKey(to=Product, db_column="product", on_delete=CASCADE)
+    product = models.CharField(db_column="product", null=False, max_length=50)
     category = models.CharField(db_column="category", null=False, max_length=50)
-    file = models.FileField(upload_to="media/download", db_column="file", null=False)
+    type = models.CharField(db_column="type", null=True, max_length=50)
+    
+    manual = models.FileField(upload_to="media/download", db_column="manual", null=True)
+    brochure = models.FileField(upload_to="media/download", db_column="brochure", null=True)
+    sheet = models.FileField(upload_to="media/download", db_column="sheet", null=True)
+
+    created_at = models.DateTimeField(db_column="created_at", auto_now_add=True, null=True)
 
     class Meta:
         db_table = "download"

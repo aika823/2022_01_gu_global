@@ -14,56 +14,24 @@
 <!-- section.support -->
 <section class="video content page-start">
   <div class="video-wrap">
-    <div class="video-item" onclick="location.href=''">
-      <div class="img-wrap">
-        <img src="/static/images/support/sample-video1.png" alt="">
-      </div>
-      <div class="text-wrap">
-        <p class="category">Solution</p>
-        <h3 class="title">Yealink Meeting
-          클라우드 화상회의 솔루션 소개</h3>
-        <p class="description">Yealink Meeting(예링크 미팅) 클라우드 화상회의 
-          솔루션을 소개합니다.</p>
-        <div class="bottom">
-          <p class="date">2021.02.15</p>
-          <img src="/static/images/arrow_detail.png" alt="">
-        </div>
-      </div>
-    </div>
 
+    {% for video in video_list %}
     <div class="video-item" onclick="location.href=''">
       <div class="img-wrap">
-        <img src="/static/images/support/sample-video2.png" alt="">
+        <img src="/media/{{video.image}}" class="image-changable" alt="">
       </div>
       <div class="text-wrap">
         <p class="category">Solution</p>
-        <h3 class="title">Yealink Meeting
-          클라우드 화상회의 솔루션 소개</h3>
-        <p class="description">Yealink Meeting(예링크 미팅) 클라우드 화상회의 
-          솔루션을 소개합니다.</p>
+        <h3 class="title">{{video.title}}</h3>
+        <p class="description">{{video.content}}</p>
         <div class="bottom">
-          <p class="date">2021.02.15</p>
+          <p class="date">{{video.created_at|date:'Y-m-d'}}</p>
           <img src="/static/images/arrow_detail.png" alt="">
         </div>
       </div>
     </div>
+    {% endfor %}
 
-    <div class="video-item" onclick="location.href=''">
-      <div class="img-wrap">
-        <img src="/static/images/support/sample-video3.png" alt="">
-      </div>
-      <div class="text-wrap">
-        <p class="category">Solution</p>
-        <h3 class="title">Yealink Meeting
-          클라우드 화상회의 솔루션 소개</h3>
-        <p class="description">Yealink Meeting(예링크 미팅) 클라우드 화상회의 
-          솔루션을 소개합니다.</p>
-        <div class="bottom">
-          <p class="date">2021.02.15</p>
-          <img src="/static/images/arrow_detail.png" alt="">
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 {% endblock content %}
@@ -71,16 +39,16 @@
 
 {% block extrascripts %}
 <script>
-  $(function() {
+  $(function () {
     $('.sub-banner').css('background-image', "url('/static/images/support/support_bg4.png')")
   });
 </script>
 
 <script>
-  $('.table-row').click(function(){
+  $('.table-row').click(function () {
     $(this).next().slideToggle(500);
     $(this).toggleClass('active');
-    if($(this).hasClass('active') == true) {
+    if ($(this).hasClass('active') == true) {
       $(this).find('.dropdown-icon i').attr('class', 'fas fa-chevron-up');
     } else {
       $(this).find('.dropdown-icon i').attr('class', 'fas fa-chevron-down');

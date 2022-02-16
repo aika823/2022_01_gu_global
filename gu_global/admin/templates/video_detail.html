@@ -1,0 +1,117 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div id="right-panel" class="right-panel">
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <div class="card">
+
+                        {% if video %}
+                        <form id="deleteForm" action="/admin/delete" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="table" value="video">
+                            <input type="hidden" name="id" value="{{video.id}}">
+                        </form>
+                        {% endif %}
+
+                        <form id="videoCreateForm" action="/admin/create" method="post" enctype="multipart/form-data"
+                            class="form-horizontal">
+
+                            {% csrf_token %}
+                            <input type="hidden" name='table' value="video">
+
+                            {% if video %}
+                            <input type="hidden" name='action' value="update">
+                            <input type="hidden" name='id' value="{{video.id}}">
+                            {% else %}
+                            <input type="hidden" name='action' value="create">
+                            {% endif %}
+
+                            <div class="card-header">
+                                <strong>다운로드</strong>
+                            </div>
+
+                            <div class="card-body card-block">
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">순서</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="order" class="form-control" value="{{video.order}}">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">제목</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="title" class="form-control" value="{{video.title}}">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">내용</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <textarea name="content" cols="30" rows="10"
+                                            class="form-control">{{video.content}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">썸네일 이미지</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" name="image" class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">유튜브 링크</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="link" class="form-control" value="{{video.link}}">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-12">
+                                        <img src="/media/{{video.image}}" class="image-changable" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-12">
+                                        <iframe width="100%" height="300px" src="{{video.link}}"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <!-- footer -->
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm" form="videoCreateForm">
+                                    {% if video %}
+                                    수정
+                                    {% else %}
+                                    추가
+                                    {% endif %}
+                                </button>
+                                {% if video %}
+                                <button type="submit" class="btn btn-outline-danger btn-sm"
+                                    form="deleteForm">삭제</button>
+                                {% endif%}
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
