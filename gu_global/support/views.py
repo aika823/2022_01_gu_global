@@ -1,6 +1,7 @@
+from multiprocessing import context
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from .models import Download, Notice
+from .models import Download, Notice, Video
 from api.api_common import get_paginated_list
 
 
@@ -48,7 +49,11 @@ def download(request):
 
 
 def video(request):
-  return render(request, "support_video.html")
+    video_list = Video.objects.all()  
+    context = {
+      'video_list':video_list
+    }
+    return render(request, "support_video.html", context=context)
 
 
 def contact(request):

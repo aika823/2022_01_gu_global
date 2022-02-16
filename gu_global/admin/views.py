@@ -174,6 +174,8 @@ def create(request):
                 item = Video.objects.get(id=id)
             elif action == 'create':
                 item = Video()
+            if request.FILES.get('image'):
+                item.image = request.FILES.get('image')
         
         if table == 'popup':
             if id:

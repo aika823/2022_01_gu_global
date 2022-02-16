@@ -32,7 +32,6 @@ class Notice(models.Model):
         ordering = ['-id']
 
 
-
 # 동영상
 class Video(models.Model):
     order = models.PositiveIntegerField(db_column="order", null=False, default=1)
@@ -41,6 +40,8 @@ class Video(models.Model):
     content = models.CharField(db_column="content", null=False, max_length=500)
     created_at = models.DateTimeField(db_column="created_at", null=False, auto_now_add=True)
     link = models.CharField(db_column="link", null=False, max_length=500)
+    image = models.ImageField(upload_to="media/images/video", db_column="image", null=True)
+
 
     class Meta:
         db_table = "video"
