@@ -47,42 +47,44 @@
 
 <!-- section.support -->
 <section class="support download">
-  <p class="total">Total <span>{{download_list.count}}</span></p>
+  <p class="total">Total <span>{{product_list.count}}</span></p>
   <div class="support-table download-table">
     <div class="table-body">
 
 
-      {% for download in download_list %}
+      {% for product in product_list %}
+      
       <div class="table-row">
         <p>{{forloop.counter}}</p>
         <div class="download-title">
-          <p>{{download.product}}</p>
+          <p>{{product.name}}</p>
           <div class="category-download">
             <span>Product</span>
             <span>｜</span>
-            <span>{{download.type}}</span>
+            <span>{{product.type}}</span>
           </div>
         </div>
-        <p>{{download.created_at|date:'Y-m-d'}}</p>
+        <p>{{product.created_at|date:'Y-m-d'}}</p>
         <p class="dropdown-icon">
           <i class="fas fa-chevron-down"></i>
         </p>
       </div>
+
       <div class="download-wrap">
         <div class="btn-wrap">
 
-          {% if download.brochure %}
-          <a href="/media/{{download.brochure}}" download>브로슈어<span
+          {% if product.brochure %}
+          <a href="/media/{{product.brochure}}" download>브로슈어<span
               class="material-icons-outlined">file_download</span></a>
           {% endif %}
 
-          {% if download.manual %}
-          <a href="/media/{{download.manual}}" download>메뉴얼<span
+          {% if product.manual %}
+          <a href="/media/{{product.manual}}" download>메뉴얼<span
               class="material-icons-outlined">file_download</span></a>
           {% endif %}
 
-          {% if download.sheet %}
-          <a href="/media/{{download.sheet}}" download>규격서<span class="material-icons-outlined">file_download</span></a>
+          {% if product.sheet %}
+          <a href="/media/{{product.sheet}}" download>규격서<span class="material-icons-outlined">file_download</span></a>
           {% endif %}
 
         </div>

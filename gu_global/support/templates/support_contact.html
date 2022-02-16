@@ -13,7 +13,7 @@
 <!-- section.support -->
 <section class="support content page-start">
   <div class="support-header">
-    <p class="total">Total <span>12</span></p>
+    <p class="total">Total <span>{{contact_list.count}}</span></p>
     <a href="/company/contact" class="btn-contact">문의하기</a>
   </div>
   <div class="support-table">
@@ -25,44 +25,23 @@
       <p>조회</p>
     </div>
     <div class="table-body">
+      
+      {% for contact in contact_list %}
       <div class="table-row">
-        <p>1</p>
-        <p class="notice-title">[전시회] SMART TECH KOREA 2021에 Yealink가 참가합니다.	</p>
-        <p>(주)지유글로벌</p>
-        <p>2021-06-17</p>
-        <p>12</p>
+        <p>{{forloop.counter}}</p>
+        <p class="notice-title">{{contact.title}}</p>
+        <p>{{contact.email}}</p>
+        <p>{{contact.created_at|date:'Y-m-d'}}</p>
+        <p>{{contact.views}}</p>
       </div>
-      <div class="table-row">
-        <p>2</p>
-        <p class="notice-title">[전시회] SMART TECH KOREA 2021에 Yealink가 참가합니다.	</p>
-        <p>(주)지유글로벌</p>
-        <p>2021-06-17</p>
-        <p>12</p>
-      </div>
-      <div class="table-row">
-        <p>3</p>
-        <p class="notice-title">[전시회] SMART TECH KOREA 2021에 Yealink가 참가합니다.	</p>
-        <p>(주)지유글로벌</p>
-        <p>2021-06-17</p>
-        <p>12</p>
-      </div>
-      <div class="table-row">
-        <p>4</p>
-        <p class="notice-title">[전시회] SMART TECH KOREA 2021에 Yealink가 참가합니다.	</p>
-        <p>(주)지유글로벌</p>
-        <p>2021-06-17</p>
-        <p>12</p>
-      </div>
-      <div class="table-row">
-        <p>5</p>
-        <p class="notice-title">[전시회] SMART TECH KOREA 2021에 Yealink가 참가합니다.	</p>
-        <p>(주)지유글로벌</p>
-        <p>2021-06-17</p>
-        <p>12</p>
-      </div>
+      {% endfor %}
+      
     </div>
   </div>
 </section>
+
+{% include "paginator.html" %}
+
 {% endblock content %}
 
 

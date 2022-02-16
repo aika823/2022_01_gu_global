@@ -14,6 +14,12 @@ class Contact(models.Model):
     author = models.CharField(db_column="author", null=False,max_length=20)
     views = models.PositiveIntegerField(db_column="views", null=False, default=0)
 
+    type = models.CharField(db_column="type", null=True, max_length=50)
+    file = models.FileField(upload_to="media/contact", db_column="file", null=True)
+    email = models.CharField(db_column="email", null=True, max_length=50)
+    password = models.CharField(db_column="password", null=True, max_length=500)
+
+
     class Meta:
         db_table = "contact"
 
@@ -60,18 +66,17 @@ class Popup(models.Model):
         db_table = "popup"
 
 
-# 다운로드
-class Download(models.Model):
-    # product = models.ForeignKey(to=Product, db_column="product", on_delete=CASCADE)
-    product = models.CharField(db_column="product", null=False, max_length=50)
-    category = models.CharField(db_column="category", null=False, max_length=50)
-    type = models.CharField(db_column="type", null=True, max_length=50)
+# # 다운로드
+# class Download(models.Model):
+#     product = models.CharField(db_column="product", null=False, max_length=50)
+#     category = models.CharField(db_column="category", null=False, max_length=50)
+#     type = models.CharField(db_column="type", null=True, max_length=50)
     
-    manual = models.FileField(upload_to="media/download", db_column="manual", null=True)
-    brochure = models.FileField(upload_to="media/download", db_column="brochure", null=True)
-    sheet = models.FileField(upload_to="media/download", db_column="sheet", null=True)
+#     manual = models.FileField(upload_to="media/download", db_column="manual", null=True)
+#     brochure = models.FileField(upload_to="media/download", db_column="brochure", null=True)
+#     sheet = models.FileField(upload_to="media/download", db_column="sheet", null=True)
 
-    created_at = models.DateTimeField(db_column="created_at", auto_now_add=True, null=True)
+#     created_at = models.DateTimeField(db_column="created_at", auto_now_add=True, null=True)
 
-    class Meta:
-        db_table = "download"
+#     class Meta:
+#         db_table = "download"

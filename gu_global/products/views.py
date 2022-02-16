@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from api import api_common
-from support.models import Download
 from products.models import Product, Category, ProductDetailImage, ProductImage
 
 def list(request):
@@ -19,9 +18,6 @@ def detail(request, product_name):
     detail_image_list = ProductDetailImage.objects.filter(product=product)
     update_context = {
         'product':product, 
-        'brochure':Download.objects.filter(product=product, category='brochure').first(),
-        'manual':Download.objects.filter(product=product, category='manual').first(),
-        'sheet':Download.objects.filter(product=product, category='sheet').first(),
         'thumbnail':image_list[0],
         'image_list':image_list[1:], 
         'detail_image_list':detail_image_list,

@@ -52,15 +52,6 @@
                                     </div>
                                 </div>
 
-                                <!-- 카테고리 -->
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label class=" form-control-label">카테고리</label></div>
-                                    <div class="col-12 col-md-9">
-                                        <input type="text" name="category" class="form-control" list="categoryList"
-                                            value="{{product.category.name}}" />
-                                    </div>
-                                </div>
-
                                 <!-- 이름 -->
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">이름</label></div>
@@ -85,6 +76,57 @@
                                     <div class="col-12 col-md-9">
                                         <textarea name="content" class="form-control" cols="30" rows="10"
                                             required>{{product.content}}</textarea>
+                                    </div>
+                                </div>
+
+
+                                <!-- 카테고리 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">제품 유형</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <select class="form-control" name="type">
+                                            <option value="codec" {{selected.codec}}>코덱</option>
+                                            <option value="camera" {{selected.camera}}>카메라</option>
+                                            <option value="speaker_phone" {{selected.speaker_phone}}>스피커폰</option>
+                                            <option value="guide" {{selected.guide}}>사용자 가이드</option>
+                                            <option value="software" {{selected.software}}>소프트웨어</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- 파일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">브로슈어</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" name="brochure" class="form-control">
+                                    </div>
+                                </div>
+
+                                <!-- 파일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">매뉴얼</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" name="manual" class="form-control">
+                                    </div>
+                                </div>
+
+                                <!-- 파일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">규격서</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" name="sheet" class="form-control">
+                                    </div>
+                                </div>
+
+                                <!-- 현재 파일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">현재 파일</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <a href="/media/{{product.brochure}}" download>브로슈어 <br> ({{product.brochure}})</a>
+                                        <br>
+                                        <a href="/media/{{product.manual}}" download>매뉴얼 <br> ({{product.manual}}) </a>
+                                        <br>
+                                        <a href="/media/{{product.sheet}}" download>규격서 <br> ({{product.sheet}}) </a>
                                     </div>
                                 </div>
 

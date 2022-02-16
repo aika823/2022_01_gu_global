@@ -39,9 +39,9 @@
 
                                 <!-- 순번 -->
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label class=" form-control-label">순번</label></div>
+                                    <div class="col col-md-3"><label class=" form-control-label">문의 유형</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="number" name="order" class="form-control" value="{{contact.order}}"
+                                        <input type="text" name="type" class="form-control" value="{{contact.type}}"
                                             required>
                                     </div>
                                 </div>
@@ -63,21 +63,37 @@
                                     </div>
                                 </div>
 
-                                <!-- 작성자 -->
+                                <!-- 이메일 -->
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label class=" form-control-label">작성자</label></div>
+                                    <div class="col col-md-3"><label class=" form-control-label">이메일</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" name="author" class="form-control"
-                                            value="{{contact.author}}" required>
+                                        <input type="text" name="email" class="form-control"
+                                            value="{{contact.email}}" required>
                                     </div>
                                 </div>
 
-                                <!-- 조회수 -->
+                                <!-- 비밀번호 -->
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label class=" form-control-label">조회수</label></div>
+                                    <div class="col col-md-3"><label class=" form-control-label">비밀번호</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" class="form-control" value="{{contact.password}}" readonly>
+                                    </div>
+                                </div>
+
+                                <!-- 조회 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">조회</label></div>
                                     <div class="col-12 col-md-9">
                                         <input type="text" name="views" class="form-control" value="{{contact.views}}"
                                             required>
+                                    </div>
+                                </div>
+
+                                <!-- 첨부파일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">첨부파일</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <a href="/media/{{contact.file}}" download>첨부파일 ({{contact.file}})</a>
                                     </div>
                                 </div>
 

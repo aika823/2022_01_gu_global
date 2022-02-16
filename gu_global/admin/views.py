@@ -2,7 +2,7 @@ from multiprocessing import context
 from django.shortcuts import redirect, render
 from products.models import Category, Product, ProductDetailImage, ProductImage
 
-from support.models import Contact, Download, Notice, Popup, Video
+from support.models import Contact, Notice, Popup, Video
 from .models import Admin
 from django.contrib.auth.hashers import make_password, check_password
 
@@ -61,11 +61,21 @@ def products_create(request):
     context = {'category_list': Category.objects.all()}
     return render(request, "products_form.html", context=context)
 def products_view(request,id):
+    
+    product = Product.objects.get(id=id)
     context = {
-        'product':Product.objects.get(id=id),
+        'product':product,
         'category_list': Category.objects.all(),
-        'image_list':ProductImage.objects.filter(product=Product.objects.get(id=id)),
-        'detail_image_list':ProductDetailImage.objects.filter(product=Product.objects.get(id=id))
+        'image_list':ProductImage.objects.filter(product=product),
+        'detail_image_list':ProductDetailImage.objects.filter(product=product),
+        
+        'selected':{
+            'codec' : 'selected' if product.type == 'codec' else None,
+            'camera' : 'selected' if product.type == 'camera' else None,
+            'speaker_phone' : 'selected' if product.type == 'speaker_phone' else None,
+            'guide' : 'selected' if product.type == 'guide' else None,
+            'software' : 'selected' if product.type == 'software' else None,
+        }
     }
     return render(request, "products_form.html", context=context)
 
@@ -114,31 +124,31 @@ def popup_view(request, id):
     return render(request, "popup_detail.html", context=context)
 
 
-# 다운로드 관리
-def download(request):
-    context = {'download_list':Download.objects.all()}
-    return render(request, "download.html", context=context)
-def download_create(request):
-    # context = {'product_list':Product.objects.all()}
-    context = {}
-    return render(request, "download_detail.html", context=context)    
-def download_view(request, id):
-    download = Download.objects.get(id=id)
-    context = {
-        # 'product_list':Product.objects.all(),
-        'download':download,
-        'selected':{
-            'brochure': 'selected' if download.category=='brochure' else None,
-            'manual': 'selected' if download.category=='manual' else None,
-            'sheet': 'selected' if download.category=='sheet' else None,
-            'codec' : 'selected' if download.type == 'codec' else None,
-            'camera' : 'selected' if download.type == 'camera' else None,
-            'speaker_phone' : 'selected' if download.type == 'speaker_phone' else None,
-            'guide' : 'selected' if download.type == 'guide' else None,
-            'software' : 'selected' if download.type == 'software' else None,
-        }
-    }
-    return render(request, "download_detail.html", context=context)
+# # 다운로드 관리
+# def download(request):
+#     context = {'download_list':Download.objects.all()}
+#     return render(request, "download.html", context=context)
+# def download_create(request):
+#     # context = {'product_list':Product.objects.all()}
+#     context = {}
+#     return render(request, "download_detail.html", context=context)    
+# def download_view(request, id):
+#     download = Download.objects.get(id=id)
+#     context = {
+#         # 'product_list':Product.objects.all(),
+#         'download':download,
+#         'selected':{
+#             'brochure': 'selected' if download.category=='brochure' else None,
+#             'manual': 'selected' if download.category=='manual' else None,
+#             'sheet': 'selected' if download.category=='sheet' else None,
+#             'codec' : 'selected' if download.type == 'codec' else None,
+#             'camera' : 'selected' if download.type == 'camera' else None,
+#             'speaker_phone' : 'selected' if download.type == 'speaker_phone' else None,
+#             'guide' : 'selected' if download.type == 'guide' else None,
+#             'software' : 'selected' if download.type == 'software' else None,
+#         }
+#     }
+#     return render(request, "download_detail.html", context=context)
 
 
 # 관리자 기능 함수
@@ -209,11 +219,27 @@ def create(request):
             except:
                 category = Category(name=request.POST.get('category'))
                 category.save()
+            
+            print(request.POST)
+            print(request.FILES)
+
+            if request.POST.get('manual'):
+                print("fuck")
+
+            if request.FILES.get('manual'):
+                print(request.FILES)
+                print(request.FILES.get('manual'))
+                item.manual = request.FILES.get('manual')
+            if request.FILES.get('brochure'):
+                item.brochure = request.FILES.get('brochure')
+            if request.FILES.get('sheet'):
+                item.sheet = request.FILES.get('sheet')
+                
             setattr(item, 'category', category)
 
         for key in request.POST:
             try:
-                if key not in ['image', 'file']:
+                if key not in ['image', 'file', 'manual', 'brochure', 'sheet']:
                     setattr(item, key, request.POST.get(key))
             except:
                 pass

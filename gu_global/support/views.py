@@ -1,7 +1,10 @@
+from itertools import product
 from multiprocessing import context
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from .models import Download, Notice, Video
+
+from products.models import Product
+from .models import Contact, Notice, Video
 from api.api_common import get_paginated_list
 
 
@@ -20,7 +23,7 @@ def certification(request):
 
 def download(request):
       
-  download_list = Download.objects.all()
+  product_list = Product.objects.all()
   
   active_dict ={
     'codec':'active' if request.GET.get('type') == 'codec' else '',
@@ -34,15 +37,14 @@ def download(request):
         if request.GET.get('type') == 'all':
               active_dict = None
         else:
-              download_list = download_list.filter(type=request.GET.get('type'))
-  if request.GET.get('keyword'):
-        download_list = download_list.filter(product__contains=request.GET.get('keyword'))
-
+              product_list = product_list.filter(type=request.GET.get('type'))
   
+  if request.GET.get('keyword'):
+        product_list = product_list.filter(title__contains=request.GET.get('keyword'))
 
   context = {
-    'download_list':get_paginated_list(request, download_list)['list'],
-    'page_obj':get_paginated_list(request, download_list)['page_obj'],
+    'product_list':get_paginated_list(request, product_list)['list'],
+    'page_obj':get_paginated_list(request, product_list)['page_obj'],
     'active' :active_dict
   }
   return render(request, "support_download.html", context=context)
@@ -57,7 +59,12 @@ def video(request):
 
 
 def contact(request):
-  return render(request, "support_contact.html")
+  contact_list = Contact.objects.all()
+  context = {
+    'contact_list':get_paginated_list(request, contact_list)['list'],
+    'page_obj':get_paginated_list(request, contact_list)['page_obj'] 
+  }
+  return render(request, "support_contact.html", context=context)
 
 
 def test(request):
