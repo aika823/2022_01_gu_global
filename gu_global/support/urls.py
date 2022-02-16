@@ -9,5 +9,7 @@ urlpatterns = [
     path('certification', views.certification),
     path('download', views.download),
     path('video', views.video),
-    path('contact', views.contact)
+    path('contact', views.contact),
+    path('notice', views.notice),
+    path('test', views.test)
 ]

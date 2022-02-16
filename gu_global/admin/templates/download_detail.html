@@ -37,6 +37,8 @@
                             <div class="card-body card-block">
 
                                 <!-- 제품 -->
+
+                                <!--
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">제품</label></div>
                                     <div class="col-12 col-md-9">
@@ -47,8 +49,25 @@
                                         </select>
                                     </div>
                                 </div>
+                                -->
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">제품</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="product" class="form-control"
+                                            value="{{download.product}}">
+                                        <!--
+                                        <select class="form-control" name="product" id="">
+                                            {% for product in product_list %}
+                                            <option value="{{product.id}}">{{product.name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                        -->
+                                    </div>
+                                </div>
 
                                 <!-- 카테고리 -->
+                                <!--
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">카테고리</label></div>
                                     <div class="col-12 col-md-9">
@@ -59,12 +78,43 @@
                                         </select>
                                     </div>
                                 </div>
+                                -->
+
+                                <!-- 카테고리 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">제품 유형</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <select class="form-control" name="type">
+                                            <option value="codec" {{selected.codec}}>코덱</option>
+                                            <option value="camera" {{selected.camera}}>카메라</option>
+                                            <option value="speaker_phone" {{selected.speaker_phone}}>스피커폰</option>
+                                            <option value="guide" {{selected.guide}}>사용자 가이드</option>
+                                            <option value="software" {{selected.software}}>소프트웨어</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <!-- 파일 -->
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label class=" form-control-label">파일</label></div>
+                                    <div class="col col-md-3"><label class=" form-control-label">브로슈어</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="file" name="file" class="form-control">
+                                        <input type="file" name="brochure" class="form-control">
+                                    </div>
+                                </div>
+
+                                <!-- 파일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">매뉴얼</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" name="manual" class="form-control">
+                                    </div>
+                                </div>
+
+                                <!-- 파일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">규격서</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" name="sheet" class="form-control">
                                     </div>
                                 </div>
 
@@ -73,7 +123,11 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">현재 파일</label></div>
                                     <div class="col-12 col-md-9">
-                                        <a href="/media/{{download.file}}" download>다운로드 <br> ({{download.file}}) </a>
+                                        <a href="/media/{{download.brochure}}" download>브로슈어 ({{download.brochure}})</a> 
+                                        <br>
+                                        <a href="/media/{{download.manual}}" download>매뉴얼 ({{download.manual}}) </a>
+                                        <br>
+                                        <a href="/media/{{download.sheet}}" download>규격서 ({{download.sheet}}) </a>
                                     </div>
                                 </div>
                                 {% endif %}

@@ -92,13 +92,6 @@ def view_notice(request, id):
     return render(request, "notice_detail.html", context=context)
 
 
-# 자료실 파일 관리
-
-def download(request):
-    context = {}
-    return render(request, "download.html")
-
-
 # 동영상 관리
 def video(request):
     context = {'video_list':Video.objects.all()}
@@ -126,17 +119,23 @@ def download(request):
     context = {'download_list':Download.objects.all()}
     return render(request, "download.html", context=context)
 def download_create(request):
-    context = {'product_list':Product.objects.all()}
+    # context = {'product_list':Product.objects.all()}
+    context = {}
     return render(request, "download_detail.html", context=context)    
 def download_view(request, id):
     download = Download.objects.get(id=id)
     context = {
-        'product_list':Product.objects.all(),
+        # 'product_list':Product.objects.all(),
         'download':download,
         'selected':{
             'brochure': 'selected' if download.category=='brochure' else None,
             'manual': 'selected' if download.category=='manual' else None,
             'sheet': 'selected' if download.category=='sheet' else None,
+            'codec' : 'selected' if download.type == 'codec' else None,
+            'camera' : 'selected' if download.type == 'camera' else None,
+            'speaker_phone' : 'selected' if download.type == 'speaker_phone' else None,
+            'guide' : 'selected' if download.type == 'guide' else None,
+            'software' : 'selected' if download.type == 'software' else None,
         }
     }
     return render(request, "download_detail.html", context=context)
@@ -190,10 +189,12 @@ def create(request):
             elif action == 'create':
                 item = Download()
             
-            item.product = Product.objects.get(id=request.POST.get('product'))
-            if request.FILES.get('file'):
-                item.file = request.FILES.get('file')
-
+            if request.FILES.get('manual'):
+                item.manual = request.FILES.get('manual')
+            if request.FILES.get('brochure'):
+                item.brochure = request.FILES.get('brochure')
+            if request.FILES.get('sheet'):
+                item.sheet = request.FILES.get('sheet')
 
         if table == 'product':
             if id:
