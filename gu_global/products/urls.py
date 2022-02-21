@@ -7,5 +7,6 @@ urlpatterns = [
     path('', views.list),
     path('detail', views.detail),
     path('detail/<str:product_name>', views.detail),
-    path('<str:main_category>/<str:category_name>', views.category_list)
+    path('<str:main_category>/<str:category_name>', views.category_list),
+    # path('<str:main_category>', views.category_list)
 ]
