@@ -4,6 +4,111 @@ section.company-intro .img-wrap img {
   width: 100%;
 }
 
+/* org */
+section.company-intro.org-wrap {
+  padding-bottom: 300px;
+}
+section.company-intro .img-wrap.org-img {
+  width: 1040px;
+  margin: 0 auto;
+  position: relative;
+}
+section.company-intro .img-wrap.org-img .position {
+  position: absolute;
+  font-family: "Noto Sans KR";
+}
+section.company-intro .img-wrap.org-img .box-title {
+  position: absolute;
+  font-family: 'KoPubDotumMedium';
+}
+section.company-intro .img-wrap.org-img .position.position--ceo {
+  top: 97px;
+  left: 50%;
+  transform: translateX(-44%);
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #151414;
+}
+section.company-intro .img-wrap.org-img .box-title.box-title--ceo {
+  top: 116px;
+  left: 282px;
+}
+section.company-intro .img-wrap.org-img .position.position--middle {
+  top: 333px;
+  font-size: 25px;
+}
+section.company-intro .img-wrap.org-img .position.position--middle.team-1 {
+  left: 75px;
+}
+section.company-intro .img-wrap.org-img .position.position--middle.team-2 {
+  left: 279px;
+}
+section.company-intro .img-wrap.org-img .position.position--middle.team-3 {
+  left: 479px;
+}
+section.company-intro .img-wrap.org-img .position.position--middle.team-4 {
+  left: 671px;
+}
+section.company-intro .img-wrap.org-img .position.position--middle.team-5 {
+  left: 873px;
+}
+
+section.company-intro .img-wrap.org-img .box-title.box-title--middle {
+  top: 472px;
+  font-size: 14px;
+}
+section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-1 {
+  left: 48px;
+}
+section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-2 {
+  left: 269px;
+}
+section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-3 {
+  left: 482px;
+}
+section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-4 {
+  left: 673px;
+}
+section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-5 {
+  left: 903px;
+}
+
+section.company-intro .img-wrap.org-img .team-description {
+  position: absolute;
+  top: 512px;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: pre-line;
+}
+section.company-intro .img-wrap.org-img .team-description.team-1 {
+  left: 48px;
+}
+section.company-intro .img-wrap.org-img .team-description.team-2 {
+  left: 250px;
+}
+section.company-intro .img-wrap.org-img .team-description.team-3 {
+  left: 455px;
+}
+section.company-intro .img-wrap.org-img .team-description.team-4 {
+  left: 656px;
+}
+section.company-intro .img-wrap.org-img .team-description.team-5{
+  left: 855px;
+}
+
+section.company-intro .img-wrap.org-img .box-title.box-title--middle-2 {
+  top: 572px;
+  font-size: 14px;
+}
+section.company-intro .img-wrap.org-img .box-title.box-title--middle-2.team-1 {
+  left: 48px;
+}
+section.company-intro .img-wrap.org-img .box-title.box-title--middle-2.team-3 {
+  left: 455px;
+}
+
+
 /* .tab-menu */
 .tab-menu {
   background-color: #F3F3F3;
@@ -105,14 +210,20 @@ section.philosophy .philosophy-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 100px;
+  gap: 150px;
 }
 section.philosophy .philosophy-wrap .img-wrap {
   justify-self: right;
-  width: 100%;
+  width: 45%;
 }
 section.philosophy .philosophy-wrap .img-wrap img {
   width: 100%;
+}
+section.philosophy .philosophy-wrap .text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
 }
 section.philosophy .philosophy-wrap .text-row {
   display: grid;
@@ -288,6 +399,10 @@ section.example .example-wrap .example-item img {
     width: 480px;
     height: 575px;
   }
+
+  section.philosophy .philosophy-wrap .img-wrap {
+    width: 65%;
+  }
 }
 @media all and (max-width: 1440px) {
   section.philosophy {
@@ -331,6 +446,10 @@ section.example .example-wrap .example-item img {
   section.example .example-wrap .example-item .ex-text p {
     font-size: 18px;
     font-family: "Noto Sans KR";
+  }
+
+  section.philosophy .philosophy-wrap .img-wrap {
+    width: 75%;
   }
 }
 @media all and (max-width: 1080px) {
@@ -467,5 +586,12 @@ section.example .example-wrap .example-item img {
 
   section.example {
     margin: 150px 20px;
+  }
+
+  section.philosophy .philosophy-wrap .img-wrap {
+    width: 100%;
+  }
+  section.philosophy .philosophy-wrap .text-wrap {
+    gap: 0;
   }
 }
