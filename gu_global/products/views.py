@@ -32,8 +32,6 @@ def detail(request, product_name):
 
 def category_list(request, main_category, category_name=None):
     context = api_common.get_common_context('Products', main_category, category_name)
-    print(category_name)
-    # category = Category.objects.get(main_category=main_category, name=category_name)
     category = Category.objects.get(name=category_name)
     product_list = Product.objects.filter(category=category)
     for product in product_list:

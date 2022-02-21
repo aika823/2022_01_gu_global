@@ -22,9 +22,6 @@ def update_image(request):
 
 def update_detail_image(request):
 
-    print(request.POST)
-    print(request.FILES)
-
     # 이미지 추가
     id = request.POST.get('id')
     product = Product.objects.get(id=id)
@@ -41,6 +38,7 @@ def update_detail_image(request):
         image = ProductDetailImage.objects.get(id=val)
         image.image = update_image_list[idx]
         image.save()
+
 
 def delete_image(request):
     print(request)

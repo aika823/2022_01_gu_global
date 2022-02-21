@@ -192,7 +192,6 @@ def create(request):
                 item = Popup.objects.get(id=id)
             elif action == 'create':
                 item = Popup()
-            print(request.FILES.get('image'))
             item.image = request.FILES.get('image')
 
         if table == 'download':
@@ -219,16 +218,8 @@ def create(request):
             except:
                 category = Category(name=request.POST.get('category'))
                 category.save()
-            
-            print(request.POST)
-            print(request.FILES)
-
-            if request.POST.get('manual'):
-                print("fuck")
 
             if request.FILES.get('manual'):
-                print(request.FILES)
-                print(request.FILES.get('manual'))
                 item.manual = request.FILES.get('manual')
             if request.FILES.get('brochure'):
                 item.brochure = request.FILES.get('brochure')
@@ -255,9 +246,9 @@ def delete(request):
         Video.objects.get(id=id).delete()
         return redirect("/admin/video")
     
-    if table == 'download':
-        Download.objects.get(id=id).delete()
-        return redirect("/admin/download")
+    # if table == 'download':
+    #     Download.objects.get(id=id).delete()
+    #     return redirect("/admin/download")
 
     if table == 'category':
         Category.objects.get(id=id).delete()
@@ -273,7 +264,6 @@ def delete(request):
         return redirect("/admin/{}/{}".format('product', product_id))
     
     if table == 'product_detail_image':
-        print(id)
         product_id = ProductDetailImage.objects.get(id=id).product.id
         ProductDetailImage.objects.get(id=id).delete()
         return redirect("/admin/{}/{}".format('product', product_id))
@@ -285,7 +275,6 @@ def update_image(request):
     return redirect("/admin/{}/{}".format(table, id))
 
 def update_detail_image(request):
-    print(request.POST)
     api.api_image.update_detail_image(request)
     table = request.POST.get('table')
     id = request.POST.get('id')

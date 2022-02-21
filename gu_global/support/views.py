@@ -50,8 +50,6 @@ def download(request):
   if request.GET.get('keyword'):
         product_list = product_list.filter(title__contains=request.GET.get('keyword'))
     
-  print(product_list.query)
-
   context = get_common_context('Support','다운로드 센터', request.GET.get('type'))
   context['product_list'] = get_paginated_list(request, product_list)['list']
   context['page_obj'] = get_paginated_list(request, product_list)['page_obj']

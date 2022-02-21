@@ -4,7 +4,6 @@ from support.models import Contact, Notice
 
 
 def index(request):
-    print('index')
     context = api_common.get_common_context()
     context['notice_list'] = Notice.objects.all().order_by('order')[:3]
     return render(request, "index.html", context=context)
@@ -49,8 +48,6 @@ def contact(request):
         contact.content = request.POST.get('content')
         contact.password = request.POST.get('password')
         contact.file = request.FILES.get('file')
-        print(request.FILES)
-        print(request.FILES.get('file'))
         contact.save()
     
     context = api_common.get_common_context('Company','Contact Us')
