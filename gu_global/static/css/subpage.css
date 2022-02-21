@@ -110,6 +110,42 @@ section.sub-banner .navbar .category-wrap p.next-arrow {
   color: rgba(234, 234, 234, 0.5);
 }
 
+#paging .pagination {
+  padding: 0;
+  margin: 0 auto 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+#paging .pagination li.page-item {
+  display: inline-block;
+}
+#paging .pagination li.page-item .page-link {
+  font-size: 24px;
+}
+#paging .pagination li.page-item.active .page-link {
+  color: #1A32C6;
+  font-weight: 600;
+}
+#paging .pagination li.page-item.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #1A32C6;
+}
+
+#paging .pagination li.page-item .page-link.arrow span{
+  border: 1px solid #1A32C6;
+  color: #1A32C6;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
 
 /* 반응형 */
 @media all and (max-width: 1440px) {

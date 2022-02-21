@@ -4,11 +4,19 @@
         <!-- 이전페이지 -->
         {% if page_obj.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?&page={{ page_obj.previous_page_number }}">이전</a>
+            <a class="page-link arrow" href="?&page={{ page_obj.previous_page_number }}">
+              <span class="material-icons-outlined">
+                chevron_left
+              </span>
+            </a>
         </li>
         {% else %}
         <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+            <a class="page-link arrow" tabindex="-1" aria-disabled="true" href="#">
+              <span class="material-icons-outlined">
+                chevron_left
+              </span>
+            </a>
         </li>
         {% endif %}
 
@@ -28,11 +36,19 @@
         <!-- 다음페이지 -->
         {% if page_obj.has_next %}
         <li class="page-item">
-            <a class="page-link" href="?&page={{ page_obj.next_page_number }}">다음</a>
+            <a class="page-link arrow" href="?&page={{ page_obj.next_page_number }}">
+              <span class="material-icons-outlined">
+                chevron_right
+              </span>
+            </a>
         </li>
         {% else %}
         <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+            <a class="page-link arrow" tabindex="-1" aria-disabled="true" href="#">
+              <span class="material-icons-outlined">
+                chevron_right
+              </span>
+            </a>
         </li>
         {% endif %}
         
