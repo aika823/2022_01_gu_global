@@ -13,14 +13,95 @@
 <!-- section.company-intro -->
 <div class="tab-menu page-start">
   <div class="tab-box">
-    <a href="javascript:void(0)" class="btn-tab active 2010">2010’s</a>
+    <a href="javascript:void(0)" class="btn-tab active 2000">2000’s</a>
     <div class="line-vertical"></div>
-    <a href="javascript:void(0)" class="btn-tab 2000">2000’s</a>
+    <a href="javascript:void(0)" class="btn-tab 2010">2010’s</a>
   </div>
 </div>
-<section class="company-intro content">
-    <div class="img-wrap">
-        <img class="history-img" src="/static/images/img_history1.png" alt="">
+<section class="company-intro content history">
+    <div class="img-wrap img-wrap--2000">
+      <img class="history-img" src="/static/images/img_history1.png" alt="">
+      <div class="year-box year-box--2009">
+        <h2 class="year">2009</h2>
+        <p>• 칭다오 KISWIRE LOT 하드웨어 수주</p>
+        <p>• 케이에이티(주) 회의실 A/V 시스템 수주</p>
+      </div>
+      <div class="year-box year-box--2008">
+        <h2 class="year">2008</h2>
+        <p>• 화상교육 시스템 구축</p>
+        <p>• GS리테일 전국 CS 교육장</p>
+      </div>
+      <div class="year-box year-box--2007">
+        <h2 class="year">2007</h2>
+        <p>• 중국 칭다오 사무소 개소</p>
+      </div>
+      <div class="year-box year-box--2006">
+        <h2 class="year">2006</h2>
+        <p>• 지유코리아 설립</p>
+      </div>
+    </div>
+
+    <div class="img-wrap img-wrap--2010" style="display: none;">
+      <img class="history-img" src="/static/images/img_history2.png" alt="">
+      <div class="year-box year-box--2020">
+        <h2 class="year">2010</h2>
+        <p>• 오디오 시스템 설계 / 구축</p>
+        <p>• 육군사관학교 정무관 외 음향시스템 수주</p>
+      </div>
+      <div class="year-box year-box--2019">
+        <h2 class="year">2011</h2>
+        <p>• 해외 HD 스트리밍 설계</p>
+        <p>• 태평양물산 화상회의시스템 수주</p>
+      </div>
+      <div class="year-box year-box--2018">
+        <h2 class="year">2012</h2>
+        <p>• 본사 이전</p>
+        <p>• HDBT 이미지 전달 시스템 설계</p>
+      </div>
+      <div class="year-box year-box--2017">
+        <h2 class="year">2013</h2>
+        <p>• (주)지유글로벌 설립</p>
+        <p>• 아날로그형 에코 제거 기술</p>
+      </div>
+      <div class="year-box year-box--2016">
+        <h2 class="year">2014</h2>
+        <p>• 소니코리아 파트너 계약</p>
+        <p>• 코맨더 센터 솔루션 개발</p>
+      </div>
+      <div class="year-box year-box--2015">
+        <h2 class="year">2015</h2>
+        <p>• 비상 방송 연결 시스템 구축</p>
+        <p>• 수원시 영상회의시스템 구축사업 수주</p>
+      </div>
+      <div class="year-box year-box--2014">
+        <h2 class="year">2016</h2>
+        <p>• GUG MCU ver.0.9</p>
+        <p>• 4K 전송 시스템 IP 베이스 구축</p>
+      </div>
+      <div class="year-box year-box--2013">
+        <h2 class="year">2017</h2>
+        <p>• Curix 솔루션 MCU</p>
+        <p>• 셀프 트레킹 폰</p>
+      </div>
+      <div class="year-box year-box--2012">
+        <h2 class="year">2018</h2>
+        <p>• 이미지 통제 시스템 구축</p>
+        <p>• R&D 파트 구축</p>
+        <p>• IOS 9001 인증 (VC 전문 설계 / 디자인 구축)</p>
+      </div>
+      <div class="year-box year-box--2011">
+        <h2 class="year">2019</h2>
+        <p>• 한국원자력환경공단 수주</p>
+        <p>• 클라우드 화상회의</p>
+        <p>• VC A/S</p>
+        <p>• Yealink 런칭</p>
+      </div>
+      <div class="year-box year-box--2010">
+        <h2 class="year">2020</h2>
+        <p>• 지유글로벌 사무실 확장 이전</p>
+        <p>• 한국수력원자력 수주</p>
+        <p>• 화상회의몰 사이트 오픈</p>
+      </div>
     </div>
 </section>
 {% endblock content %}
@@ -31,11 +112,15 @@
   $('.btn-tab').click(function() {
     if($(this).hasClass('active') == false) {
       if($(this).hasClass('2000') == true) {
-        $('.history-img').attr('src', '/static/images/img_history2.png');
+        // $('.history-img').attr('src', '/static/images/img_history2.png');
+        $('.img-wrap--2010').css('display', 'none');
+        $('.img-wrap--2000').css('display', 'block');
         $('.btn-tab').removeClass('active');
         $(this).addClass('active');
       } else if($(this).hasClass('2010') == true) {
-        $('.history-img').attr('src', '/static/images/img_history1.png');
+        // $('.history-img').attr('src', '/static/images/img_history1.png');
+        $('.img-wrap--2000').css('display', 'none');
+        $('.img-wrap--2010').css('display', 'block');
         $('.btn-tab').removeClass('active');
         $(this).addClass('active');
       }

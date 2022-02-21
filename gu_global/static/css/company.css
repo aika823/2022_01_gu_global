@@ -7,6 +7,9 @@ section.company-intro .img-wrap img {
 /* org */
 section.company-intro.org-wrap {
   padding-bottom: 300px;
+  box-sizing: border-box;
+  padding-right: 0;
+  padding-left: 0;
 }
 section.company-intro .img-wrap.org-img {
   width: 1040px;
@@ -88,7 +91,7 @@ section.company-intro .img-wrap.org-img .team-description.team-2 {
   left: 250px;
 }
 section.company-intro .img-wrap.org-img .team-description.team-3 {
-  left: 455px;
+  left: 450px;
 }
 section.company-intro .img-wrap.org-img .team-description.team-4 {
   left: 656px;
@@ -98,14 +101,99 @@ section.company-intro .img-wrap.org-img .team-description.team-5{
 }
 
 section.company-intro .img-wrap.org-img .box-title.box-title--middle-2 {
-  top: 572px;
+  position: absolute;
+  top: 616px;
   font-size: 14px;
 }
 section.company-intro .img-wrap.org-img .box-title.box-title--middle-2.team-1 {
-  left: 48px;
+  left: 68px;
 }
 section.company-intro .img-wrap.org-img .box-title.box-title--middle-2.team-3 {
-  left: 455px;
+  left: 484px;
+}
+
+section.company-intro .img-wrap.org-img .team-description-2 {
+  position: absolute;
+  top: 662px;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: pre-line;
+}
+section.company-intro .img-wrap.org-img .team-description-2.team-1 {
+  left: 48px;
+}
+section.company-intro .img-wrap.org-img .team-description-2.team-3 {
+  left: 450px;
+}
+
+
+/* history */
+section.history .img-wrap {
+  position: relative;
+  width: 1040px;
+  margin: 0 auto;
+  padding-bottom: 300px;
+  box-sizing: border-box;
+}
+section.history .img-wrap .year-box h2 {
+  font-size: 45px;
+  color: #1A32C6;
+  font-family: "Noto Sans KR";
+}
+section.history .img-wrap .year-box p {
+  font-size: 20px;
+  color: #151414;
+  font-family: "Noto Sans KR";
+}
+section.history .img-wrap .year-box {
+  position: absolute;
+  left: 138px;
+}
+section.history .img-wrap .year-box.year-box--2009 {
+  top: 115px;
+}
+section.history .img-wrap .year-box.year-box--2008 {
+  top: 296px;
+}
+section.history .img-wrap .year-box.year-box--2007 {
+  top: 505px;
+}
+section.history .img-wrap .year-box.year-box--2006 {
+  top: 658px;
+}
+
+section.history .img-wrap .year-box.year-box--2010 {
+  top: 115px;
+}
+section.history .img-wrap .year-box.year-box--2011 {
+  top: 325px;
+}
+section.history .img-wrap .year-box.year-box--2012 {
+  top: 566px;
+}
+section.history .img-wrap .year-box.year-box--2013 {
+  top: 771px;
+}
+section.history .img-wrap .year-box.year-box--2014 {
+  top: 956px;
+}
+section.history .img-wrap .year-box.year-box--2015 {
+  top: 1137px;
+}
+section.history .img-wrap .year-box.year-box--2016 {
+  top: 1316px;
+}
+section.history .img-wrap .year-box.year-box--2017 {
+  top: 1500px;
+}
+section.history .img-wrap .year-box.year-box--2018 {
+  top: 1681px;
+}
+section.history .img-wrap .year-box.year-box--2019 {
+  top: 1860px;
+}
+section.history .img-wrap .year-box.year-box--2020 {
+  top: 2045px;
 }
 
 
@@ -452,6 +540,164 @@ section.example .example-wrap .example-item img {
     width: 75%;
   }
 }
+@media all and (max-width: 1150px) {
+  section.company-intro .img-wrap.org-img {
+    width: 750px;
+  }
+
+  section.company-intro .img-wrap.org-img .position.position--ceo {
+    top: 67px;
+    font-size: 30px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--ceo {
+    top: 83px;
+    left: 198px;
+    font-size: 14px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle {
+    top: 239px;
+    font-size: 20px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-1 {
+    left: 54px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-2 {
+    left: 199px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-3 {
+    left: 343px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-4 {
+    left: 479px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-5 {
+    left: 624px;
+  }
+  
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle {
+    top: 340px;
+    font-size: 10px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-1 {
+    left: 36px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-2 {
+    left: 194px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-3 {
+    left: 349px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-4 {
+    left: 485px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-5 {
+    left: 652px;
+  }
+  
+  section.company-intro .img-wrap.org-img .team-description {
+    top: 368px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-1 {
+    left: 36px;
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-2 {
+    left: 181px;
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-3 {
+    left: 326px;
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-4 {
+    left: 470px;
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-5{
+    left: 618px;
+  }
+  
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle-2 {
+    top: 444px;
+    font-size: 10px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle-2.team-1 {
+    left: 53px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle-2.team-3 {
+    left: 348px;
+  }
+  
+  section.company-intro .img-wrap.org-img .team-description-2 {
+    top: 474px;
+    font-size: 10px;
+    line-height: 14px;
+  }
+  section.company-intro .img-wrap.org-img .team-description-2.team-1 {
+    left: 32px;
+  }
+  section.company-intro .img-wrap.org-img .team-description-2.team-3 {
+    left: 326px;
+  }
+
+
+  section.history .img-wrap {
+    width: 740px;
+  }
+  section.history .img-wrap .year-box {
+    left: 110px;
+  }
+  section.history .img-wrap .year-box h2 {
+    font-size: 36px;
+  }
+  section.history .img-wrap .year-box p {
+    font-size: 16px;
+  }
+  section.history .img-wrap .year-box.year-box--2009 {
+    top: 78px;
+  }
+  section.history .img-wrap .year-box.year-box--2008 {
+    top: 207px;
+  }
+  section.history .img-wrap .year-box.year-box--2007 {
+    top: 357px;
+  }
+  section.history .img-wrap .year-box.year-box--2006 {
+    top: 465px;
+  }
+
+  section.history .img-wrap .year-box.year-box--2010 {
+    top: 77px;
+  }
+  section.history .img-wrap .year-box.year-box--2011 {
+    top: 226px;
+  }
+  section.history .img-wrap .year-box.year-box--2012 {
+    top: 396px;
+  }
+  section.history .img-wrap .year-box.year-box--2013 {
+    top: 546px;
+  }
+  section.history .img-wrap .year-box.year-box--2014 {
+    top: 675px;
+  }
+  section.history .img-wrap .year-box.year-box--2015 {
+    top: 804px;
+  }
+  section.history .img-wrap .year-box.year-box--2016 {
+    top: 933px;
+  }
+  section.history .img-wrap .year-box.year-box--2017 {
+    top: 1065px;
+  }
+  section.history .img-wrap .year-box.year-box--2018 {
+    top: 1189px;
+  }
+  section.history .img-wrap .year-box.year-box--2019 {
+    top: 1318px;
+  }
+  section.history .img-wrap .year-box.year-box--2020 {
+    top: 1448px;
+  }
+}
 @media all and (max-width: 1080px) {
   section.company-intro .intro-wrap {
     grid-template-columns: 100%;
@@ -562,6 +808,173 @@ section.example .example-wrap .example-item img {
   }
   section.example .example-wrap .example-item .ex-text p span.space {
     display: none;
+  }
+
+  section.company-intro .img-wrap.org-img {
+    width: 360px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--ceo {
+    top: 31px;
+    font-size: 17px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--ceo {
+    top: 39px;
+    left: 88px;
+    font-size: 10px;
+    -webkit-transform: scale(.7);
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle {
+    top: 114px;
+    font-size: 10px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-1 {
+    left: 25px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-2 {
+    left: 95px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-3 {
+    left: 164px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-4 {
+    left: 229px;
+  }
+  section.company-intro .img-wrap.org-img .position.position--middle.team-5 {
+    left: 299px;
+  }
+  
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle {
+    top: 161px;
+    font-size: 10px;
+    -webkit-transform: scale(.45);
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-1 {
+    left: -10px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-2 {
+    left: 73px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-3 {
+    left: 152px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-4 {
+    left: 213px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle.team-5 {
+    left: 303px;
+  }
+  
+  section.company-intro .img-wrap.org-img .team-description {
+    top: 165px;
+    font-size: 10px;
+    line-height: 14px;
+    -webkit-transform: scale(.45);
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-1 {
+    left: -17px;
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-2 {
+    left: 57px;
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-3 {
+    left: 130px;
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-4 {
+    left: 199px;
+    top: 158px;
+  }
+  section.company-intro .img-wrap.org-img .team-description.team-5{
+    left: 271px;
+    top: 158px;
+  }
+  
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle-2 {
+    top: 210px;
+    font-size: 10px;
+    -webkit-transform: scale(.45);
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle-2.team-1 {
+    left: 8px;
+  }
+  section.company-intro .img-wrap.org-img .box-title.box-title--middle-2.team-3 {
+    left: 153px;
+  }
+  
+  section.company-intro .img-wrap.org-img .team-description-2 {
+    top: 211px;
+    font-size: 10px;
+    line-height: 14px;
+    -webkit-transform: scale(.45);
+  }
+  section.company-intro .img-wrap.org-img .team-description-2.team-1 {
+    left: -25px;
+  }
+  section.company-intro .img-wrap.org-img .team-description-2.team-3 {
+    left: 122px;
+    top: 215px;
+  }
+
+
+  section.history .img-wrap {
+    width: 360px;
+  }
+  section.history .img-wrap .year-box {
+    left: 40px;
+  }
+  section.history .img-wrap .year-box h2 {
+    font-size: 16px;
+  }
+  section.history .img-wrap .year-box p {
+    font-size: 10px;
+    -webkit-transform: scale(.9);
+    line-height: 13px;
+    margin-left: -6px;
+  }
+  section.history .img-wrap .year-box.year-box--2009 {
+    top: 38px;
+  }
+  section.history .img-wrap .year-box.year-box--2008 {
+    top: 101px;
+  }
+  section.history .img-wrap .year-box.year-box--2007 {
+    top: 174px;
+  }
+  section.history .img-wrap .year-box.year-box--2006 {
+    top: 226px;
+  }
+
+  section.history .img-wrap .year-box.year-box--2010 {
+    top: 38px;
+  }
+  section.history .img-wrap .year-box.year-box--2011 {
+    top: 111px;
+  }
+  section.history .img-wrap .year-box.year-box--2012 {
+    top: 193px;
+  }
+  section.history .img-wrap .year-box.year-box--2013 {
+    top: 267px;
+  }
+  section.history .img-wrap .year-box.year-box--2014 {
+    top: 328px;
+  }
+  section.history .img-wrap .year-box.year-box--2015 {
+    top: 393px;
+  }
+  section.history .img-wrap .year-box.year-box--2016 {
+    top: 454px;
+  }
+  section.history .img-wrap .year-box.year-box--2017 {
+    top: 517px;
+  }
+  section.history .img-wrap .year-box.year-box--2018 {
+    top: 580px;
+  }
+  section.history .img-wrap .year-box.year-box--2019 {
+    top: 643px;
+  }
+  section.history .img-wrap .year-box.year-box--2020 {
+    top: 705px;
   }
 }
 @media all and (max-width: 450px) {

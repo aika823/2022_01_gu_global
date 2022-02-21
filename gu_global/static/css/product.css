@@ -206,6 +206,19 @@ section.detail-bottom .btn-img .overlay p {
   section.product-detail {
     display: block;
   }
+
+  section.detail-bottom .btn-img {
+    height: 300px;
+  }
+  section.detail-bottom .btn-img .overlay {
+    padding: 80px 30px;
+  }
+  section.detail-bottom .btn-img .overlay h2 {
+    font-size: 33px;
+  }
+  section.detail-bottom .btn-img .overlay p {
+    font-size: 19px;
+  }
 }
 @media all and (max-width: 768px) {
   section.product-list .product-item .product-img {
@@ -252,5 +265,18 @@ section.detail-bottom .btn-img .overlay p {
   }
   section.product-detail .detail-text-wrap .text-box {
     padding: 0;
+  }
+
+  section.detail-bottom .btn-img {
+    height: 150px;
+  }
+  section.detail-bottom .btn-img .overlay {
+    padding: 30px 30px;
+  }
+  section.detail-bottom .btn-img .overlay h2 {
+    font-size: 20px;
+  }
+  section.detail-bottom .btn-img .overlay p {
+    font-size: 10px;
   }
 }

@@ -652,6 +652,19 @@ section.contact-form .form-wrap form .table-wrap .line {
     display: block;
     margin: 0 auto;
   }
+
+  section.business .slide-business .grid-wrap .text-wrap .more {
+    font-size: 14px;
+  }
+
+  section.news .news-header .btn-wrap a.btn-link {
+    padding: 9px 0;
+    font-size: 16px;
+  }
+  section.news .news-header .btn-wrap {
+    gap: 15px;
+    width: 350px;
+  }
 }
 @media all and (max-width: 650px) {
   section.news .news-header {
@@ -716,7 +729,7 @@ section.contact-form .form-wrap form .table-wrap .line {
     font-size: 16px;
   }
   section.business .slide-business .wide-wrap .business-content {
-    width: 85%;
+    width: 70%;
   }
   section.business .slide-business .wide-wrap .business-content h4 {
     font-size: 18px;
@@ -741,11 +754,37 @@ section.contact-form .form-wrap form .table-wrap .line {
   section.product .slide-product .product-img {
     height: 150px;
   }
+
+  section.business .slide-business .wide-wrap {
+    height: 195px;
+  }
+  section.business .slide-business .wide-wrap .business-content .logo-wrap {
+    width: 95px;
+    margin-top: 7px;
+  }
+  section.business .slide-business .wide-wrap .business-content p {
+    font-size: 12px;
+    margin-top: 12px;
+  }
+  section.business .slide-business .wide-wrap .business-content h4 {
+    font-size: 14px;
+  }
+  section.business .slide-business .wide-wrap .btn-control p {
+    font-size: 12px;
+  }
+  section.business .slide-business .wide-wrap .btn-control a {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+  section.business .slide-business .wide-wrap .business-content a.more {
+    font-size: 15px;
+    margin-top: 6px;
+  }
+  .more img {
+    height: 25px;
+  }
 }
 @media all and (max-width: 400px) {
-  section.business .slide-business .wide-wrap .business-content {
-    width: 92%;
-  }
   section.business .slide-business .grid-wrap .text-wrap .more {
     font-size: 10px;
   }

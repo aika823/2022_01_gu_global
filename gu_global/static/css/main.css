@@ -58,37 +58,39 @@ h1, h2, h3, h4, h5, h6 { margin: 0;}
 
 .open-side {
   display: none;
+  font-size:30px;
+  cursor:pointer;
+  color: #fff;
 }
 
 .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 10;
+  z-index: 20;
   top: 0;
   right: 0;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
+  padding-top: 60px;
   text-align:center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
+
 .sidenav a {
-  padding: 8px 8px 8px 32px;
-  margin-top: 20px;
+  padding: 12px 8px 12px 12px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 16px;
   color: #818181;
   display: block;
   transition: 0.3s;
-
+  box-sizing: border-box;
 }
+
 .sidenav a:hover{
   color: #f1f1f1;
 }
+
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -96,6 +98,55 @@ h1, h2, h3, h4, h5, h6 { margin: 0;}
   font-size: 36px;
   margin-left: 50px;
 }
+
+.dropdown-btn {
+  padding: 12px 8px 12px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+}
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+.dropdown-btn.active {
+  background-color: #2E2E2E;
+  color: white;
+  font-size: 18px;
+}
+
+.dropdown-container .dropdown-btn {
+  font-size: 18px;
+}
+.dropdown-container .dropdown-btn.active {
+  color: #d5dbff;
+}
+.dropdown-container .dropdown--product {
+  background-color: #000;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+.dropdown--company,
+.dropdown--contact {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -226,6 +277,7 @@ header .btn-wrapper {
   grid-template-columns: 1fr 1fr;
   box-sizing: border-box;
   gap: 20px;
+  align-items: center;
 }
 header .btn-wrapper .btn-item {
   text-align: center;
@@ -454,9 +506,17 @@ footer .sns-wrap img {
   header .logo {
     width: 200px;
   }
+  header .menu {
+    display: none;
+  }
   header .btn-wrapper {
-    width: 200px;
+    width: 230px;
     gap: 10px;
+    grid-template-columns: 1fr 1fr 30px;
+  }
+  header .btn-wrapper .open-side {
+    display: block;
+    justify-self: right;
   }
   header .btn-wrapper .btn-item {
     font-size: 15px;
@@ -508,11 +568,14 @@ footer .sns-wrap img {
     gap: 10px;
   }
   header .logo {
-    width: 100px;
+    width: 200px;
   }
   header .btn-wrapper {
-    width: 120px;
+    /* width: 120px; */
     gap: 5px;
+  }
+  header .btn-wrapper .open-side {
+    font-size: 25px;
   }
   header .btn-wrapper .btn-item {
     font-size: 12px;
@@ -566,17 +629,19 @@ footer .sns-wrap img {
     gap: 10px;
   }
   header .btn-wrapper .btn-item {
-    font-size: 12px;
+    font-size: 10px;
+    font-family: "Noto Sans KR";
+    padding: 8px 0;
   }
   header .header-top {
     position: relative;
   }
   header .btn-wrapper {
-    position: fixed;
+    /* position: fixed;
     right: 10px;
     top: 100px;
-    z-index: 1;
-    width: 140px;
+    z-index: 1; */
+    width: 170px;
   }
 
   footer .logo-wrap {
