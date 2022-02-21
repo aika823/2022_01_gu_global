@@ -8,14 +8,14 @@
             <div class="title-wrap">
                 <h1>Video Conferencing</h1>
                 <h3>화상회의 시스템과 스마트 협업 솔루션 주력으로
-                  <br class="mobile">화상회의 분야 전문 SI 기업</h3>
+                    <br class="mobile">화상회의 분야 전문 SI 기업</h3>
             </div>
         </div>
         <div class="slide-bg" style="background-image: url('/static/images/main_bg.png');">
             <div class="title-wrap">
                 <h1>Video Conferencing</h1>
                 <h3>화상회의 시스템과 스마트 협업 솔루션 주력으로
-                  <br class="mobile">화상회의 분야 전문 SI 기업</h3>
+                    <br class="mobile">화상회의 분야 전문 SI 기업</h3>
             </div>
         </div>
     </div>
@@ -196,44 +196,24 @@
             </p>
         </div>
         <div class="btn-wrap">
-            <a href="javascript:void(0)" onclick="" class="btn-link">공지사항</a>
-            <a href="javascript:void(0)" onclick="" class="btn-link">다운로드 센터</a>
+            <a href="/support/notice" onclick="" class="btn-link">공지사항</a>
+            <a href="/support/download" onclick="" class="btn-link">다운로드 센터</a>
         </div>
     </div>
     <div class="grid-wrap">
+
+        {% for notice in notice_list %}
         <div class="news-item">
             <div class="news-title">
-                <h3>SMART TECH KOREA 2021에 Yealink가 참가합니다.</h3>
+                <h3>{{notice.title}}</h3>
                 <a href="javascript:void(0)" class="more" onclick=""><i class="fas fa-plus"></i></a>
             </div>
             <div class="line"></div>
-            <p>
-                2021년 6월 23일(수)~25일(금) COEX A홀에서 개최되는 SMART TECH KOREA 2021에 Yealink가 참가합니다.
-            </p>
-            <p class="date">2021-06-17</p>
+            <p>{{notice.content}}</p>
+            <p class="date">{{notice.created_at |date:'Y-m-d'}}</p>
         </div>
-        <div class="news-item">
-            <div class="news-title">
-                <h3>SMART TECH KOREA 2021에 Yealink가 참가합니다.</h3>
-                <a href="javascript:void(0)" class="more" onclick=""><i class="fas fa-plus"></i></a>
-            </div>
-            <div class="line"></div>
-            <p>
-                2021년 6월 23일(수)~25일(금) COEX A홀에서 개최되는 SMART TECH KOREA 2021에 Yealink가 참가합니다.
-            </p>
-            <p class="date">2021-06-17</p>
-        </div>
-        <div class="news-item">
-            <div class="news-title">
-                <h3>SMART TECH KOREA 2021에 Yealink가 참가합니다.</h3>
-                <a href="javascript:void(0)" class="more" onclick=""><i class="fas fa-plus"></i></a>
-            </div>
-            <div class="line"></div>
-            <p>
-                2021년 6월 23일(수)~25일(금) COEX A홀에서 개최되는 SMART TECH KOREA 2021에 Yealink가 참가합니다.
-            </p>
-            <p class="date">2021-06-17</p>
-        </div>
+        {% endfor %}
+
     </div>
 </section>
 

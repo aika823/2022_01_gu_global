@@ -1,45 +1,32 @@
 from django.shortcuts import render
 from api import api_common
-from support.models import Contact
+from support.models import Contact, Notice
 
 
 def index(request):
     print('index')
     context = api_common.get_common_context()
+    context['notice_list'] = Notice.objects.all().order_by('order')[:3]
     return render(request, "index.html", context=context)
 
 
 def intro(request):
-    context = api_common.get_common_context()
-    context['banner_1'] = api_common.get_banner('common')
-    context['banner_2'] = api_common.get_banner('company')
-    context['current_page'] = ['Company', '회사소개']
-    print(context)
+    context = api_common.get_common_context('Company', '회사소개')
     return render(request, "intro.html", context=context)
 
 
 def org(request):
-    context = api_common.get_common_context()
-    context['banner_1'] = api_common.get_banner('common')
-    context['banner_2'] = api_common.get_banner('company')
-    context['current_page'] = ['Company', '조직도']
+    context = api_common.get_common_context('Company', '조직도')
     return render(request, "org.html", context=context)
 
 
 def history(request):
-    context = api_common.get_common_context()
-    context['banner_1'] = api_common.get_banner('common')
-    context['banner_2'] = api_common.get_banner('company')
-    context['current_page'] = ['Company', '연혁']
+    context = api_common.get_common_context('Company','연혁')
     return render(request, "history.html", context=context)
 
 
 def partner(request):
-    context = api_common.get_common_context()
-    context['banner_1'] = api_common.get_banner('common')
-    context['banner_2'] = api_common.get_banner('company')
-    context['banner_3'] = api_common.get_banner('partner')
-    context['current_page'] = ['Company', '파트너사','파트너사']
+    context = api_common.get_common_context('Company','파트너사','파트너사')
     return render(request, "partner.html", context=context)
 
 
@@ -49,10 +36,7 @@ def works(request):
 
 
 def portfolio(request):
-    context = api_common.get_common_context()
-    context['banner_1'] = api_common.get_banner('common')
-    context['banner_2'] = api_common.get_banner('company')
-    context['current_page'] = ['Company', '포트폴리오']
+    context = api_common.get_common_context('Company','포트폴리오')
     return render(request, "portfolio.html", context=context)
 
 
@@ -68,8 +52,6 @@ def contact(request):
         print(request.FILES)
         print(request.FILES.get('file'))
         contact.save()
-    context = api_common.get_common_context()
-    context['banner_1'] = api_common.get_banner('common')
-    context['banner_2'] = api_common.get_banner('company')
-    context['current_page'] = ['Company', 'Contact Us']
+    
+    context = api_common.get_common_context('Company','Contact Us')
     return render(request, "contact_page.html", context=context)

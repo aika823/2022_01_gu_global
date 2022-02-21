@@ -63,7 +63,9 @@ def download(request):
 def video(request):
     video_list = Video.objects.all()  
     context = get_common_context('Support','동영상')
-    context['video_list'] = video_list
+    # context['video_list'] = video_list
+    context['video_list'] = get_paginated_list(request, video_list)['list']
+    context['page_obj'] = get_paginated_list(request, video_list)['page_obj']
     return render(request, "support_video.html", context=context)
 
 

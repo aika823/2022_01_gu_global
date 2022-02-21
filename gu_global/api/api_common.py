@@ -12,7 +12,7 @@ from django.core.paginator import Paginator
 
 
 
-def get_common_context(page_1=None, page_2=None, page_3=None):
+def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_title=None):
 
     banner_yealink = dict()
     yealink_list = Category.objects.filter(main_category='Yealink').order_by('order')
@@ -62,7 +62,7 @@ def get_common_context(page_1=None, page_2=None, page_3=None):
     banner_support = {
         '공지사항':'/support/',
         '인증서':'/support/certification',
-        '다운로드 센터':'/support/download?type=all',
+        '다운로드 센터':'/support/download?type=전체',
         '동영상':'/support/video',
         '문의게시판':'/support/contact',
     }
@@ -84,12 +84,12 @@ def get_common_context(page_1=None, page_2=None, page_3=None):
     }
 
     banner_dict = {
-        'company':banner_company,
+        'Company':banner_company,
         'Products':banner_product,
         'Solution':banner_solution,
         'Support':banner_support,
         
-        'partner':banner_partner,
+        '파트너사':banner_partner,
         'Yealink':banner_yealink,
         'SONY':banner_sony,
         'Other':banner_others,
@@ -104,7 +104,10 @@ def get_common_context(page_1=None, page_2=None, page_3=None):
         'banner_1': banner_common if page_1 else None,
         'banner_2': banner_dict[page_1] if page_2 else None,
         'banner_3': banner_dict[page_2] if page_3 else None,
-        'current_page': [page_1, page_2, page_3]
+        'current_page': [page_1, page_2, page_3],
+        
+        'title':title if title else page_1,
+        'sub_title':sub_title if sub_title else page_2
     }
     return context_dict
 
