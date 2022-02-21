@@ -32,10 +32,6 @@ urlpatterns = [
     path('popup/create', views.popup_create),
     path('popup/<int:id>', views.popup_view),
 
-    # path('download', views.download),
-    # path('download/create', views.download_create),
-    # path('download/<int:id>', views.download_view),
-
     path('create', views.create),
     path('delete', views.delete),
 

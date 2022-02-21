@@ -6,8 +6,11 @@ def list(request):
     context = api_common.get_common_context('Products', 'Yealink')
     product_list = Product.objects.all()
     for product in product_list:
-        thumbnail = ProductImage.objects.filter(product=product).first()
-        product.thumbnail = thumbnail.image
+        try:
+            thumbnail = ProductImage.objects.filter(product=product).first()
+            product.thumbnail = thumbnail.image
+        except:
+            pass
     context['product_list'] = product_list    
     return render(request, "list.html", context=context)
 
@@ -28,11 +31,16 @@ def detail(request, product_name):
 
 
 def category_list(request, main_category, category_name=None):
-    context = api_common.get_common_context('product', main_category, category_name)
-    category = Category.objects.get(main_category=main_category, name=category_name)
+    context = api_common.get_common_context('Products', main_category, category_name)
+    print(category_name)
+    # category = Category.objects.get(main_category=main_category, name=category_name)
+    category = Category.objects.get(name=category_name)
     product_list = Product.objects.filter(category=category)
     for product in product_list:
-        thumbnail = ProductImage.objects.filter(product=product).first()
-        product.thumbnail = thumbnail.image
+        try:
+            thumbnail = ProductImage.objects.filter(product=product).first()
+            product.thumbnail = thumbnail.image
+        except:
+            pass
     context['product_list'] = product_list
     return render(request, "list.html", context=context)

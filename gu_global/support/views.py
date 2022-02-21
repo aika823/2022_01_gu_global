@@ -10,14 +10,14 @@ from api.api_common import get_paginated_list, get_common_context
 
 def notice(request):
   notice_list = Notice.objects.all()
-  context = get_common_context()
+  context = get_common_context('Support','공지사항')
   context['notice_list'] = get_paginated_list(request, notice_list)['list']
   context['page_obj'] = get_paginated_list(request, notice_list)['page_obj']
   return render(request, 'support_notice.html', context=context) 
 
 
 def certification(request):
-  context = get_common_context()
+  context = get_common_context('Support','인증서')
   return render(request, "certification.html", context=context)
 
 
@@ -42,7 +42,7 @@ def download(request):
   if request.GET.get('keyword'):
         product_list = product_list.filter(title__contains=request.GET.get('keyword'))
 
-  context = get_common_context()
+  context = get_common_context('Support','다운로드 센터')
   context['product_list'] = get_paginated_list(request, product_list)['list']
   context['page_obj'] = get_paginated_list(request, product_list)['page_obj']
   context['active'] = active_dict
@@ -52,14 +52,14 @@ def download(request):
 
 def video(request):
     video_list = Video.objects.all()  
-    context = get_common_context()
+    context = get_common_context('Support','동영상')
     context['video_list'] = video_list
     return render(request, "support_video.html", context=context)
 
 
 def contact(request):
   contact_list = Contact.objects.all()
-  context = get_common_context()
+  context = get_common_context('Support','문의게시판')
   context['contact_list'] = get_paginated_list(request, contact_list)['list']
   context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
   return render(request, "support_contact.html", context=context)
