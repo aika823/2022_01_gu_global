@@ -69,7 +69,8 @@ section.sub-banner .navbar .category-wrap .category-item .brief-menu {
   background-color: #2f2f2f;
   color: #fff;
   position: absolute;
-  bottom: -275px;
+  /* bottom: -275px; */
+  top: 75px;
   right: 0;
   display: none;
 }
@@ -92,6 +93,7 @@ section.sub-banner .navbar .category-wrap .category-item .btn-dropdown {
   /* padding: 4px; */
   border-radius: 50%;
   box-sizing: border-box;
+  display: inline-block;
 }
 section.sub-banner .navbar .category-wrap .category-item .btn-dropdown span {
   color: #2f2f2f;
@@ -190,6 +192,10 @@ section.sub-banner .navbar .category-wrap p.next-arrow {
   section.sub-banner .navbar .home-icon {
     font-size: 20px;
   }
+
+  section.sub-banner .navbar .category-wrap .category-item .brief-menu {
+    top: 62px;
+  }
 }
 @media all and (max-width: 768px) {
   section.sub-banner {
@@ -228,13 +234,14 @@ section.sub-banner .navbar .category-wrap p.next-arrow {
   }
 
   section.sub-banner .navbar .category-wrap .category-item .brief-menu {
-    bottom: -301px;
+    top: 30px;
     right: 10px;
   }
 }
 @media all and (max-width: 500px) {
   section.sub-banner .navbar .category-wrap .category-item p {
-    font-size: 12px;
+    font-size: 10px;
+    word-break: keep-all;
   }
   section.sub-banner .navbar .category-wrap {
     grid-template-columns: 1fr 15px 1fr 15px 1fr;
@@ -252,5 +259,9 @@ section.sub-banner .navbar .category-wrap p.next-arrow {
   section.sub-banner .navbar .category-wrap .category-item .brief-menu.second {
     right: 50%;
     transform: translateX(50%);
+  }
+
+  .tab-menu .tab-box a.btn-tab {
+    font-size: 12px;
   }
 }
