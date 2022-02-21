@@ -77,6 +77,18 @@
       });
     </script>
 
+    <script>
+      $('.btn-dropdown').click(function() {
+        if($(this).find('.material-icons-round').text() == "arrow_drop_down") {
+          $(this).find('.material-icons-round').text("arrow_drop_up");
+          $(this).next().fadeIn();
+        } else {
+          $(this).find('.material-icons-round').text("arrow_drop_down");
+          $(this).next().fadeOut();
+        }
+      });
+    </script>
+
     {% block extrascripts %}{% endblock extrascripts %}
 </body>
 
