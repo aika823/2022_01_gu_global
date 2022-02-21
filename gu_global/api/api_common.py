@@ -74,6 +74,15 @@ def get_common_context(page_1=None, page_2=None, page_3=None):
         '협력사':'/company/partner?type=cooperate',
     }
 
+    banner_download = {
+        '전체':'/support/download?type=전체',
+        '코덱':'/support/download?type=코덱',
+        '카메라':'/support/download?type=카메라',
+        '스피커폰':'/support/download?type=스피커폰',
+        '사용자 가이드':'/support/download?type=사용자 가이드',
+        '소프트웨어':'/support/download?type=소프트웨어',
+    }
+
     banner_dict = {
         'company':banner_company,
         'Products':banner_product,
@@ -84,6 +93,7 @@ def get_common_context(page_1=None, page_2=None, page_3=None):
         'Yealink':banner_yealink,
         'SONY':banner_sony,
         'Other':banner_others,
+        '다운로드 센터':banner_download,
     }
 
     context_dict = {
