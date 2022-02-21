@@ -267,6 +267,10 @@ def delete(request):
         product_id = ProductDetailImage.objects.get(id=id).product.id
         ProductDetailImage.objects.get(id=id).delete()
         return redirect("/admin/{}/{}".format('product', product_id))
+    
+    if table == 'popup':
+        Popup.objects.get(id=id).delete()
+        return redirect("/admin/popup")
 
 def update_image(request):
     api.api_image.update_image(request)

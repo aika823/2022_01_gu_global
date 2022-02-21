@@ -1,0 +1,105 @@
+.pop {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.pop .title {
+    margin: 10px 0;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pop p {
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.pop {
+    display: none;
+}
+
+
+/* .pop:before {display:block; content:""; position:fixed; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,.5);} */
+
+.pop .layerBox {
+    width: 30%;
+    position: fixed;
+    z-index: 3;
+    left: 20%;
+    top: 50%;
+    transform: translate(-20%, -50%);
+    padding: 0px;
+    background: #fff;
+}
+
+.pop .layerBox .title {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-weight: 600;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: left;
+}
+
+.pop .layerBox .cont {
+    width: 100%;
+}
+
+.pop .layerBox .cont img {
+    width: 100%;
+}
+
+.pop .layerBox p {
+    line-height: 20px;
+    font-size: 13px;
+}
+
+.pop .layerBox .close {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pop .layerBox .btnClose {
+    display: inline-block;
+    padding: 6px 12px;
+    color: #444;
+    font-size: 16px;
+}
+
+.pop .layerBox .btnTodayHide {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.pop .layerBox .btnTodayHide label {
+    cursor: pointer;
+}
+
+.pop .layerBox .btnTodayHide #chkday {
+    width: 16px;
+    height: 16px;
+}
+
+@media all and (max-width: 1080px) {
+    .pop .layerBox {
+        width: 50%;
+    }
+    br.mobile {
+        display: block;
+    }
+    .column-text {
+        white-space: normal;
+        margin-top: 15px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .pop .layerBox {
+        width: 90%;
+    }
+    .column-text {
+        white-space: pre-line;
+    }
+}

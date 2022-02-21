@@ -1,11 +1,22 @@
 from django.shortcuts import render
 from api import api_common
-from support.models import Contact, Notice
+from support.models import Contact, Notice, Popup
+from datetime import date
 
 
 def index(request):
     context = api_common.get_common_context()
     context['notice_list'] = Notice.objects.all().order_by('order')[:3]
+    today = date.today()
+    
+    popup_list = list()
+    for popup in Popup.objects.all():
+        if popup.start < today < popup.end :
+            popup_list.append(popup)
+    
+    print(popup_list)
+            
+    context['popup_list'] = popup_list[:1]
     return render(request, "index.html", context=context)
 
 

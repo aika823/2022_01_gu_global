@@ -1,6 +1,27 @@
 {% extends "base.html" %}
 
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/popup.css">
+{% endblock extraheads %}
+
 {% block content %}
+
+{% for popup in popup_list %}
+<!-- popup -->
+<div id="pop" class="pop">
+    <div class="layerBox">
+        <div class="cont">
+            <img src="/media/{{popup.image}}" alt="">
+        </div>
+        <div class="close">
+            <span id="check" class="btnTodayHide"><input type="checkbox" value="checkbox" name="chkbox"
+                    id="chkday" /><label for="chkday">오늘 하루동안 보지 않기</label></span>
+            <span id="" class="btnClose"> <a href="#0">Close</a></span>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
 <!-- section.main -->
 <section class="main page-start">
     <div class="slide">
@@ -229,3 +250,12 @@
     </div>
 </section>
 {% endblock content %}
+
+{% block extrascripts %}
+<script src="/static/js/popup.js"></script>
+
+<script>
+    
+</script>
+
+{% endblock extrascripts %}
