@@ -1,5 +1,8 @@
 import os
 from pathlib import Path
+import pymysql
+
+pymysql.install_as_MySQLdb()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -7,7 +10,7 @@ SECRET_KEY = 'django-insecure-96+gfri#pj)4#b*$zgq=2k^@xljd_mf7-71+b$yr53p3mpzh)p
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     # 'django.contrib.admin',
@@ -53,10 +56,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'gu_global.wsgi.application'
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default' : {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dbguglobal',              
+        'USER': 'guglobal',                      
+        'PASSWORD': '20222024mc!',              
+        'HOST': 'db.guglobal.gabia.io',
+        'PORT': '3306',                      
     }
 }
 

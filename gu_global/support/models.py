@@ -1,5 +1,4 @@
 from pyexpat import model
-from tkinter import CASCADE
 from django.db import models
 from products.models import Product
 from django.db.models.deletion import CASCADE
