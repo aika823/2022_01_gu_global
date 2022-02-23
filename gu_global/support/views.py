@@ -13,6 +13,7 @@ def notice(request):
   context = get_common_context('Support','공지사항')
   context['notice_list'] = get_paginated_list(request, notice_list)['list']
   context['page_obj'] = get_paginated_list(request, notice_list)['page_obj']
+  context['my_range'] = get_paginated_list(request, notice_list)['my_range']
   return render(request, 'support_notice.html', context=context) 
 
 
@@ -65,6 +66,7 @@ def video(request):
     # context['video_list'] = video_list
     context['video_list'] = get_paginated_list(request, video_list)['list']
     context['page_obj'] = get_paginated_list(request, video_list)['page_obj']
+    context['my_range'] = get_paginated_list(request, video_list)['my_range']
     return render(request, "support_video.html", context=context)
 
 
@@ -73,4 +75,5 @@ def contact(request):
   context = get_common_context('Support','문의게시판')
   context['contact_list'] = get_paginated_list(request, contact_list)['list']
   context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
+  context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 
   return render(request, "support_contact.html", context=context)
