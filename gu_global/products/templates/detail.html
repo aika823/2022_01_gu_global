@@ -7,7 +7,7 @@
 
 {% block content %}
 <!-- section.product-detail -->
-<section class="product-detail page-start">
+<section class="product-detail page-start max-1280">
     <div class="detail-img-wrap">
         <div class="detail-img main-img">
             <img src="/media/{{thumbnail.image}}" alt="">
@@ -44,7 +44,7 @@
     </div>
 </section>
 
-<div class="detail-full-image">
+<div class="detail-full-image max-1280">
     {% for image in detail_image_list %}
     <img src="/media/{{image.image}}" alt="">
     {% endfor %}

@@ -1,9 +1,9 @@
 /* section.product_list */
 section.product-list {
-  padding: 170px 0 300px;
+  padding: 100px 0 300px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 140px;
+  gap: 85px;
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
@@ -37,8 +37,8 @@ section.product-list .product-item .product-description {
 
 /* section.product-detail */
 section.product-detail {
-  margin: 360px 0 420px;
-  padding: 0 150px;
+  margin: 160px auto 320px;
+  /* padding: 0 150px; */
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1.2fr .8fr;
@@ -76,17 +76,17 @@ section.product-detail .detail-text-wrap .category {
 }
 section.product-detail .detail-text-wrap .description-1 {
   margin: 40px 0 10px;
-  font-size: 30px;
+  font-size: 19px;
   font-weight: 600;
   color: #656565;
 }
 section.product-detail .detail-text-wrap .title {
-  margin-bottom: 130px;
-  font-size: 55px;
+  margin-bottom: 100px;
+  font-size: 40px;
   font-weight: 600;
 }
 section.product-detail .detail-text-wrap .title span.description-2 {
-  font-size: 30px;
+  font-size: 21px;
   color: #D6D6D6;
 }
 section.product-detail .detail-text-wrap .btn-group {
@@ -96,14 +96,14 @@ section.product-detail .detail-text-wrap .btn-group {
 }
 section.product-detail .detail-text-wrap .btn-group .btn-item {
   display: inline-block;
-  padding: 20px;
+  padding: 13px;
   width: 100%;
   text-align: center;
   border: 2px solid #1A32C6;
   box-sizing: border-box;
   color: #1A32C6;
   background-color: #fff;
-  font-size: 26px;
+  font-size: 21px;
   font-weight: 600;
   transition: background-color .5s;
 }
@@ -114,8 +114,8 @@ section.product-detail .detail-text-wrap .btn-group .btn-item:hover {
 
 
 .detail-full-image {
-  padding: 0 150px;
-  margin: 150px 0 200px;
+  /* padding: 0 150px; */
+  margin: 150px auto 200px;
   box-sizing: border-box;
 }
 .detail-full-image img {
@@ -181,7 +181,7 @@ section.detail-bottom .btn-img .overlay p {
     margin: 50px 0 60px;
   }
   section.product-detail {
-    margin: 250px 0;
+    margin: 250px auto;
     padding: 0 50px;
   }
   section.product-detail .detail-text-wrap .title {
@@ -195,6 +195,11 @@ section.detail-bottom .btn-img .overlay p {
   }
   section.product-detail .detail-text-wrap .btn-group .btn-item {
     font-size: 21px;
+  }
+
+  .detail-full-image {
+    padding-right: 50px;
+    padding-left: 50px;
   }
 }
 @media all and (max-width: 1080px) {
@@ -259,8 +264,10 @@ section.detail-bottom .btn-img .overlay p {
   
   section.product-detail {
     padding: 0 20px;
+    margin-bottom: 100px;
   }
   .detail-full-image {
+    margin: 50px auto 200px;
     padding: 0 20px;
   }
   section.product-detail .detail-text-wrap .text-box {
@@ -278,5 +285,19 @@ section.detail-bottom .btn-img .overlay p {
   }
   section.detail-bottom .btn-img .overlay p {
     font-size: 10px;
+  }
+
+  section.product-detail .detail-text-wrap .description-1 {
+    font-size: 16px;
+  }
+  section.product-detail .detail-text-wrap .title {
+    font-size: 35px;
+  }
+  section.product-detail .detail-text-wrap .title span.description-2 {
+    font-size: 14px;
+  }
+  section.product-detail .detail-text-wrap .btn-group .btn-item {
+    font-size: 16px;
+    padding: 9px;
   }
 }

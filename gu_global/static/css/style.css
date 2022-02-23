@@ -66,7 +66,7 @@ section.business .slide-business .wide-wrap {
   color: #fff;
   position: relative;
   width: 100%;
-  height: 450px;
+  height: 360px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -93,24 +93,24 @@ section.business .slide-business .wide-wrap .business-content h4 {
   font-family: 'NanumBarunGothic', sans-serif;
 }
 section.business .slide-business .wide-wrap .business-content .logo-wrap {
-  width: 280px;
-  margin-top: 30px;
+  width: 180px;
+  margin-top: 20px;
 }
 section.business .slide-business .wide-wrap .business-content .logo-wrap img {
   width: 100%;
 }
 section.business .slide-business .wide-wrap .business-content p {
-  font-size: 21px;
+  font-size: 19px;
   font-family: 'NanumBarunGothic', sans-serif;
-  margin-top: 50px;
+  margin-top: 35px;
 }
 section.business .slide-business .wide-wrap .business-content a.more {
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 19px;
   color: #fff;
   font-weight: 600;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .more img {
   width: 40px;
@@ -135,7 +135,7 @@ section.business .slide-business .wide-wrap .btn-control a {
 }
 section.business .slide-business .wide-wrap .btn-control p {
   text-align: center;
-  font-size: 21px;
+  font-size: 16px;
   margin-bottom: 5px;
 }
 
@@ -151,17 +151,17 @@ section.business .slide-business .grid-wrap .img-wrap {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 270px;
+  height: 230px;
 }
 section.business .slide-business .grid-wrap .text-wrap h3 {
   color: #0D0D0D;
   font-size: 23px;
-  margin-top: 42px;
+  margin-top: 35px;
 }
 section.business .slide-business .grid-wrap .text-wrap p {
   color: #656565;
   font-size: 15px;
-  margin-top: 20px;
+  margin-top: 15px;
   word-break: keep-all;
   line-height: 24px;
   font-weight: 400;
@@ -173,7 +173,7 @@ section.business .slide-business .grid-wrap .text-wrap .more {
   display: flex;
   align-items: center;
   font-weight: 600;
-  margin-top: 75px;
+  margin-top: 35px;
 }
 
 
@@ -212,8 +212,8 @@ section.solution .solution-grid .solution-wrap:nth-child(2n) {
 
 /* section.news */
 section.news {
-  padding-top: 280px;
-  padding-bottom: 200px;
+  padding-top: 180px;
+  padding-bottom: 100px;
   margin: 0 auto;
   max-width: 1280px;
 }
@@ -256,7 +256,7 @@ section.news .grid-wrap .news-item .news-title {
   grid-template-columns: 80% 20%;
 }
 section.news .grid-wrap .news-item .news-title h3 {
-  font-size: 18px;
+  font-size: 20px;
 }
 section.news .grid-wrap .news-item .news-title a.more {
   position: relative;
@@ -296,7 +296,7 @@ section.product .slide-product {
   margin-top: 85px;
 }
 section.product .slide-product .product-img {
-  height: 500px;
+  height: 350px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

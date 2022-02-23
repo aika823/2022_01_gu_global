@@ -194,6 +194,8 @@ header .header-top {
   align-items: center;
   justify-content: space-between;
   gap: 100px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 header.down {
   background: #000;
@@ -268,7 +270,7 @@ header .menu .btn-menu.menu-company .company-category a,
 header .menu .btn-menu.menu-support .support-category a {
   color: #fff;
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   padding-top: 23px;
   word-break: keep-all;
 }
@@ -410,7 +412,7 @@ footer .sns-wrap img {
 }
 
 .section-title {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   text-align: center;

@@ -20,10 +20,13 @@ $('.btn-menu').mouseover(function() {
     }
 });
 $('.header-content').mouseleave(function() {
+  if($('header').hasClass('.down') == true) {
+    console.log('down')
     $('.logo img').attr('src', '/static/images/logo.png');
     $('header').css({ 'background-color': 'transparent' });
     $('.btn-menu').removeClass('color');
     $('.btn-menu').removeClass('active');
-    $('.category-box').css('display', 'none');
-    $('.header-content').css('display', 'none');
+  }
+  $('.category-box').css('display', 'none');
+  $('.header-content').css('display', 'none');
 });

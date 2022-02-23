@@ -43,6 +43,7 @@ section.sub-banner .navbar {
   color: #fff;
   display: flex;
   box-sizing: border-box;
+  justify-content: center;
 }
 section.sub-banner .navbar .home-icon {
   display: flex;
@@ -59,6 +60,7 @@ section.sub-banner .navbar .category-wrap {
   width: 100%;
   align-items: center;
   box-sizing: border-box;
+  max-width: 1280px;
 }
 section.sub-banner .navbar .category-wrap .category-item {
   padding: 15px 40px;
@@ -72,7 +74,7 @@ section.sub-banner .navbar .category-wrap .category-item .brief-menu {
   color: #fff;
   position: absolute;
   /* bottom: -275px; */
-  top: 75px;
+  top: 55px;
   right: 0;
   display: none;
 }
@@ -195,9 +197,6 @@ section.sub-banner .navbar .category-wrap p.next-arrow {
     font-size: 20px;
   }
 
-  section.sub-banner .navbar .category-wrap .category-item .brief-menu {
-    top: 62px;
-  }
 }
 @media all and (max-width: 768px) {
   section.sub-banner {
