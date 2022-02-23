@@ -17,9 +17,9 @@ def list(request):
     return render(request, "list.html", context=context)
 
 
-def detail(request, product_name):
+def detail(request, id):
     context = api_common.get_common_context()
-    product = Product.objects.get(name=product_name)
+    product = Product.objects.get(id=id)
     image_list = ProductImage.objects.filter(product=product)
     detail_image_list = ProductDetailImage.objects.filter(product=product)
     update_context = {

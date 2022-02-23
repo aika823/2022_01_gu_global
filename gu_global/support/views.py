@@ -53,6 +53,7 @@ def download(request):
   context = get_common_context('Support','다운로드 센터', request.GET.get('type'))
   context['product_list'] = get_paginated_list(request, product_list)['list']
   context['page_obj'] = get_paginated_list(request, product_list)['page_obj']
+  context['my_range'] = get_paginated_list(request, product_list)['my_range']
   context['active'] = active_dict
   
   return render(request, "support_download.html", context=context)

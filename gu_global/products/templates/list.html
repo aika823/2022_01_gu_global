@@ -28,7 +28,7 @@
 <section class="product-list page-start max-1280">
 
     {% for product in product_list %}
-    <div class="product-item" onclick="location.href='/products/detail/{{product.name}}'">
+    <div class="product-item" onclick="location.href='/products/detail/{{product.id}}'">
         <div class="product-img">
             <img src="/media/{{product.thumbnail}}" alt="">
         </div>

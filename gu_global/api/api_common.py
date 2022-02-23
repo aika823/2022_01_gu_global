@@ -151,7 +151,14 @@ def get_banner(page=None):
 
 
 def get_paginated_list(request, list, item_per_page=10):
+
     page = request.GET.get('page', '1')
     paginator = Paginator(list, item_per_page)
     page_obj = paginator.page(page)
-    return {'list':page_obj.object_list, 'page_obj':page_obj}
+
+    current_page = page_obj.number
+    min_num = max(1, current_page-2)
+    max_num = min(current_page+3, paginator.num_pages+1)
+    my_range  = range(min_num, max_num)
+
+    return {'list':page_obj.object_list, 'page_obj':page_obj, 'my_range':my_range}
