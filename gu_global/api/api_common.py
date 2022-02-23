@@ -31,7 +31,7 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
 
     banner_common = {
         'Company':'/company', 
-        'Products':'/products', 
+        'Products':'/products/Yealink/{}'.format(yealink_list.first().name),
         'Solution':'/solution', 
         'Support':'/support', 
     }
@@ -46,7 +46,7 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
     }
 
     banner_product = {
-        'Yealink':'/products/Yealink/{}'.format(sony_list.first().name),
+        'Yealink':'/products/Yealink/{}'.format(yealink_list.first().name),
         'Sony':'/products/SONY/{}'.format(sony_list.first().name),
         'Others':'/products/Other/{}'.format(other_list.first().name),
     }
@@ -98,7 +98,7 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
 
     context_dict = {
         'yealink_list':yealink_list,
-        'sony_list':Category.objects.filter(main_category='SONY').order_by('order'),
+        'sony_list':sony_list,
         'other_list':other_list,
         
         'banner_1': banner_common if page_1 else None,
@@ -116,9 +116,11 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
 
 def get_banner(page=None):
 
+    yealink_list = Category.objects.filter(main_category='Yealink').order_by('order')
+
     banner_common = {
         'Company':'/company', 
-        'Products':'/product', 
+        'Products':'/products/Yealink/{}'.format(yealink_list.first().name), 
         'Solution':'/solution', 
         'Support':'/support', 
     }
@@ -137,13 +139,6 @@ def get_banner(page=None):
         '고객사':'/company/partner?type=customer',
         '시/정부기관':'/company/partner?type=government',
         '협력사':'/company/partner?type=cooperate',
-    }
-
-    banner_products = {
-        'Yealink':'/products/Sony',
-        'Sony':'/products/Sony',
-        'Sony':'/products/Sony',
-        
     }
 
     banner_dict = {

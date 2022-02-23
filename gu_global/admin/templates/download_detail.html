@@ -111,12 +111,14 @@
                                 </div>
 
                                 <!-- 파일 -->
+                                <!--
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">규격서</label></div>
                                     <div class="col-12 col-md-9">
                                         <input type="file" name="sheet" class="form-control">
                                     </div>
                                 </div>
+                                -->
 
                                 {% if download %}
                                 <!-- 현재 파일 -->
@@ -126,8 +128,10 @@
                                         <a href="/media/{{download.brochure}}" download>브로슈어 ({{download.brochure}})</a> 
                                         <br>
                                         <a href="/media/{{download.manual}}" download>매뉴얼 ({{download.manual}}) </a>
+                                        <!--
                                         <br>
                                         <a href="/media/{{download.sheet}}" download>규격서 ({{download.sheet}}) </a>
+                                        -->
                                     </div>
                                 </div>
                                 {% endif %}

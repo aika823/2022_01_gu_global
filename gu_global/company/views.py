@@ -5,7 +5,7 @@ from datetime import date
 
 
 def index(request):
-    context = api_common.get_common_context()
+    context = api_common.get_common_context('Company')
     context['notice_list'] = Notice.objects.all().order_by('order')[:3]
     today = date.today()
     
@@ -13,8 +13,6 @@ def index(request):
     for popup in Popup.objects.all():
         if popup.start < today < popup.end :
             popup_list.append(popup)
-    
-    print(popup_list)
             
     context['popup_list'] = popup_list[:1]
     return render(request, "index.html", context=context)

@@ -65,17 +65,26 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">제목</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" name="title" class="form-control" value="{{product.title}}"
+                                        <input type="text" name="title" class="form-control" value="{{product.title}}">
+                                    </div>
+                                </div>
+
+                                <!-- 제목 -->
+                                <!--
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">서브타이틀</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="sub_title" class="form-control" value="{{product.sub_title}}"
                                             required>
                                     </div>
                                 </div>
+                                -->
 
                                 <!-- 내용 -->
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">내용</label></div>
                                     <div class="col-12 col-md-9">
-                                        <textarea name="content" class="form-control" cols="30" rows="10"
-                                            required>{{product.content}}</textarea>
+                                        <textarea name="content" class="form-control" cols="30" rows="10">{{product.content}}</textarea>
                                     </div>
                                 </div>
 
@@ -111,12 +120,14 @@
                                 </div>
 
                                 <!-- 파일 -->
+                                <!--
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">규격서</label></div>
                                     <div class="col-12 col-md-9">
                                         <input type="file" name="sheet" class="form-control">
                                     </div>
                                 </div>
+                                -->
 
                                 <!-- 현재 파일 -->
                                 <div class="row form-group">
@@ -125,8 +136,6 @@
                                         <a href="/media/{{product.brochure}}" download>브로슈어 <br> ({{product.brochure}})</a>
                                         <br>
                                         <a href="/media/{{product.manual}}" download>매뉴얼 <br> ({{product.manual}}) </a>
-                                        <br>
-                                        <a href="/media/{{product.sheet}}" download>규격서 <br> ({{product.sheet}}) </a>
                                     </div>
                                 </div>
 

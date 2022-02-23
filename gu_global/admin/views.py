@@ -194,18 +194,18 @@ def create(request):
                 item = Popup()
             item.image = request.FILES.get('image')
 
-        if table == 'download':
-            if id:
-                item = Download.objects.get(id=id)
-            elif action == 'create':
-                item = Download()
+        # if table == 'download':
+        #     if id:
+        #         item = Download.objects.get(id=id)
+        #     elif action == 'create':
+        #         item = Download()
             
-            if request.FILES.get('manual'):
-                item.manual = request.FILES.get('manual')
-            if request.FILES.get('brochure'):
-                item.brochure = request.FILES.get('brochure')
-            if request.FILES.get('sheet'):
-                item.sheet = request.FILES.get('sheet')
+        #     if request.FILES.get('manual'):
+        #         item.manual = request.FILES.get('manual')
+        #     if request.FILES.get('brochure'):
+        #         item.brochure = request.FILES.get('brochure')
+        #     if request.FILES.get('sheet'):
+        #         item.sheet = request.FILES.get('sheet')
 
         if table == 'product':
             if id:

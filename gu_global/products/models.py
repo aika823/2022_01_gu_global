@@ -12,12 +12,13 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    name = models.CharField(db_column="order", null=False, max_length=50, default=1)
+    name = models.CharField(db_column="name", null=False, max_length=50, default=1)
     title = models.CharField(db_column="title", null=False, max_length=50)
     sub_title = models.CharField(db_column="sub_title", null=False, max_length=50)
     content = models.CharField(db_column="content", null=False, max_length=500)
 
     category = models.ForeignKey(to=Category, db_column="category", on_delete=CASCADE)
+    sub_category = models.CharField(db_column="sub_category", null=True, max_length=50, default=None)
     type = models.CharField(db_column="type", null=True, max_length=50)
 
     manual = models.FileField(upload_to="media/download", db_column="manual", null=True)
