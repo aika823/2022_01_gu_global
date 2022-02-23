@@ -16,7 +16,7 @@
   <div class="video-wrap max-1280">
 
     {% for video in video_list %}
-    <div class="video-item" onclick="location.href='{{video.link}}'">
+    <div class="video-item" onclick="window.open('{{video.link}}')">
       <div class="img-wrap" style="background-image: url('/media/{{video.image}}');">
         <!-- <img src="/media/{{video.image}}" class="image-changable" alt=""> -->
       </div>

@@ -215,12 +215,13 @@ section.news {
   padding-top: 180px;
   padding-bottom: 100px;
   margin: 0 auto;
-  max-width: 1280px;
 }
 section.news .news-header {
   display: flex;
   gap: 60px;
   justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 section.news .news-header .title-wrap .section-title,
 section.news .news-header .title-wrap .section-subtitle {
@@ -246,10 +247,11 @@ section.news .news-header .btn-wrap a.btn-link {
   font-weight: 600;
 }
 section.news .grid-wrap {
-  margin-top: 90px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
+  max-width: 1280px;
+  margin: 90px auto 0;
 }
 section.news .grid-wrap .news-item .news-title {
   display: grid;
@@ -262,11 +264,11 @@ section.news .grid-wrap .news-item .news-title a.more {
   position: relative;
   color: #343434;
 }
-section.news .grid-wrap .news-item .news-title a.more span {
+section.news .grid-wrap .news-item .news-title a.more i {
   position: absolute;
   right: 0;
   bottom: 0;
-  font-size: 37px;
+  font-size: 21px;
 }
 section.news .grid-wrap .news-item .line {
   height: 1px;
@@ -290,13 +292,13 @@ section.news .grid-wrap .news-item p.date {
 /* section.product */
 section.product {
   margin: 0 auto;
-  max-width: 1280px;
 }
 section.product .slide-product {
-  margin-top: 85px;
+  margin: 85px auto 0;
+  max-width: 1280px;
 }
 section.product .slide-product .product-img {
-  height: 350px;
+  height: 420px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

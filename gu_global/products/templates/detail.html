@@ -38,7 +38,7 @@
                 <a href="/media/{{product.manual}}" class="btn-item" download>매뉴얼</a>
                 {% endif %}
 
-                <a href="" class="btn-item">문의하기</a>
+                <a href="javascript:void(0)" class="open_modal btn-item">문의하기</a>
             </div>
         </div>
     </div>
@@ -66,11 +66,60 @@
         </div>
     </div>
 </section>
+
+<section class="modal_wrap">
+  <article class="modal_cnt">
+    <div class="modal_body">
+      <img src="/static/images/product/talk.png" alt="">
+      <div class="line"></div>
+      <h3>CONTACT US</h3>
+      <div class="policy-content">
+        <p><span>• 대표 전화</span>  02 461 0741</p>
+        <p><span>• 제품 문의</span>  help@guglobal.com</p>
+        <p><span>• 영업 문의</span>  sales@guglobal.com</p>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="close_btn">X</a>
+  </article>
+  <div class="modal_dim"></div>
+</section>
 {% endblock content %}
 
 
 {% block extrascripts %}
 <script>
     $('header').addClass('black');
+</script>
+
+<script>
+  $body = $('body');
+  $modalWrap = $('.modal_wrap');
+
+  $('.open_modal').on('click', function () {
+    $body.addClass('modal_in');
+    $modalWrap.fadeIn(300);
+    $body.css('padding-right', getScrollWidth());
+  });
+
+  $('.close_btn, .modal_dim').on('click', function () {
+    var speed = 300;
+    $modalWrap.fadeOut(speed);
+    setTimeout(function () {
+      $body.removeClass('modal_in');
+      $body.css('padding-right', 0)
+    }, speed)
+  });
+
+  function getScrollWidth() {
+    var body = document.querySelector('body');
+    var scrollDiv = document.createElement('div');
+    scrollDiv.className = 'fake_sjwidth';
+    body.appendChild(scrollDiv);
+    var scrollbarWidth = $(document).height() > $(window).height() ? scrollDiv.offsetWidth - scrollDiv.clientWidth :
+    0;
+
+    body.removeChild(scrollDiv);
+    return scrollbarWidth;
+  }
 </script>
 {% endblock extrascripts %}
