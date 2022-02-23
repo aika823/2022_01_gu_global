@@ -1,6 +1,7 @@
 /* section.support */
 section.support {
   padding-bottom: 200px;
+  padding-top: 150px;
 }
 section.support .support-header {
   display: flex;
@@ -17,13 +18,14 @@ section.support .total span {
   font-weight: 600;
 }
 section.support .support-header .btn-contact {
-  padding: 13px 30px;
+  padding: 10px 26px;
   display: inline-block;
   box-sizing: border-box;
   color: #fff;
   background-color: #1A32C6;
   font-weight: 600;
-  font-size: 23px;
+  font-size: 18px;
+  font-family: "Noto Sans KR";
 }
 section.support .support-table .table-head,
 section.support .support-table .table-body .table-row {
@@ -39,7 +41,8 @@ section.support .support-table .table-head {
   border-bottom: 1px solid #E0E0E0;
 }
 section.support .support-table .table-head p {
-  font-size: 23px;
+  font-size: 16px;
+  font-family: "Noto Sans KR";
   color: #303030;
   font-weight: 600;
   padding: 25px 0;
@@ -49,7 +52,8 @@ section.support .support-table .table-body .table-row {
 }
 section.support .support-table .table-body .table-row p {
   padding: 25px 0;
-  font-size: 20px;
+  font-size: 16px;
+  font-family: "Noto Sans KR";
 }
 section.support .support-table .table-body .table-row p.notice-title {
   font-weight: 600;
@@ -128,7 +132,7 @@ section.support .support-table.download-table .table-body .table-row .download-t
   color: #969696;
 }
 section.support .support-table.download-table .table-body .download-wrap {
-  padding: 80px 0;
+  padding: 45px 0;
   background-color: #F9FAFB;
   box-sizing: border-box;
   display: none;
@@ -143,7 +147,7 @@ section.support .support-table.download-table .table-body .download-wrap .btn-wr
 section.support .support-table.download-table .table-body .download-wrap .btn-wrap a {
   display: flex;
   align-items: center;
-  font-size: 23px;
+  font-size: 20px;
   color: #1A32C6;
   font-weight: 600;
   gap: 10px;
@@ -179,16 +183,16 @@ section.video .video-wrap .video-item .img-wrap img {
   width: 100%;
 }
 section.video .video-wrap .video-item .text-wrap {
-  padding: 75px 35px;
+  padding: 35px;
   box-sizing: border-box;
 }
 section.video .video-wrap .video-item .text-wrap .category {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   color: #1A32C6;
 }
 section.video .video-wrap .video-item .text-wrap .title {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
   color: #0d0d0d;
   margin: 30px 0 15px;
@@ -198,7 +202,7 @@ section.video .video-wrap .video-item .text-wrap .description {
   color: #656565;
 }
 section.video .video-wrap .video-item .text-wrap .bottom {
-  margin-top: 60px;
+  margin-top: 25px;
   color: #969696;
   display: flex;
   align-items: flex-end;
@@ -232,6 +236,10 @@ section.video .video-wrap .video-item .text-wrap .bottom img {
 
   section.search {
     width: 60%;
+  }
+
+  section.support {
+    padding: 150px 50px 200px;
   }
 }
 @media all and (max-width: 1080px) {
@@ -291,7 +299,7 @@ section.video .video-wrap .video-item .text-wrap .bottom img {
     font-size: 16px;
   }
   section.support .support-table .table-body .table-row p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   section.video .video-wrap {
@@ -299,6 +307,21 @@ section.video .video-wrap .video-item .text-wrap .bottom img {
   }
   section.video .video-wrap .video-item .img-wrap {
     height: 285px;
+  }
+
+  section.support {
+    padding: 150px 25px 200px;
+  }
+
+  section.support .support-table.download-table .table-body .table-row .download-title {
+    padding: 20px 0;
+  }
+  section.support .support-table.download-table .table-body .download-wrap {
+    padding: 25px 0;
+  }
+  section.support .support-table.download-table .table-body .download-wrap .btn-wrap a {
+    font-size: 15px;
+    font-family: "Noto Sans KR";
   }
 }
 @media all and (max-width: 450px) {
@@ -358,10 +381,18 @@ section.video .video-wrap .video-item .text-wrap .bottom img {
   }
 
   section.support.download {
-    padding: 50px 30px 150px;
+    padding: 50px 30px;
+  }
+  .tab-menu .tab-box a.btn-tab {
+    font-size: 14px;
+    padding: 12px 10px;
   }
   section.search {
     width: 87%;
     grid-template-columns: 30% 70%;
+  }
+
+  section.support {
+    padding: 150px 20px 200px;
   }
 }

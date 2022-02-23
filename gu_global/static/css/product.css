@@ -1,6 +1,6 @@
 /* section.product_list */
 section.product-list {
-  padding: 170px 250px 300px;
+  padding: 170px 0 300px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 140px;
@@ -16,7 +16,7 @@ section.product-list .product-item .product-img img {
   width: 100%;
 }
 section.product-list .product-item .product-img {
-  height: 350px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;

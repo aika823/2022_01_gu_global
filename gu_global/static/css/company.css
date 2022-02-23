@@ -267,9 +267,9 @@ section.company-intro .intro-wrap .intro-text h1 {
 }
 section.company-intro .intro-wrap .intro-text p {
   font-family: 'KoPubDotumMedium';
-  font-size: 21px;
+  font-size: 19px;
   color: #535353;
-  line-height: 30px;
+  line-height: 29px;
 }
 section.company-intro .intro-wrap .intro-text p span {
   color: #1A32C6;
@@ -292,7 +292,7 @@ section.company-intro .intro-wrap .intro-text p span img {
 
 /* section.philosophy */
 section.philosophy {
-  margin: 200px 150px;
+  margin: 200px auto;
 }
 section.philosophy .philosophy-wrap {
   display: grid;
@@ -302,7 +302,7 @@ section.philosophy .philosophy-wrap {
 }
 section.philosophy .philosophy-wrap .img-wrap {
   justify-self: right;
-  width: 45%;
+  width: 85%;
 }
 section.philosophy .philosophy-wrap .img-wrap img {
   width: 100%;
@@ -324,11 +324,11 @@ section.philosophy .philosophy-wrap .text-row .icon-wrap img {
   width: 100%;
 }
 section.philosophy .philosophy-wrap .text-row .text-box h3 {
-  font-size: 27px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 section.philosophy .philosophy-wrap .text-row .text-box p {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /* section.ci */
@@ -374,7 +374,7 @@ section.company-intro.partner {
 
 /* section.portfolio */
 section.portfolio {
-  margin: 150px;
+  margin: 150px auto;
 }
 section.portfolio .portfolio-wrap {
   width: 100%;
@@ -386,23 +386,26 @@ section.portfolio .portfolio-wrap {
 section.portfolio .portfolio-wrap .portfolio-description {
   position: absolute;
   bottom: 100px;
-  left: 0px;
-  width: 580px;
-  height: 775px;
-  padding: 110px 40px;
+  left: -50px;
+  /* width: 580px;
+  height: 775px; */
+  width: 380px;
+  height: 475px;
+  padding: 80px 40px 110px;
   box-sizing: border-box;
   background-color: #072DD6;
   color: #fff;
+  font-family: "Noto Sans KR";
 }
 section.portfolio .portfolio-wrap .portfolio-description h2 {
-  font-size: 32px;
+  font-size: 23px;
 }
 section.portfolio .portfolio-wrap .portfolio-description p {
-  font-size: 23px;
+  font-size: 19px;
   margin: 30px 0 60px;
 }
 section.portfolio .portfolio-wrap .portfolio-description h3 {
-  font-size: 26px;
+  font-size: 20px;
   margin: 20px 0 0;
 }
 section.portfolio .portfolio-wrap .portfolio-description .line {
@@ -412,13 +415,13 @@ section.portfolio .portfolio-wrap .portfolio-description .line {
   margin: 0 0 20px;
 }
 section.portfolio .portfolio-wrap img {
-  width: 90%;
+  width: 100%;
 }
 
 
 /* section.example */
 section.example {
-  margin: 150px;
+  margin: 150px auto;
 }
 section.example h2 {
   font-size: 38px;
@@ -481,12 +484,19 @@ section.example .example-wrap .example-item img {
 }
 
 
+/* certification */
+section.certification {
+  padding: 150px 0;
+}
+
+
+
 /* 반응형 */
 @media all and (max-width: 1920px) {
-  section.portfolio .portfolio-wrap .portfolio-description {
+  /* section.portfolio .portfolio-wrap .portfolio-description {
     width: 480px;
     height: 575px;
-  }
+  } */
 
   section.philosophy .philosophy-wrap .img-wrap {
     width: 65%;
@@ -1006,5 +1016,9 @@ section.example .example-wrap .example-item img {
   }
   section.philosophy .philosophy-wrap .text-wrap {
     gap: 0;
+  }
+
+  section.certification {
+    padding: 80px 20px;
   }
 }

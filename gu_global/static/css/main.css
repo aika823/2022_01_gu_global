@@ -166,6 +166,10 @@ h1, h2, h3, h4, h5, h6 { margin: 0;}
   padding: 150px;
   box-sizing: border-box;
 }
+.max-1280 {
+  max-width: 1280px;
+  margin: 0 auto;
+}
 
 br.mobile {
   display: none;
@@ -198,7 +202,7 @@ header.black {
   background: #000;
 }
 header .logo {
-  width: 320px;
+  width: 240px;
   /* margin-right: 80px; */
 }
 header .logo a {
@@ -214,7 +218,7 @@ header .menu {
   justify-content: space-around;
   align-items: center;
   width: 60%;
-  font-size: 27px;
+  font-size: 20px;
   color: #313030;
 }
 header.main-header .menu p {
@@ -264,15 +268,15 @@ header .menu .btn-menu.menu-company .company-category a,
 header .menu .btn-menu.menu-support .support-category a {
   color: #fff;
   display: block;
-  font-size: 20px;
-  padding-top: 30px;
+  font-size: 16px;
+  padding-top: 23px;
   word-break: keep-all;
 }
 
 
 header .btn-wrapper {
   /* margin-left: 150px; */
-  width: 300px;
+  width: 250px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   box-sizing: border-box;
@@ -281,12 +285,14 @@ header .btn-wrapper {
 }
 header .btn-wrapper .btn-item {
   text-align: center;
-  padding: 12px 0 8px;
+  padding: 6px 0;
   box-sizing: border-box;
   background: #1A32C6;
   border-radius: 22.5px;
   color: #fff;
   letter-spacing: -0.015em;
+  font-family: "Noto Sans KR";
+  font-size: 13px;
 }
 header .btn-wrapper .btn-item.btn-item--green {
   background-color: #359C75;
@@ -298,18 +304,18 @@ header .btn-wrapper .btn-item.btn-item--green {
   position: fixed;
   top: 0;
   left: 0;
-  height: 700px;
+  height: 600px;
   width: 100%;
-  background-color: #2E2E2E;
+  background-color: rgba(0,0,0,.9);
   z-index: 11;
-  padding: 180px 150px;
+  padding: 150px 150px 0;
   color: #fff;
   box-sizing: border-box;
 }
 .header-content a {
   color: #fff;
   display: block;
-  padding-top: 30px;
+  padding-top: 23px;
 }
 .header-content .product-category {
   /* display: grid; */
@@ -325,7 +331,7 @@ header .btn-wrapper .btn-item.btn-item--green {
 }
 .header-content .category-list a {
   color: #989898;
-  font-size: 18px;
+  font-size: 16px;
 }
 .header-content .line-vertical {
   height: 360px;
@@ -343,9 +349,10 @@ header .btn-wrapper .btn-item.btn-item--green {
 }
 .header-content .solution-category a {
   font-weight: 600;
-  font-size: 22px;
+  font-size: 16px;
+  font-family: "Noto Sans KR";
   color: #fff;
-  padding: 50px 0;
+  padding: 35px 0;
 }
 .category-box {
   display: none;
@@ -403,13 +410,13 @@ footer .sns-wrap img {
 }
 
 .section-title {
-  font-size: 45px;
+  font-size: 38px;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
   text-align: center;
 }
 .section-subtitle {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   font-family: 'NanumBarunGothic', sans-serif;
   color: #969696;
