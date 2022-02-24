@@ -20,34 +20,33 @@
   </div>
   <div class="contact-detail max-1280">
     <div class="detail-head">
-      <p class="notice-title">제목입니다.{{contact.title}}</p>
+      <p class="notice-title">{{contact.title}}</p>
       <p>작성일{{contact.created_at|date:'Y-m-d'}}</p>
     </div>
     <div class="detail-body">
+      
       <div class="detail-wrap">
         <div class="detail-body-info">
-          <p class="contact-type">제품문의</p>
+          {% if contact.type %}
+          <p class="contact-type">{{contact.type}}</p>
+          {% else %}
+          <p class="contact-type">일반 문의</p>
+          {% endif %}
           <p class="writer"><span>작성자</span> {{contact.email}}</p>
         </div>
-        {% for contact in contact_list %}
-        <p class="contact-description">
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-        </p>
-        {% endfor %}
+        
+        <p class="contact-description">{{contact.content}}</p>
+        
       </div>
-      
+
       <div class="file-wrap">
-        <a href="" download>
+        {% if contact.file %}
+        <a href="/media/{{contact.file}}" download>
           <span class="material-icons-outlined">insert_drive_file</span>
-          파일명.pdf
+          {{contact.new_file_name}}
         </a>
+        {% endif %}
+
       </div>
     </div>
   </div>
@@ -58,7 +57,7 @@
 
 {% block extrascripts %}
 <script>
-  $(function() {
+  $(function () {
     $('.sub-banner').css('background-image', "url('/static/images/support/support_bg5.png')")
   });
 </script>

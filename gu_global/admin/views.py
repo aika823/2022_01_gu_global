@@ -20,11 +20,6 @@ def index(request):
 
 def login(request):
     
-    # admin = Admin()
-    # admin.username = "1234"
-    # admin.password = make_password("1234")
-    # admin.save()
-
     if request.method == "POST":
         try:
             admin = Admin.objects.get(username=request.POST.get('username'))

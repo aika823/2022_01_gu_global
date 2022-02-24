@@ -2,6 +2,7 @@ from django.shortcuts import render
 from api import api_common
 from support.models import Contact, Notice, Popup
 from datetime import date
+from django.contrib.auth.hashers import make_password
 
 
 def index(request):
@@ -55,7 +56,7 @@ def contact(request):
         contact.title = request.POST.get('title')
         contact.email = request.POST.get('email')
         contact.content = request.POST.get('content')
-        contact.password = request.POST.get('password')
+        contact.password = make_password(request.POST.get('password'))
         contact.file = request.FILES.get('file')
         contact.save()
     

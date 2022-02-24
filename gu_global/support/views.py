@@ -1,11 +1,13 @@
 from itertools import product
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
+from django.contrib.auth.hashers import make_password, check_password
 
 from products.models import Product
 from .models import Contact, Notice, Video
 from api.api_common import get_paginated_list, get_common_context
+
 
 
 def notice(request):
@@ -85,19 +87,49 @@ def contact(request):
   context['contact_list'] = get_paginated_list(request, contact_list)['list']
   context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
   context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 
+  
+  if request.POST.get('id') and request.POST.get('password'):
+        contact = Contact.objects.get(id=request.POST.get('id'))
+        if check_password(request.POST.get('password'), contact.password):
+              print('good')
+              request.session['contact_id'] = request.POST.get('id')
+              return redirect('/support/contact/{}'.format(request.POST.get('id')))
+
+  
   return render(request, "support_contact.html", context=context)
 
 
-def contact_more(request):
-  contact_list = Contact.objects.all()
-  context = get_common_context('Support','문의게시판')
-  context['contact_list'] = get_paginated_list(request, contact_list)['list']
-  context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
-  context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 
-  return render(request, "contact_more.html", context=context)
+def contact_more(request, id):
+
+      if str(request.session.get('contact_id')) == str(id):
+            contact_list = Contact.objects.all()
+            contact = Contact.objects.get(id=id)
+            if contact.file:
+              contact.new_file_name = str(contact.file)[14:]
+            context = get_common_context('Support','문의게시판')
+            context['contact'] = contact
+            context['contact_list'] = get_paginated_list(request, contact_list)['list']
+            context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
+            context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 
+            return render(request, "contact_more.html", context=context)
+      else:
+            print("bad")
+            return redirect("/support/contact")
+  
 
 
 def contact_form(request):
+  
+  if request.method == 'POST':
+        contact = Contact()
+        contact.type = request.POST.get('type')
+        contact.title = request.POST.get('title')
+        contact.email = request.POST.get('email')
+        contact.content = request.POST.get('content')
+        contact.password = make_password(request.POST.get('password'))
+        contact.file = request.FILES.get('file')
+        contact.save()
+
   contact_list = Contact.objects.all()
   context = get_common_context('Support','문의게시판')
   context['contact_list'] = get_paginated_list(request, contact_list)['list']

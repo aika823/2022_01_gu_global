@@ -27,7 +27,7 @@
     <div class="table-body">
       
       {% for contact in contact_list %}
-      <div class="table-row btn-password">
+      <div class="table-row btn-password" data-id="{{contact.id}}">
         <p>{{forloop.counter}}</p>
         <p class="notice-title">{{contact.title}}</p>
         <p>{{contact.email}}</p>
@@ -47,8 +47,14 @@
       <h3>PASSWORD</h3>
       <p>* 비밀번호를 입력해주세요.</p>
       <div class="password-wrap">
-        <input type="password" placeholder="비밀번호 입력"/>
-        <button type="" class="btn-submit">확인</button>
+      
+      <form action="" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="id" id="inputContactID" value="" />
+      <input type="password" name="password" placeholder="비밀번호 입력" />
+      <button type="submit" class="btn-submit">확인</button>
+      </form>
+        
       </div>
     </div>
     <a href="javascript:void(0)" class="close_btn">X</a>
@@ -74,6 +80,7 @@
   $modalWrap = $('.modal_wrap');
 
   $('.btn-password').on('click', function () {
+    $('#inputContactID').val($(this).data('id'))
     $body.addClass('modal_in');
     $modalWrap.fadeIn(300);
     $body.css('padding-right', getScrollWidth());
