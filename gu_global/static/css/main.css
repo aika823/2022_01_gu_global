@@ -248,13 +248,13 @@ header .menu .btn-menu.active::after {
   border-bottom: 5px solid #1A32C6;
   transition: all 1s ease-out;
   left: 50%;
-  bottom: -50px;
+  bottom: -42px;
   width: 0;
 }
 header .menu .btn-menu.active:hover::after {
   transition: all 1s ease-out;
   left: 0%;
-  bottom: -50px;
+  bottom: -42px;
   width: 100%;
 }
 header .menu .btn-menu.menu-company {

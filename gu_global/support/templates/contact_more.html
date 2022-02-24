@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/support.css">
+{% endblock extraheads %}
+
+{% block content %}
+
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
+<!-- section.support -->
+<section class="support content page-start">
+  <div class="support-header support-header--detail max-1280">
+    <a href="" class="btn-edit">
+      수정
+      <span class="material-icons-outlined">edit</span>
+    </a>
+  </div>
+  <div class="contact-detail max-1280">
+    <div class="detail-head">
+      <p class="notice-title">제목입니다.{{contact.title}}</p>
+      <p>작성일{{contact.created_at|date:'Y-m-d'}}</p>
+    </div>
+    <div class="detail-body">
+      <div class="detail-wrap">
+        <div class="detail-body-info">
+          <p class="contact-type">제품문의</p>
+          <p class="writer"><span>작성자</span> {{contact.email}}</p>
+        </div>
+        {% for contact in contact_list %}
+        <p class="contact-description">
+          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
+          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
+          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
+          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
+          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
+          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
+          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
+          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
+        </p>
+        {% endfor %}
+      </div>
+      
+      <div class="file-wrap">
+        <a href="" download>
+          <span class="material-icons-outlined">insert_drive_file</span>
+          파일명.pdf
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
+
+
+{% block extrascripts %}
+<script>
+  $(function() {
+    $('.sub-banner').css('background-image', "url('/static/images/support/support_bg5.png')")
+  });
+</script>
+{% endblock extrascripts %}

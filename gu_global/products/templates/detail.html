@@ -10,12 +10,12 @@
 <section class="product-detail page-start max-1280">
     <div class="detail-img-wrap">
         <div class="detail-img main-img">
-            <img src="/media/{{thumbnail.image}}" alt="">
+          <div class="img-wrap" style="background-image: url('/media/{{thumbnail.image}}');"></div>
         </div>
         <div class="img-group">
             {% for image in image_list %}
             <div class="detail-img sub-img">
-                <img src="/media/{{image.image}}" alt="">
+              <div class="img-wrap" style="background-image: url('/media/{{image.image}}');"></div>
             </div>
             {% endfor %}
         </div>
@@ -121,5 +121,14 @@
     body.removeChild(scrollDiv);
     return scrollbarWidth;
   }
+</script>
+
+
+<script>
+  $('.sub-img').click(function(){
+    $main_img = $('.main-img .img-wrap').attr('style');
+    $('.main-img .img-wrap').attr('style', $(this).find('.img-wrap').attr('style'));
+    $(this).find('.img-wrap').attr('style', $main_img);
+  });
 </script>
 {% endblock extrascripts %}

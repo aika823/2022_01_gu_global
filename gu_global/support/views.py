@@ -14,7 +14,16 @@ def notice(request):
   context['notice_list'] = get_paginated_list(request, notice_list)['list']
   context['page_obj'] = get_paginated_list(request, notice_list)['page_obj']
   context['my_range'] = get_paginated_list(request, notice_list)['my_range']
-  return render(request, 'support_notice.html', context=context) 
+  return render(request, 'support_notice.html', context=context)
+
+
+def notice_more(request):
+  notice_list = Notice.objects.all()
+  context = get_common_context('Support','공지사항')
+  context['notice_list'] = get_paginated_list(request, notice_list)['list']
+  context['page_obj'] = get_paginated_list(request, notice_list)['page_obj']
+  context['my_range'] = get_paginated_list(request, notice_list)['my_range']
+  return render(request, 'notice_more.html', context=context) 
 
 
 def certification(request):
@@ -77,3 +86,12 @@ def contact(request):
   context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
   context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 
   return render(request, "support_contact.html", context=context)
+
+
+def contact_more(request):
+  contact_list = Contact.objects.all()
+  context = get_common_context('Support','문의게시판')
+  context['contact_list'] = get_paginated_list(request, contact_list)['list']
+  context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
+  context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 
+  return render(request, "contact_more.html", context=context)

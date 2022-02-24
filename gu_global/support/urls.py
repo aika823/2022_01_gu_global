@@ -10,5 +10,7 @@ urlpatterns = [
     path('download', views.download),
     path('video', views.video),
     path('contact', views.contact),
+    path('contact_more', views.contact_more),
     path('notice', views.notice),
+    path('notice_more', views.notice_more),
 ]

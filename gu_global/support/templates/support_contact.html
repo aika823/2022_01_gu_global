@@ -27,7 +27,7 @@
     <div class="table-body">
       
       {% for contact in contact_list %}
-      <div class="table-row">
+      <div class="table-row" onclick="location.href='/support/contact_more'">
         <p>{{forloop.counter}}</p>
         <p class="notice-title">{{contact.title}}</p>
         <p>{{contact.email}}</p>
@@ -48,7 +48,7 @@
 {% block extrascripts %}
 <script>
   $(function() {
-    $('.sub-banner').css('background-image', "url('/static/images/support/support_bg4.png')")
+    $('.sub-banner').css('background-image', "url('/static/images/support/support_bg5.png')")
   });
 </script>
 {% endblock extrascripts %}
