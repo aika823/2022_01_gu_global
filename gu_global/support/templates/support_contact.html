@@ -14,7 +14,7 @@
 <section class="support content page-start">
   <div class="support-header max-1280">
     <p class="total">Total <span>{{contact_list.count}}</span></p>
-    <a href="/company/contact" class="btn-contact">문의하기</a>
+    <a href="/support/contact_form" class="btn-contact">문의하기</a>
   </div>
   <div class="support-table max-1280">
     <div class="table-head">
@@ -27,7 +27,7 @@
     <div class="table-body">
       
       {% for contact in contact_list %}
-      <div class="table-row" onclick="location.href='/support/contact_more'">
+      <div class="table-row btn-password">
         <p>{{forloop.counter}}</p>
         <p class="notice-title">{{contact.title}}</p>
         <p>{{contact.email}}</p>
@@ -40,6 +40,22 @@
   </div>
 </section>
 
+
+<section class="modal_wrap">
+  <article class="modal_cnt">
+    <div class="modal_body">
+      <h3>PASSWORD</h3>
+      <p>* 비밀번호를 입력해주세요.</p>
+      <div class="password-wrap">
+        <input type="password" placeholder="비밀번호 입력"/>
+        <button type="" class="btn-submit">확인</button>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="close_btn">X</a>
+  </article>
+  <div class="modal_dim"></div>
+</section>
+
 {% include "paginator.html" %}
 
 {% endblock content %}
@@ -50,5 +66,38 @@
   $(function() {
     $('.sub-banner').css('background-image', "url('/static/images/support/support_bg5.png')")
   });
+</script>
+
+
+<script>
+  $body = $('body');
+  $modalWrap = $('.modal_wrap');
+
+  $('.btn-password').on('click', function () {
+    $body.addClass('modal_in');
+    $modalWrap.fadeIn(300);
+    $body.css('padding-right', getScrollWidth());
+  });
+
+  $('.close_btn, .modal_dim').on('click', function () {
+    var speed = 300;
+    $modalWrap.fadeOut(speed);
+    setTimeout(function () {
+      $body.removeClass('modal_in');
+      $body.css('padding-right', 0)
+    }, speed)
+  });
+
+  function getScrollWidth() {
+    var body = document.querySelector('body');
+    var scrollDiv = document.createElement('div');
+    scrollDiv.className = 'fake_sjwidth';
+    body.appendChild(scrollDiv);
+    var scrollbarWidth = $(document).height() > $(window).height() ? scrollDiv.offsetWidth - scrollDiv.clientWidth :
+    0;
+
+    body.removeChild(scrollDiv);
+    return scrollbarWidth;
+  }
 </script>
 {% endblock extrascripts %}

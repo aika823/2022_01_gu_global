@@ -95,3 +95,12 @@ def contact_more(request):
   context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
   context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 
   return render(request, "contact_more.html", context=context)
+
+
+def contact_form(request):
+  contact_list = Contact.objects.all()
+  context = get_common_context('Support','문의게시판')
+  context['contact_list'] = get_paginated_list(request, contact_list)['list']
+  context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
+  context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 
+  return render(request, "contact_form.html", context=context)

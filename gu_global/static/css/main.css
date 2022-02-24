@@ -452,7 +452,7 @@ header.down {
 }
 
 .modal_wrap .modal_cnt .modal_body h3 {
-  font-size: 38px;
+  font-size: 32px;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.01em;
 }
@@ -467,6 +467,34 @@ header.down {
   color: #1A32C6;
   font-weight: 600;
   margin-right: 15px;
+}
+
+.modal_wrap .modal_cnt .modal_body .password-wrap {
+  width: 80%;
+  margin-top: 40px;
+}
+.modal_wrap .modal_cnt .modal_body .password-wrap input {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #c2c2c2;
+  font-size: 17px;
+}
+.modal_wrap .modal_cnt .modal_body .password-wrap .btn-submit {
+  padding: 10px 0;
+  width: 100%;
+  color: #1A32C6;
+  background-color: #fff;
+  box-sizing: border-box;
+  border: 1px solid #1A32C6;
+  transition: all .5s;
+  font-size: 17px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.modal_wrap .modal_cnt .modal_body .password-wrap .btn-submit:hover {
+  background-color: #1A32C6;
+  color: #fff;
 }
 
 .modal_wrap .modal_cnt .modal_body div {
