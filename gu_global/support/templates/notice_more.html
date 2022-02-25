@@ -14,34 +14,16 @@
 <section class="support notice-detail content page-start">
   <div class="contact-detail max-1280">
     <div class="detail-head">
-      <p class="notice-title">공지사항 입니다.{{notice.title}}</p>
-      <p>작성일{{notice.created_at|date:'Y-m-d'}}</p>
+      <p class="notice-title">{{notice.title}}</p>
+      <p>작성일 {{notice.created_at|date:'Y-m-d'}}</p>
     </div>
     <div class="detail-body">
       <div class="detail-wrap">
         <div class="detail-body-info">
-          <p class="writer">{{notice.email}}</p>
+          <p class="writer">{{notice.author}}</p>
         </div>
-        {% for notice in notice_list %}
-        <p class="contact-description">
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-          문의내용문의내용문의내용문의내용문의내용문의내용문의내용
-        </p>
-        {% endfor %}
+        <p class="contact-description">{{notice.content}}</p>
       </div>
-      
-      <!-- <div class="file-wrap">
-        <a href="" download>
-          <span class="material-icons-outlined">insert_drive_file</span>
-          파일명.pdf
-        </a>
-      </div> -->
     </div>
   </div>
 </section>
