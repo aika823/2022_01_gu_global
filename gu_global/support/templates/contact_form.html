@@ -11,7 +11,7 @@
 {% include "sub_banner.html" %}
 
 <!-- section.contact-form -->
-<section class="contact-form">
+<section class="contact-form support-page">
   <h1>Contact Us</h1>
   <p>문의 내용을 남겨주시면 담당자가 자세하게 안내를 도와드리겠습니다.</p>
   <div class="form-wrap">
@@ -20,7 +20,7 @@
 
       {% csrf_token %}
 
-      <div></div>
+      <!-- <div></div> -->
       <div class="input-wrap">
         <div class="form-row">
           <a href="javascript:void(0)" class="select-dropdown">
@@ -35,18 +35,25 @@
         </div>
         <input type="text" class="select-value" id="type" name="type" value="" required/>
         
-        <div class="form-row">
-          <label for="">제목</label>
-          <input name="title" type="text" required/>
+        <div class="form-grid">
+          <div class="form-row">
+            <!-- <label for="">제목</label> -->
+            <input name="title" type="text" placeholder="제목" required/>
+          </div>
+  
+          <div class="form-row">
+            <!-- <label for="">이메일</label> -->
+            <input name="email" type="email" placeholder="이메일" required/>
+          </div>
         </div>
 
         <div class="form-row">
-          <label for="">이메일</label>
-          <input name="email" type="email" required/>
+          <!-- <label for="">문의 내용</label> -->
+          <textarea name="content" type="text" placeholder="문의 내용" required></textarea>
         </div>
-
+        
         <div class="form-row">
-          <label for="">파일 첨부</label>
+          <!-- <label for="">파일 첨부</label> -->
           <label class="btn-file" for="MailFile">
             <i class="far fa-file"></i>&nbsp;&nbsp;파일 첨부
           </label>
@@ -54,13 +61,8 @@
         </div>
 
         <div class="form-row">
-          <label for="">문의 내용</label>
-          <input name="content" type="text" required/>
-        </div>
-
-        <div class="form-row">
-          <label for="">비밀번호</label>
-          <input name="password" type="password" required/>
+          <!-- <label for="">비밀번호</label> -->
+          <input name="password" type="password" placeholder="비밀번호" required/>
         </div>
 
         <div class="checkbox-wrap">
@@ -92,6 +94,12 @@
 
 
 {% block extrascripts %}
+<script>
+  $(function() {
+    $('.sub-banner').css('background-image', "url('/static/images/support/support_bg5.png')")
+  });
+</script>
+
 <script>
   $('.select-dropdown').click(function() {
     $('.select-content').slideToggle();

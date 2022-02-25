@@ -487,6 +487,72 @@ section.contact-form .form-wrap form .table-wrap .line {
   width: 100%;
 }
 
+
+
+/***
+* contact_form.html
+***/
+
+/* section.contactform.support-page */
+section.contact-form.support-page {
+  background-image: url('/static/images/support/contact-form-bg\ \(2\).jpg');
+  color: #535353;
+}
+section.contact-form.support-page .form-wrap form .form-row {
+  margin: 12px 0 20px;
+}
+section.contact-form.support-page .form-wrap {
+  max-width: 900px;
+  margin: 50px auto;
+}
+section.contact-form.support-page .form-wrap form {
+  display: block;
+}
+section.contact-form.support-page .form-wrap form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+section.contact-form .form-wrap form .form-row .select-item {
+  background-color: #f1f1f1;
+}
+section.contact-form.support-page .form-wrap form .form-row input,
+section.contact-form.support-page .form-wrap form .form-row select,
+section.contact-form.support-page .form-wrap form .form-row textarea,
+section.contact-form .form-wrap form .form-row .select-dropdown {
+  color: #535353;
+  border: 1px solid #535353;
+}
+section.contact-form.support-page .form-wrap form .form-row textarea {
+  width: 100%;
+  resize: none;
+  height: 300px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+section.contact-form.support-page .form-wrap form .form-row textarea::placeholder {
+  font-size: 18px;
+  font-family: 'NanumBarunGothic';
+}
+section.contact-form.support-page .form-wrap form .form-row label.btn-file {
+  border: 1px solid #535353;
+  color: #535353;
+}
+section.contact-form.support-page .form-wrap form .form-row label.btn-file:hover {
+  background-color: #f1f1f1;
+}
+section.contact-form .form-wrap form button.btn-submit {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #1A32C6;
+  width: 100%;
+}
+section.contact-form .form-wrap form button.btn-submit:hover {
+  background-color: #435ae6;
+}
+
+
+
 /* 반응형 */
 @media all and (max-width: 1440px) {
   section.business .slide-business .wide-wrap .business-content p {
