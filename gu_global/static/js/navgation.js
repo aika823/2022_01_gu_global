@@ -6,10 +6,10 @@ $('.btn-menu').mouseover(function() {
     $(this).addClass('active');
     $('.header-content').css('display', 'block');
     if ($(this).hasClass('menu-company') == true) {
-      $('.category-box').css('display', 'none');  
+      $('.category-box').css('display', 'none');
       $('.company-category').css('display', 'block');
     } else if ($(this).hasClass('menu-products') == true) {
-      $('.category-box').css('display', 'none');  
+      $('.category-box').css('display', 'none');
       $('.product-category').css('display', 'grid');
     } else if ($(this).hasClass('menu-solution') == true) {
         $('.category-box').css('display', 'none');
@@ -27,6 +27,7 @@ $('.header-content').mouseleave(function() {
     $('.btn-menu').removeClass('color');
     $('.btn-menu').removeClass('active');
   }
+  $('.btn-menu').removeClass('active');
   $('.category-box').css('display', 'none');
   $('.header-content').css('display', 'none');
 });
