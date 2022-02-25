@@ -181,12 +181,12 @@ section.detail-bottom .btn-img .overlay p {
 }
 @media all and (max-width: 1800px) {
   section.product-list {
-    padding: 170px 100px 300px;
+    padding: 50px 100px 300px;
   }
 }
 @media all and (max-width: 1440px) {
   section.product-list {
-    padding: 170px 50px 300px;
+    padding: 50px 50px 300px;
     gap: 20px;
   }
 
@@ -217,7 +217,7 @@ section.detail-bottom .btn-img .overlay p {
 }
 @media all and (max-width: 1080px) {
   section.product-list {
-    padding: 100px 50px 300px;
+    padding: 50px 50px 300px;
     grid-template-columns: 1fr 1fr;
   }
 
