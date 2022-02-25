@@ -152,7 +152,9 @@ section.support .contact-detail .detail-body .file-wrap span {
 
 
 /* section.support.notice-detail */
-section.support.notice-detail 
+section.support.notice-detail {
+
+}
 
 
 
@@ -161,19 +163,21 @@ section.support.notice-detail
 ***/
 section.search {
   padding: 150px 0 0;
-  margin: 0 150px;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 20% 80%;
-  /* justify-content: center; */
-  width: 30%;
   margin: 0 auto;
   border-bottom: 2px solid #000;
   position: relative;
   box-sizing: border-box;
+  width: 30%;
 }
-section.search select,
-section.search input {
+section.search #searchForm {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 20% 80%;
+  width: 100%;
+  margin: 0 auto;
+}
+section.search #searchForm select,
+section.search #searchForm input {
   padding: 10px 15px;
   border: none;
   width: 100%;
@@ -483,7 +487,10 @@ section.video .video-wrap .video-item .text-wrap .bottom img {
     padding: 12px 10px;
   }
   section.search {
-    width: 87%;
+    width: 90%;
+  }
+  section.search #searchForm {
+    width: 100%;
     grid-template-columns: 30% 70%;
   }
 
