@@ -219,7 +219,7 @@ section.news {
 section.news .news-header {
   display: flex;
   gap: 60px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -230,14 +230,14 @@ section.news .news-header .title-wrap .section-subtitle {
 section.news .news-header .btn-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  width: 300px;
+  gap: 20px;
+  width: 400px;
 }
 section.news .news-header .btn-wrap a.btn-link {
   display: inline-block;
-  padding: 10px 0;
+  padding: 14px 0;
   width: 100%;
-  font-size: 17px;
+  font-size: 21px;
   color: #0D0D0D;
   background-color: #F4F4F4;
   border: 1px solid #BEBEBE;
