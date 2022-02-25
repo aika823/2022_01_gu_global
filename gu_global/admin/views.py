@@ -1,6 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import redirect, render
-from products.models import Category, Product, ProductDetailImage, ProductImage
+from products.models import BestProduct, Category, Product, ProductDetailImage, ProductImage
 
 from support.models import Contact, Notice, Popup, Video
 from .models import Admin
@@ -35,6 +35,12 @@ def login(request):
             return render(request, "login.html", context=context)
             return redirect('/admin/login', context=context)
     return render(request, "login.html")
+
+
+def best_product(request, id=None):
+    product = BestProduct.objects.get(id=id) if id else None
+    context = {'best_product_list':BestProduct.objects.all().order_by('order'), 'product':product}
+    return render(request, "best_product.html", context=context)
 
 
 # 문의사항 관리
@@ -188,6 +194,18 @@ def create(request):
             elif action == 'create':
                 item = Popup()
             item.image = request.FILES.get('image')
+        
+
+        print(request.POST)
+        print(table)
+
+        if table == 'best_product':
+            if id:
+                item = BestProduct.objects.get(id=id)
+            else:
+                item = BestProduct()
+            if request.FILES.get('image'):
+                item.image = request.FILES.get('image')
 
         # if table == 'download':
         #     if id:
@@ -248,6 +266,10 @@ def delete(request):
     if table == 'category':
         Category.objects.get(id=id).delete()
         return redirect("/admin/category")
+
+    if table == 'best_product':
+        BestProduct.objects.get(id=id).delete()
+        return redirect("/admin/best_product")
 
     if table == 'product':
         Product.objects.get(id=id).delete()

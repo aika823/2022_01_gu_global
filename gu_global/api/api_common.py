@@ -52,11 +52,11 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
     }
 
     banner_solution = {
-        '스탠다드 화상회의 (H.323/SIP)':'/solution/',
-        '클라우드 화상회의':'/solution/ym',
-        'MS Teams 화상회의':'/solution/ms',
-        '구축형 화상회의':'/solution/yms',
-        '스마트 강의':'/solution/sony',
+        '스탠다드 화상회의 (H.323/SIP)':'/solution/?name=스탠다드 화상회의',
+        '클라우드 화상회의 (YM)':'/solution/YM?name=클라우드 화상회의',
+        'MS Teams 화상회의 (MS)':'/solution/MS?name=MS Teams 화상회의',
+        '구축형 화상회의 (YMS)':'/solution/YMS?name=구축형 화상회의',
+        '스마트 강의 (SONY)':'/solution/SONY?name=스마트 강의',
     }
 
     banner_support = {
@@ -64,7 +64,7 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
         '인증서':'/support/certification',
         '다운로드 센터':'/support/download?type=전체',
         '동영상':'/support/video',
-        '문의게시판':'/support/contact',
+        '문의하기':'/support/contact',
     }
 
     banner_partner = {

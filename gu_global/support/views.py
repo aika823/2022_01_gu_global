@@ -28,9 +28,9 @@ def notice_more(request):
   return render(request, 'notice_more.html', context=context) 
 
 
-def certification(request):
-  context = get_common_context('Support','인증서')
-  return render(request, "certification.html", context=context)
+# def certification(request):
+#   context = get_common_context('Support','인증서')
+#   return render(request, "certification.html", context=context)
 
 
 def download(request):
@@ -83,7 +83,7 @@ def video(request):
 
 def contact(request):
   contact_list = Contact.objects.all()
-  context = get_common_context('Support','문의게시판')
+  context = get_common_context('Support','문의하기')
   context['contact_list'] = get_paginated_list(request, contact_list)['list']
   context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
   context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 
@@ -106,7 +106,7 @@ def contact_more(request, id):
             contact = Contact.objects.get(id=id)
             if contact.file:
               contact.new_file_name = str(contact.file)[14:]
-            context = get_common_context('Support','문의게시판')
+            context = get_common_context('Support','문의하기')
             context['contact'] = contact
             context['contact_list'] = get_paginated_list(request, contact_list)['list']
             context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
@@ -131,7 +131,7 @@ def contact_form(request):
         contact.save()
 
   contact_list = Contact.objects.all()
-  context = get_common_context('Support','문의게시판')
+  context = get_common_context('Support','문의하기')
   context['contact_list'] = get_paginated_list(request, contact_list)['list']
   context['page_obj'] = get_paginated_list(request, contact_list)['page_obj'] 
   context['my_range'] = get_paginated_list(request, contact_list)['my_range'] 

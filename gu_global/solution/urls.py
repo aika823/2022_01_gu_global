@@ -6,8 +6,9 @@ app_name = "solution"
 
 urlpatterns = [
     path('', views.vc),
-    path('ym', views.ym),
-    path('ms', views.ms),
-    path('yms', views.yms),
-    path('sony', views.sony),
+    path('VC', views.vc),
+    path('YM', views.ym),
+    path('MS', views.ms),
+    path('YMS', views.yms),
+    path('SONY', views.sony),
 ]

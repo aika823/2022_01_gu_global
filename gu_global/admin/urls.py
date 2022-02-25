@@ -7,6 +7,9 @@ app_name = "admin"
 urlpatterns = [
     path('', views.products),
     path('login', views.login),
+
+    path('best_product', views.best_product),
+    path('best_product/<int:id>', views.best_product),
     
     path('category', views.category),
     path('category/create', views.category_create),

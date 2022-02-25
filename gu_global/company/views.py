@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from api import api_common
+from products.models import BestProduct
 from support.models import Contact, Notice, Popup
 from datetime import date
 from django.contrib.auth.hashers import make_password
@@ -8,6 +9,7 @@ from django.contrib.auth.hashers import make_password
 def index(request):
     context = api_common.get_common_context('Company')
     context['notice_list'] = Notice.objects.all().order_by('order')[:3]
+    context['best_product_list'] = BestProduct.objects.all().order_by('order')
     today = date.today()
     
     popup_list = list()

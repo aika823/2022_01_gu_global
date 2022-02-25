@@ -11,6 +11,14 @@ class Category(models.Model):
         db_table = "category"
 
 
+class BestProduct(models.Model):
+    order = models.PositiveIntegerField(db_column="order", null=False, default=1)
+    name = models.CharField(db_column="name", max_length=50)
+    image = models.ImageField(upload_to=("media/images/best_product"))
+    class Meta:
+        db_table = "best_product"
+
+
 class Product(models.Model):
     name = models.CharField(db_column="name", null=False, max_length=50, default=1)
     title = models.CharField(db_column="title", null=False, max_length=50)

@@ -60,8 +60,7 @@
                         H/W와 S/W가 결합되어 업무의 효율성을
                         <br>향상시키는 비즈니스 화상회의 솔루션입니다.
                     </p>
-                    <a href="/solution/yms" class="more">더보기<img src="/static/images/arrow_detail_w.png"
-                            alt=""></a>
+                    <a href="/solution/YMS" class="more">더보기<img src="/static/images/arrow_detail_w.png" alt=""></a>
                 </div>
                 <div class="btn-control">
                     <p>1/2</p>
@@ -83,8 +82,7 @@
                             HD 화상회의 협업을 위해 설계된
                             <br>분산형 클라우드 기반 화상회의의 인프라입니다.
                         </p>
-                        <a href="/solution/yms" class="more">자세히보기<img
-                                src="/static/images/arrow_detail.png" alt=""></a>
+                        <a href="/solution/YMS" class="more">자세히보기<img src="/static/images/arrow_detail.png" alt=""></a>
                     </div>
                 </div>
                 <div class="business-item">
@@ -96,8 +94,7 @@
                             모바일, PC 또는 화상회의 코덱으로 어디서든
                             <br>접속할 수 있는 Yealink Meeting 클라우드 화상회의입니다.
                         </p>
-                        <a href="/solution/ym" class="more">자세히보기<img
-                                src="/static/images/arrow_detail.png" alt=""></a>
+                        <a href="/solution/ym" class="more">자세히보기<img src="/static/images/arrow_detail.png" alt=""></a>
                     </div>
                 </div>
                 <div class="business-item">
@@ -109,8 +106,7 @@
                             Teams가 탑재된 코덱 기반의 Teams 전용 화상회의
                             <br>엔드포인트와 구축형 서버 솔루션에서의 Teams Gateway입니다.
                         </p>
-                        <a href="/solution/ms" class="more">자세히보기<img
-                                src="/static/images/arrow_detail.png" alt=""></a>
+                        <a href="/solution/ms" class="more">자세히보기<img src="/static/images/arrow_detail.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -128,8 +124,7 @@
                         다양한 솔루션과 제품의 조합으로
                         <br>커뮤니케이션의 질을 향상시켜주는 기술입니다.
                     </p>
-                    <a href="/solution/sony" class="more">더보기<img src="/static/images/arrow_detail_w.png"
-                            alt=""></a>
+                    <a href="/solution/sony" class="more">더보기<img src="/static/images/arrow_detail_w.png" alt=""></a>
                 </div>
                 <div class="btn-control">
                     <p>2/2</p>
@@ -150,8 +145,8 @@
                             조직의 모든 일원을 하나로 연결하고 모든 직원이
                             <br>성공에 기여할 수 있도록 스마트한 업무 환경을 조성합니다.
                         </p>
-                        <a href="/solution/sony" class="more">자세히보기<img
-                                src="/static/images/arrow_detail.png" alt=""></a>
+                        <a href="/solution/sony" class="more">자세히보기<img src="/static/images/arrow_detail.png"
+                                alt=""></a>
                     </div>
                 </div>
                 <div class="business-item">
@@ -161,8 +156,8 @@
                         <p>
                             인공지능을 활용한 영상 분석 기술로 콘텐츠 전달 및 청중의 참여 유도를 지원하여 커뮤니케이션의 질을 향상시켜줍니다.
                         </p>
-                        <a href="/products/SONY/EDGE" class="more">자세히보기<img
-                                src="/static/images/arrow_detail.png" alt=""></a>
+                        <a href="/products/SONY/EDGE" class="more">자세히보기<img src="/static/images/arrow_detail.png"
+                                alt=""></a>
                     </div>
                 </div>
                 <div class="business-item">
@@ -243,11 +238,13 @@
 <section class="product content">
     <h2 class="section-title">PRODUCT</h2>
     <p class="section-subtitle">Yealink의 화상회의 베스트 상품입니다.</p>
+    {% if best_product_list %}
     <div class="slide-product">
-        <div class="product-img" style="background-image:url('/static/images/product-sample.png')"></div>
-        <div class="product-img" style="background-image:url('/static/images/product-sample.png')"></div>
-        <div class="product-img" style="background-image:url('/static/images/product-sample.png')"></div>
+        {% for product in best_product_list %}
+        <div class="product-img" style="background-image:url('/media/{{product.image}}')"></div>
+        {% endfor %}
     </div>
+    {% endif %}
 </section>
 {% endblock content %}
 
@@ -255,7 +252,7 @@
 <script src="/static/js/popup.js"></script>
 
 <script>
-    
+
 </script>
 
 {% endblock extrascripts %}

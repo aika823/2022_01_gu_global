@@ -1,0 +1,128 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div id="right-panel" class="right-panel">
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">베스트 상품</strong>
+                        </div>
+                        <div class="card-body">
+                            <table id="dataTable" class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">순번</th>
+                                        <th scope="col">이름</th>
+                                        <th scope="col">이미지</th>
+                                        <th scope="col">삭제</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for product in best_product_list %}
+                                    <tr>
+                                        <td>{{product.order}}</td>
+                                        <td>{{product.name}}</td>
+                                        <td><img src="/media/{{product.image}}" alt=""></th>
+                                        <td>
+                                            <form id="deleteForm" action="/admin/delete" method="post">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="table" value="best_product">
+                                                <input type="hidden" name="id" value="{{product.id}}">
+                                                <button type="submit" class="btn btn-xs btn-danger">삭제</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-primary"
+                                onclick="location.href='/admin/product/create'">추가</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card">
+
+
+
+                        <form id="productCreateForm" action="/admin/create" method="post" enctype="multipart/form-data"
+                            class="form-horizontal">
+
+                            {% csrf_token %}
+                            <input type="hidden" name='table' value="best_product">
+
+                            <div class="card-header">
+                                <strong>추가</strong>
+                            </div>
+
+                            <div class="card-body card-block">
+
+
+                                <!-- 순번 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">순번</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="number" name="order" class="form-control" value="" required>
+                                    </div>
+                                </div>
+
+                                <!-- 이름 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">이름</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" name="name" class="form-control" value="" required>
+                                    </div>
+                                </div>
+
+                                <!-- 내용 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">내용</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="file" name="image" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- footer -->
+                            <div class="card-footer" style="text-align: right;">
+                                <button type="submit" class="btn btn-outline-primary btn-sm" form="productCreateForm">
+                                    추가
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block extrascripts %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dataTable').DataTable({
+            "order": [
+                [0, "desc"]
+            ]
+        });
+    });
+
+    function deleteProduct(id) {
+
+    }
+</script>
+{% endblock extrascripts %}
