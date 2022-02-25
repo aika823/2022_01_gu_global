@@ -13,10 +13,14 @@
 <!-- section.support -->
 <section class="support content page-start">
   <div class="support-header support-header--detail max-1280">
+    
+    <!--
     <a href="" class="btn-edit">
       수정
       <span class="material-icons-outlined">edit</span>
     </a>
+    -->
+
   </div>
   <div class="contact-detail max-1280">
     <div class="detail-head">
@@ -24,7 +28,7 @@
       <p>작성일{{contact.created_at|date:'Y-m-d'}}</p>
     </div>
     <div class="detail-body">
-      
+
       <div class="detail-wrap">
         <div class="detail-body-info">
           {% if contact.type %}
@@ -34,9 +38,9 @@
           {% endif %}
           <p class="writer"><span>작성자</span> {{contact.email}}</p>
         </div>
-        
+
         <p class="contact-description">{{contact.content}}</p>
-        
+
       </div>
 
       <div class="file-wrap">
