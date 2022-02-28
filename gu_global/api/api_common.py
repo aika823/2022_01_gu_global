@@ -40,9 +40,9 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
         '회사소개':'/company', 
         '조직도':'/company/org', 
         '연혁':'/company/history', 
-        '파트너사':'/company/partner', 
-        '포트폴리오':'/company/portfolio', 
-        'Contact Us':'/company/contact', 
+        # '파트너사':'/company/partner', 
+        '포트폴리오':'/company/portfolio',
+        # 'Contact Us':'/company/contact', 
     }
 
     banner_product = {
@@ -61,10 +61,10 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
 
     banner_support = {
         '공지사항':'/support/',
-        '인증서':'/support/certification',
+        # '인증서':'/support/certification',
         '다운로드 센터':'/support/download?type=전체',
         '동영상':'/support/video',
-        '문의하기':'/support/contact',
+        '문의하기':'/company/contact',
     }
 
     banner_partner = {

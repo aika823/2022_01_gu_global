@@ -197,8 +197,14 @@ header .header-top {
   max-width: 1280px;
   margin: 0 auto;
 }
+header.white {
+  background-color: #fff;
+}
 header.down {
   background: #000;
+}
+header.white.down {
+  background-color: #fff;
 }
 header.black {
   background: #000;

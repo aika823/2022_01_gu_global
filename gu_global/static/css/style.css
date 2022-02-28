@@ -180,6 +180,7 @@ section.business .slide-business .grid-wrap .text-wrap .more {
 /* section.solution */
 section.solution {
   background-color: #F4F4F4;
+  padding-top: 100px;
 }
 section.solution .solution-grid {
   display: grid;
@@ -444,21 +445,22 @@ section.contact-form .form-wrap form .checkbox-wrap input[type="checkbox"] {
   border-radius: 5px;
 }
 section.contact-form .form-wrap form button.btn-submit {
-  border: 1px solid #fff;
-  color: #fff;
+  /* border: 1px solid #fff; */
+  color: #0c1244;
+  background-color: #fff;
   font-size: 27px;
   font-weight: 600;
   padding: 10px 0;
   width: 260px;
   float: right;
-  background-color: transparent;
+  /* background-color: transparent; */
   transition: all .5s;
   cursor: pointer;
 }
 section.contact-form .form-wrap form button.btn-submit:hover {
-  background-color: #1A32C6;
-  border: 1px solid #1A32C6;
-  color: #fff;
+  background-color: #072dd6;
+  /* border: 1px solid #1A32C6; */
+  color: #ffffff;
 }
 section.contact-form .form-wrap form .table-wrap {
   text-align: center;
@@ -519,7 +521,7 @@ section.contact-form .form-wrap form .form-row .select-item {
 section.contact-form.support-page .form-wrap form .form-row input,
 section.contact-form.support-page .form-wrap form .form-row select,
 section.contact-form.support-page .form-wrap form .form-row textarea,
-section.contact-form .form-wrap form .form-row .select-dropdown {
+section.contact-form.support-page .form-wrap form .form-row .select-dropdown {
   color: #535353;
   border: 1px solid #535353;
 }
@@ -541,13 +543,13 @@ section.contact-form.support-page .form-wrap form .form-row label.btn-file {
 section.contact-form.support-page .form-wrap form .form-row label.btn-file:hover {
   background-color: #f1f1f1;
 }
-section.contact-form .form-wrap form button.btn-submit {
+section.contact-form.support-page .form-wrap form button.btn-submit {
   border: 1px solid #fff;
   color: #fff;
   background-color: #1A32C6;
   width: 100%;
 }
-section.contact-form .form-wrap form button.btn-submit:hover {
+section.contact-form.support-page .form-wrap form button.btn-submit:hover {
   background-color: #435ae6;
 }
 
