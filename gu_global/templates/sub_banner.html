@@ -3,7 +3,7 @@
         <div class="title-wrap">
             <p class="sub-subtitle">{{title}}</p>
             {% if solution_name %}
-            <h2 class="sub-title">{{solution_name}} ({{sub_title}})</h2>
+            <h2 class="sub-title">{{solution_name}}</h2>
             {% else %}
             <h2 class="sub-title">{{sub_title}}</h2>
             {% endif %}
@@ -32,7 +32,7 @@
             <div class="category-item">
                 
                 {% if solution_name %}
-                <p>{{solution_name}} ({{current_page.1}})</p>
+                <p>{{solution_name}}</p>
                 {% else %}
                 <p>{{current_page.1}}</p>
                 {% endif %}

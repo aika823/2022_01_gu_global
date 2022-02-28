@@ -52,11 +52,11 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
     }
 
     banner_solution = {
-        '스탠다드 화상회의 (H.323/SIP)':'/solution/?name=스탠다드 화상회의',
-        '클라우드 화상회의 (YM)':'/solution/YM?name=클라우드 화상회의',
-        'MS Teams 화상회의 (MS)':'/solution/MS?name=MS Teams 화상회의',
-        '구축형 화상회의 (YMS)':'/solution/YMS?name=구축형 화상회의',
-        '스마트 강의 (SONY)':'/solution/SONY?name=스마트 강의',
+        '스탠다드 화상회의':'/solution/?name=스탠다드 화상회의',
+        '클라우드 화상회의':'/solution/YM?name=클라우드 화상회의',
+        'MS Teams 화상회의':'/solution/MS?name=MS Teams 화상회의',
+        '구축형 화상회의':'/solution/YMS?name=구축형 화상회의',
+        '스마트 강의':'/solution/SONY?name=스마트 강의',
     }
 
     banner_support = {
