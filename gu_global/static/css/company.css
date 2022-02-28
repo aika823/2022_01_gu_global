@@ -506,8 +506,65 @@ section.location {
   padding: 100px 50px 150px;
   box-sizing: border-box;
 }
-
-
+section.location #map {
+  width: 100%;
+  height: 550px;
+}
+section.location h3.section-intro-title {
+  margin-bottom: 30px;
+}
+section.location .map-wrap .address-info {
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 20px;
+}
+section.location .map-wrap .address-info .address-box h2,
+section.location .map-wrap .address-info .contact-box h2 {
+  font-size: 28px;
+  font-family: "Noto Sans";
+  margin-bottom: 8px;
+}
+section.location .map-wrap .address-info p.sub {
+  font-size: 18px;
+  font-family: "Noto Sans";
+  font-weight:600;
+  color: #535353;
+  word-break: keep-all;
+}
+section.location .map-wrap .address-info .mt {
+  margin-top: 40px;
+  word-break: keep-all;
+}
+section.location .map-wrap .address-info .address-box .mt {
+  font-size: 17px;
+  color: #ababab;
+  line-height: 21px;
+}
+section.location .map-wrap .address-info .contact-box .top {
+  display: flex;
+  gap: 50px;
+}
+section.location .map-wrap .address-info .address-box .icon-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 10px;
+}
+section.location .map-wrap .address-info .icon-box.mobile {
+  display: none;
+}
+section.location .map-wrap .icon-box a {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+section.location .map-wrap .icon-box a img {
+  width: 23px;
+}
+section.location .map-wrap .icon-box a:last-child img {
+  width: 37px;
+}
 
 /* 반응형 */
 @media all and (max-width: 1920px) {
@@ -761,6 +818,11 @@ section.location {
   section.example {
     margin: 150px 50px;
   }
+
+  section.location #map {
+    width: 100%;
+    height: 400px;
+  }
 }
 @media all and (max-width: 768px) {
   section.company-intro .intro-wrap .intro-text p {
@@ -1004,6 +1066,36 @@ section.location {
   section.history .img-wrap .year-box.year-box--2020 {
     top: 705px;
   }
+
+
+  section.location .map-wrap .address-info .contact-box .top {
+    gap: 20px;
+  }
+  section.location .map-wrap .address-info .icon-box.pc {
+    display: none;
+  }
+  section.location .map-wrap .address-info .icon-box.mobile {
+    display: flex;
+    gap: 15px;
+  }
+  section.location .map-wrap .address-info {
+    grid-template-columns: auto;
+    gap: 30px;
+  }
+  section.location .map-wrap .address-info .address-box .mt {
+    margin-top: 30px;
+  }
+
+  section.location #map {
+    width: 100%;
+    height: 250px;
+  }
+
+  section.location .map-wrap .address-info {
+    gap: 20px;
+    padding-top: 25px;
+  }
+
 }
 @media all and (max-width: 450px) {
   section.portfolio {
@@ -1038,5 +1130,22 @@ section.location {
 
   section.certification {
     padding: 80px 20px;
+  }
+
+  section.location {
+    padding: 75px 25px 150px;
+  }
+  section.location #map {
+    height: 200px;
+  }
+  section.location .map-wrap .address-info p.sub {
+    font-size: 16px;
+  }
+  section.location .map-wrap .address-info .address-box h2,
+  section.location .map-wrap .address-info .contact-box h2 {
+    font-size: 21px;
+  }
+  section.location .map-wrap .address-info .address-box .mt {
+    font-size: 15px;
   }
 }

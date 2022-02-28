@@ -456,6 +456,7 @@ section.contact-form .form-wrap form button.btn-submit {
   /* background-color: transparent; */
   transition: all .5s;
   cursor: pointer;
+  border: none;
 }
 section.contact-form .form-wrap form button.btn-submit:hover {
   background-color: #072dd6;
