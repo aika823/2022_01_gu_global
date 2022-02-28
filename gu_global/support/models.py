@@ -18,6 +18,7 @@ class Contact(models.Model):
     email = models.CharField(db_column="email", null=True, max_length=50)
     password = models.CharField(db_column="password", null=True, max_length=500)
 
+    date = models.DateField(db_column="date", null=True, auto_now_add=True)
 
     class Meta:
         db_table = "contact"
@@ -31,6 +32,8 @@ class Notice(models.Model):
     created_at = models.DateTimeField(db_column="created_at", null=False, auto_now_add=True)
     author = models.CharField(db_column="author", null=False,max_length=20)
     views = models.PositiveIntegerField(db_column="views", null=False, default=0)
+
+    date = models.DateField(db_column="date", null=True, auto_now_add=True)
 
     class Meta:
         db_table = "notice"

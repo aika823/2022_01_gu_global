@@ -72,6 +72,15 @@
                                     </div>
                                 </div>
 
+                                <!-- 작성일 -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">작성일</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="date" name="date" class="form-control" value="{{notice.date |date:'Y-m-d'}}"
+                                            required>
+                                    </div>
+                                </div>
+
                                 <!-- 조회수 -->
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">조회수</label></div>
