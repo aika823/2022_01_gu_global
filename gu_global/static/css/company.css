@@ -501,6 +501,14 @@ section.certification {
 
 
 
+/* section.location */
+section.location {
+  padding: 100px 50px 150px;
+  box-sizing: border-box;
+}
+
+
+
 /* 반응형 */
 @media all and (max-width: 1920px) {
   /* section.portfolio .portfolio-wrap .portfolio-description {

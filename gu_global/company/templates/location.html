@@ -3,6 +3,8 @@
 {% block extraheads %}
 <link rel="stylesheet" href="/static/css/subpage.css">
 <link rel="stylesheet" href="/static/css/company.css">
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a217640ec8b2535234692853de58d13"></script>
 {% endblock extraheads %}
 
 {% block content %}
@@ -15,7 +17,40 @@
 <section class="location">
   <div class="max-1280">
     <h3 class="section-intro-title">Location</h3>
-    
+    <div class="map-wrap">
+      <div id="map" style="width:100%;height:550px;"></div>
+      <div class="address-info">
+        <div class="address-box">
+          <h2>ADDRESS</h2>
+          <p>서울특별시 중랑구 신내역로3길 40-36 데시앙플렉스 A동 801/802호</p>
+          <p>
+            A-801, 40-36, Sinnaeyeok-ro-3-gil, Jungang-gu, Seoul, Republic of Korea
+            <br>02-461-0741 Mon-Fri AM 09:00 ~ 18:00 / SAT, SUN, HOLIDAY OFF
+            <br>WWW.GUGLOBAL.COM
+          </p>
+          <div class="icon-box">
+
+          </div>
+        </div>
+        <div class="contact-box">
+          <div class="top">
+            <div class="wrap">
+              <h2>TEL</h2>
+              <p></p>
+            </div>
+            <div class="wrap">
+              <h2>FAX</h2>
+              <p>02 461 0742</p>
+            </div>
+          </div>
+          <div class="mail-wrap">
+            <h2>MAIL</h2>
+            <p>help@guglobal.com</p>
+            <p>sales@guglobal.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -24,4 +59,43 @@
 
 
 {% block extrascripts %}
+<script>
+  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.61743178713217, 127.10404161034295), // 지도의 중심좌표
+        level: 2 // 지도의 확대 레벨
+    };
+
+  var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+  // 마커가 표시될 위치입니다 
+  var markerPosition  = new kakao.maps.LatLng(37.61743178713217, 127.10404161034295);
+
+  // 마커를 생성합니다
+  var marker = new kakao.maps.Marker({
+      position: markerPosition
+  });
+
+  // 마커가 지도 위에 표시되도록 설정합니다
+  marker.setMap(map);
+
+  // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+  // marker.setMap(null);    
+
+  var iwContent = `
+                  <div style="padding:5px; margin: 0 auto;">
+                  <a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="display:block; color:#535353; text-align:center;" target="_blank">지유글로벌</a> 
+                `, 
+  // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+
+  // 인포윈도우를 생성합니다
+  var infowindow = new kakao.maps.InfoWindow({
+      position : iwPosition, 
+      content : iwContent 
+  });
+    
+  // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+  infowindow.open(map, marker); 
+</script>
 {% endblock extrascripts %}
