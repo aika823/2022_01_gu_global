@@ -532,9 +532,9 @@ footer {
   line-height: 22px;
   color: #fff;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 250px 1fr;
   gap: 100px;
-  align-items: center;
+  /* align-items: center; */
   position: relative;
 }
 footer.content {
@@ -550,13 +550,14 @@ footer .logo-wrap img {
 }
 footer .footer-content p {
   margin: 5px 0;
+  font-size: 16px;
 }
 footer .footer-content p.copyright {
   margin-top: 50px;
   color: rgba(255,255,255,.35);
 }
 footer .sns-wrap {
-  width: 320px;
+  width: 210px;
   gap: 15px;
   display: flex;
   justify-content: center;
