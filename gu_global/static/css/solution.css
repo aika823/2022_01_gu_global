@@ -888,6 +888,7 @@ section.sony-grid .img-wrap {
 }
 section.sony-grid .img-wrap img {
   width: 100%;
+  cursor: pointer;
 }
 section.sony-grid .text-wrap h2 {
   color: #1A32C6;
@@ -903,10 +904,12 @@ section.sony-grid .text-wrap h4 {
 }
 section.sony-grid .text-wrap p {
   color: #0D0D0D;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 36px;
+  line-height: 32px;
   word-break: keep-all;
+  /* font-family: "Noto Sans KR"; */
+  font-family: 'NanumBarunGothic';
 }
 
 /* section.area */
