@@ -136,7 +136,7 @@ def get_banner(page=None):
         '연혁':'/company/history', 
         '파트너사':'/company/partner', 
         '포트폴리오':'/company/portfolio', 
-        'Contact Us':'/company/contact', 
+        '문의하기':'/company/contact', 
     }
 
     banner_partner = {

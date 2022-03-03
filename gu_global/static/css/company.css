@@ -363,7 +363,7 @@ section.ci .ci-wrap .ci-description p {
   font-size: 18px;
   color: #535353;
   font-family: 'Noto Sans KR';
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 section.ci .ci-img,
 section.ci .ci-img img {

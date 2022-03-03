@@ -67,5 +67,5 @@ def contact(request):
         contact.file = request.FILES.get('file')
         contact.save()
     
-    context = api_common.get_common_context('Company','Contact Us')
+    context = api_common.get_common_context('Company','문의하기')
     return render(request, "contact_page.html", context=context)
