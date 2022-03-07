@@ -64,6 +64,7 @@ def products_create(request):
 def products_view(request,id):
     
     product = Product.objects.get(id=id)
+    
     context = {
         'product':product,
         'category_list': Category.objects.all(),

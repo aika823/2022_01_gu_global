@@ -20,7 +20,7 @@
                                         <th scope="col">카테고리</th>
                                         <th scope="col">제품명</th>
                                         <th scope="col">타이틀</th>
-                                        <th scope="col">서브타이틀</th>
+                                        <th scope="col">하위 카테고리</th>
                                         <th scope="col">내용</th>
                                     </tr>
                                 </thead>
@@ -31,7 +31,7 @@
                                         <td>{{product.category.name}}</td>
                                         <td><a href="/admin/product/{{product.id}}">{{product.name}}</a></th>
                                         <td>{{product.title}}</td>
-                                        <td>{{product.sub_title}}</td>
+                                        <td>{{product.sub_category}}</td>
                                         <td>{{product.content}}</td>
                                     </tr>
                                     {% endfor %}

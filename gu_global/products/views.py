@@ -50,6 +50,13 @@ def category_list(request, main_category, category_name=None):
     else:
         product_list = Product.objects.filter(Q(category=category) & ~Q(sub_category='주변기기'))
         sub_active = ['active', None]
+    
+    print(product_list.query)
+
+    for product in product_list:
+        print(product.name)
+
+
         
     for product in product_list:
         try:
