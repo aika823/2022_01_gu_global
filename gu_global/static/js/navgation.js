@@ -1,5 +1,5 @@
 $('.btn-menu').mouseover(function() {
-    $('.logo img').attr('src', '/static/images/logo_color.png');
+    $('.logo img').attr('src', '/static/images/logo_.png');
     $('header').addClass('white');
     $('.btn-menu').addClass('color');
     $('.btn-menu').removeClass('active');
