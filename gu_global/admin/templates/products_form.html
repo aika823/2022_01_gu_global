@@ -39,6 +39,14 @@
 
                                 <!-- 카테고리 -->
                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">순서</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="number" name="order" class="form-control" value="{{product.order}}" />
+                                    </div>
+                                </div>
+
+                                <!-- 카테고리 -->
+                                <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">카테고리</label></div>
                                     <div class="col-12 col-md-9">
                                         <input type="text" name="category" class="form-control" list="categoryList"
@@ -73,8 +81,8 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">주변기기 여부</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" name="sub_category" placeholder="'주변기기' 입력" class="form-control" value="{{product.sub_category}}"
-                                            required>
+                                        <input type="text" name="sub_category" placeholder="'주변기기' 입력"
+                                            class="form-control" value="{{product.sub_category}}" required>
                                     </div>
                                 </div>
 
@@ -82,7 +90,8 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">내용</label></div>
                                     <div class="col-12 col-md-9">
-                                        <textarea name="content" class="form-control" cols="30" rows="10">{{product.content}}</textarea>
+                                        <textarea name="content" class="form-control" cols="30"
+                                            rows="10">{{product.content}}</textarea>
                                     </div>
                                 </div>
 
@@ -131,7 +140,8 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">현재 파일</label></div>
                                     <div class="col-12 col-md-9">
-                                        <a href="/media/{{product.brochure}}" download>브로슈어 <br> ({{product.brochure}})</a>
+                                        <a href="/media/{{product.brochure}}" download>브로슈어 <br>
+                                            ({{product.brochure}})</a>
                                         <br>
                                         <a href="/media/{{product.manual}}" download>매뉴얼 <br> ({{product.manual}}) </a>
                                     </div>
@@ -192,13 +202,16 @@
                                     {% for image in image_list %}
                                     <div class="col col-md-4">
 
-                                        <input type="hidden" name="update_image_id[]" class="update-image-id" value="" data-id="{{image.id}}">
-                                        
+                                        <input type="hidden" name="update_image_id[]" class="update-image-id" value=""
+                                            data-id="{{image.id}}">
+
                                         <input type="file" name="update_image[]" style="opacity:0"
-                                            class="input-update-image" onchange="onChangeImage({{image.id}})" data-id="{{image.id}}">
+                                            class="input-update-image" onchange="onChangeImage({{image.id}})"
+                                            data-id="{{image.id}}">
 
                                         <img src="/media/{{image.image}}" class="image-changable" alt=""
-                                            onclick="openImageUpdateInput({{forloop.counter0}}, 'input-update-image')" data-id="{{image.id}}">
+                                            onclick="openImageUpdateInput({{forloop.counter0}}, 'input-update-image')"
+                                            data-id="{{image.id}}">
 
                                         <button type="button" style="width:100%" class="btn btn-outline-danger btn-sm"
                                             onclick="deleteImage({{image.id}})">
@@ -245,8 +258,8 @@
                         </form>
 
                         <!-- 제품 상세 이미지 수정 -->
-                        <form id="detailImageForm" action="/admin/update_detail_image" method="post" enctype="multipart/form-data"
-                            class="form-horizontal">
+                        <form id="detailImageForm" action="/admin/update_detail_image" method="post"
+                            enctype="multipart/form-data" class="form-horizontal">
 
                             {% csrf_token %}
                             <input type="hidden" name='table' value="product">
@@ -265,15 +278,16 @@
                                     {% for image in detail_image_list %}
                                     <div class="col col-md-4">
 
-                                        <input type="hidden" name="update_image_id[]" class="update-detail-image-id" value=""
-                                            data-id="{{image.id}}">
+                                        <input type="hidden" name="update_image_id[]" class="update-detail-image-id"
+                                            value="" data-id="{{image.id}}">
 
                                         <input type="file" name="update_image[]" style="opacity:0"
-                                            class="input-update-detail-image" onchange="onChangeImage({{image.id}}, true)"
-                                            data-id="{{image.id}}">
+                                            class="input-update-detail-image"
+                                            onchange="onChangeImage({{image.id}}, true)" data-id="{{image.id}}">
 
                                         <img src="/media/{{image.image}}" class="detail-image-changable" alt=""
-                                            onclick="openImageUpdateInput({{forloop.counter0}}, 'input-update-detail-image')" data-id="{{image.id}}">
+                                            onclick="openImageUpdateInput({{forloop.counter0}}, 'input-update-detail-image')"
+                                            data-id="{{image.id}}">
 
                                         <button type="button" style="width:100%" class="btn btn-outline-danger btn-sm"
                                             onclick="deleteImage({{image.id}}, true)">

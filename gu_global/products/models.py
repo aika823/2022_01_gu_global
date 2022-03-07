@@ -24,6 +24,7 @@ class Product(models.Model):
     title = models.CharField(db_column="title", null=False, max_length=50)
     sub_title = models.CharField(db_column="sub_title", null=False, max_length=50)
     content = models.CharField(db_column="content", null=False, max_length=500)
+    order = models.PositiveIntegerField(db_column="order", null=False, default=1)
 
     category = models.ForeignKey(to=Category, db_column="category", on_delete=CASCADE)
     sub_category = models.CharField(db_column="sub_category", null=True, max_length=50, default=None)
