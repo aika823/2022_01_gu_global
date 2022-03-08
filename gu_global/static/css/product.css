@@ -130,6 +130,7 @@ section.product-detail .detail-text-wrap .btn-group .btn-item:hover {
   /* padding: 0 150px; */
   margin: 150px auto 200px;
   box-sizing: border-box;
+  max-width: 860px;
 }
 .detail-full-image img {
   width: 100%;

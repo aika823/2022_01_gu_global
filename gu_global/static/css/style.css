@@ -179,7 +179,7 @@ section.business .slide-business .grid-wrap .text-wrap .more {
 
 /* section.solution */
 section.solution {
-  background-color: #F4F4F4;
+  background-color: #fff;
   padding-top: 100px;
 }
 section.solution .solution-grid {
@@ -733,6 +733,7 @@ section.contact-form.support-page .form-wrap form button.btn-submit:hover {
   section.news .news-header .btn-wrap a.btn-link {
     padding: 9px 0;
     font-size: 16px;
+    box-sizing: border-box;
   }
   section.news .news-header .btn-wrap {
     gap: 15px;
@@ -855,6 +856,24 @@ section.contact-form.support-page .form-wrap form button.btn-submit:hover {
   }
   .more img {
     height: 25px;
+  }
+
+  section.business .slide-business .grid-wrap .text-wrap .more {
+    margin-top: 0;
+  }
+  section.business .slide-business:nth-child(2) .grid-wrap .business-item:last-child .text-wrap p {
+    margin-top: 33px;
+  }
+  section.business .slide-business .grid-wrap .business-item .text-wrap {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  section.news .news-header .btn-wrap {
+    width: 240px;
+    gap: 10px;
   }
 }
 @media all and (max-width: 400px) {

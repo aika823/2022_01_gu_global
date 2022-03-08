@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 { margin: 0;}
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 0;
   font-size: 36px;
   margin-left: 50px;
 }
@@ -254,13 +254,13 @@ header .menu .btn-menu.active::after {
   border-bottom: 5px solid #1A32C6;
   transition: all 1s ease-out;
   left: 50%;
-  bottom: -45px;
+  bottom: -38px;
   width: 0;
 }
 header .menu .btn-menu.active:hover::after {
   transition: all 1s ease-out;
   left: 0%;
-  bottom: -45px;
+  bottom: -38px;
   width: 100%;
 }
 header .menu .btn-menu.menu-company {
@@ -672,7 +672,7 @@ footer .sns-wrap img {
     gap: 10px;
     grid-template-columns: 1fr 1fr 30px;
   }
-  header .btn-wrapper .open-side {
+  header .open-side {
     display: block;
     justify-self: right;
   }

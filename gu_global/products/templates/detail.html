@@ -92,7 +92,14 @@
 
 {% block extrascripts %}
 <script>
-    $('header').addClass('black');
+    // $('header').addClass('black');
+    $('header').css('background-color', 'black');
+    $('header .btn-menu').mouseover(function() {
+      $('header').css('background-color', '#fff')
+    });
+    $('.header-content').mouseleave(function() {
+      $('header').css('background-color', 'black')
+    });
 </script>
 
 <script>
