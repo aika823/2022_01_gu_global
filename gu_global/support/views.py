@@ -23,6 +23,8 @@ def notice_more(request, id):
   notice = Notice.objects.get(id=id)
   context = get_common_context('Support','공지사항')
   context['notice'] = notice
+  notice.views = notice.views + 1
+  notice.save()
   return render(request, 'notice_more.html', context=context) 
 
 

@@ -38,9 +38,10 @@ def category_list(request, main_category, category_name=None):
     category = Category.objects.get(name=category_name)
     product_list = Product.objects.filter(category=category).order_by('order')
 
+    # 주변기기가 하나라도 있으면 '주변기기' sub 탭 추가됨
     has_sub_category = False
     for product in product_list:
-        if product.sub_category:
+        if product.sub_category == '주변기기':
             has_sub_category = True
             break
     

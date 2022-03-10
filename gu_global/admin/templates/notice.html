@@ -31,7 +31,7 @@
                                         <td><a href="/admin/notice/{{notice.id}}">{{notice.title}}</a></th>
                                         <td>{{notice.content}}</td>
                                         <td>{{notice.author}}</td>
-                                        <td>{{notice.created_at | date:'Y-m-d'}}</td>
+                                        <td>{{notice.date | date:'Y-m-d'}}</td>
                                         <td>{{notice.views}}</td>
                                     </tr>
                                     {% endfor %}
