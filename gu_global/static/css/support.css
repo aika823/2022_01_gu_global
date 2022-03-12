@@ -199,6 +199,7 @@ section.search .search-icon {
   right: 15px;
   transform: translateY(-50%);
   font-size: 23px;
+  cursor: pointer;
 }
 
 
