@@ -37,7 +37,13 @@
       <option value="사용자 가이드" {{selected.guide}}>사용자 가이드</option>
       <option value="소프트웨어" {{selected.software}}>소프트웨어</option>
     </select>
-    <input type="text" name="keyword" value="{{keyword | safe}}"/>
+    
+    {% if keyword %}
+    <input type="text" name="keyword" value="{{keyword}}"/>
+    {% else %}
+    <input type="text" name="keyword"/>
+    {% endif %}
+    
   </form>
   <div class="search-icon" onclick="document.getElementById('searchForm').submit();">
     <i class="fas fa-search"></i>
