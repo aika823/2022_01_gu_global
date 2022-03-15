@@ -1127,7 +1127,6 @@ section.area .text-box p {
     font-size: 16px;
     top: -42px;
   }
-
 }
 @media all and (max-width: 1080px) {
   section.solution.box-1 h2 {
@@ -1261,10 +1260,6 @@ section.area .text-box p {
     border-right: none;
     border-top: 2px solid #0019A7;
     border-bottom: 2px solid #0019A7;
-  }
-
-  section.yms-map.content {
-    padding: 80px 20px 20px;
   }
 }
 @media all and (max-width: 900px) {
@@ -1478,13 +1473,6 @@ section.area .text-box p {
     grid-template-columns: 1fr 1fr;
     row-gap: 30px;
   }
-
-  section.solution.box-2.pt-0 {
-    padding-top: 80px;
-  }
-  section.solution.box-2.pt-0 .text-box h3 {
-    margin-top: 0;
-  }
 }
 @media all and (max-width: 600px) {
   section.ym-function .ym-wrap .ym-function-content .content-row {
@@ -1533,6 +1521,9 @@ section.area .text-box p {
     font-size: 28px;
   }
   
+  section.pricing p {
+    margin-bottom: 75px;
+  }
 }
 @media all and (max-width: 450px) {
   section.solution.box-1 p {
@@ -1603,7 +1594,14 @@ section.area .text-box p {
     padding: 60px 20px;
   }
 
-  section.pricing p {
-    margin-bottom: 75px;
+  section.yms-map.content {
+    padding: 80px 20px 20px;
+  }
+
+  section.solution.box-2.pt-0 {
+    padding-top: 80px;
+  }
+  section.solution.box-2.pt-0 .text-box h3 {
+    margin-top: 0;
   }
 }

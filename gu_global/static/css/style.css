@@ -796,11 +796,21 @@ section.contact-form.support-page .form-wrap form button.btn-submit:hover {
   }
 }
 @media all and (max-width: 450px) {
+  section.main {
+    height: auto;
+  }
+  section.main .slide {
+    height: 300px;
+  }
+  section.main .slide .slick-dots {
+    bottom: 10px;
+  }
   section.main .slide .slick-track .slide-bg .title-wrap h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
   section.main .slide .slick-track .slide-bg .title-wrap h3 {
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 20px;
   }
   section.business .slide-business .wide-wrap .business-content {
     width: 70%;
