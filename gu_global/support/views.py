@@ -11,7 +11,7 @@ from api.api_common import get_paginated_list, get_common_context
 
 
 def notice(request):
-  notice_list = Notice.objects.all()
+  notice_list = Notice.objects.all().order_by('order')
   context = get_common_context('Support','공지사항')
   context['notice_list'] = get_paginated_list(request, notice_list)['list']
   context['page_obj'] = get_paginated_list(request, notice_list)['page_obj']
