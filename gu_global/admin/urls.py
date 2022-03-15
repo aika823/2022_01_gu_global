@@ -40,4 +40,6 @@ urlpatterns = [
 
     path('update_image', views.update_image),
     path('update_detail_image', views.update_detail_image),
+
+    path('upload_image', views.upload_image),
 ]

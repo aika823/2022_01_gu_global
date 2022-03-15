@@ -5,6 +5,13 @@
 
 
 {% block content %}
+<form id="deleteForm" action="/admin/delete" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="table" value="notice">
+    <input type="hidden" name="id" value="{{notice.id}}">
+    <button type="submit" class="btn btn-xs btn-danger">삭제</button>
+</form>
+
 <div id="right-panel" class="right-panel">
     <div class="content mt-3">
         <div class="animated fadeIn">
@@ -63,7 +70,8 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">내용</label></div>
                                     <div class="col-12 col-md-9">
-                                    <textarea id="summernote" name="content" class="form-control" cols="30" rows="10" required>{{notice.content}}</textarea>
+                                        <textarea id="summernote" name="content" class="form-control" cols="30"
+                                            rows="10" required>{{notice.content}}</textarea>
                                     </div>
                                 </div>
 
@@ -71,8 +79,8 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">작성자</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" name="author" class="form-control"
-                                            value="{{notice.author}}" required>
+                                        <input type="text" name="author" class="form-control" value="{{notice.author}}"
+                                            required>
                                     </div>
                                 </div>
 
@@ -80,8 +88,8 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">작성일</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="date" name="date" class="form-control" value="{{notice.date |date:'Y-m-d'}}"
-                                            required>
+                                        <input type="date" name="date" class="form-control"
+                                            value="{{notice.date |date:'Y-m-d'}}" required>
                                     </div>
                                 </div>
 
@@ -124,16 +132,43 @@
 
 {% block extrascripts %}
 {# Summer note #}
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-</script>
+    </script> -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#summernote').summernote({
-          dialogsInBody: true,
+            dialogsInBody: true,
+            callbacks: {
+                onImageUpload: function (image) {
+                    uploadImage(image[0]);
+                }
+            }
         });
     });
+
+    function uploadImage(image) {
+        var data = new FormData();
+        data.append("image", image);
+        data.append("csrfmiddlewaretoken", $('meta[name="csrf-token"]').attr('content'));
+        $.ajax({
+            url: '/admin/upload_image',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: data,
+            type: "post",
+            success: function (data) {
+                console.log(data.url);
+                var image = $('<img>').attr('src', '/media/' + data.url);
+                $('#summernote').summernote("insertNode", image[0]);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        });
+    }
 </script>
 {% endblock extrascripts %}

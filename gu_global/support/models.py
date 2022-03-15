@@ -39,6 +39,14 @@ class Notice(models.Model):
         db_table = "notice"
         ordering = ['-id']
 
+class NoticeImage(models.Model):
+    image = models.ImageField(upload_to="media/images/notice", db_column="image", null=True)
+    class Meta:
+        db_table = "notice_image"
+
+
+
+
 
 # 동영상
 class Video(models.Model):
@@ -49,8 +57,6 @@ class Video(models.Model):
     created_at = models.DateTimeField(db_column="created_at", null=False, auto_now_add=True)
     link = models.CharField(db_column="link", null=False, max_length=500)
     image = models.ImageField(upload_to="media/images/video", db_column="image", null=True)
-
-
     class Meta:
         db_table = "video"
 
