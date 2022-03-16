@@ -112,7 +112,7 @@ section.support .contact-detail .detail-body .detail-wrap {
   padding: 35px 80px 40px;
 }
 section.support .contact-detail .detail-body .detail-wrap img {
-  width: 100%;
+  max-width: 100%;
 }
 section.support .contact-detail .detail-body .detail-body-info {
   display: flex;
