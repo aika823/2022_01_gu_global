@@ -299,10 +299,19 @@ section.video .video-wrap .video-item .text-wrap .title {
   font-weight: 400;
   color: #0d0d0d;
   margin: 30px 0 15px;
+  height: 28px;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
 }
 section.video .video-wrap .video-item .text-wrap .description {
   font-size: 18px;
   color: #656565;
+  height: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  white-space: normal;
 }
 section.video .video-wrap .video-item .text-wrap .bottom {
   margin-top: 25px;
