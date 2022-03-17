@@ -37,7 +37,7 @@ class Notice(models.Model):
 
     class Meta:
         db_table = "notice"
-        ordering = ['-id']
+        ordering = ['-date']
 
 
 # 동영상
@@ -50,9 +50,9 @@ class Video(models.Model):
     link = models.CharField(db_column="link", null=False, max_length=500)
     image = models.ImageField(upload_to="media/images/video", db_column="image", null=True)
 
-
     class Meta:
         db_table = "video"
+        ordering = ['-created_at']
 
 
 # 팝업
