@@ -98,7 +98,7 @@ section.support .contact-detail .detail-head .notice-title {
   font-weight: 600;
 }
 section.support .contact-detail .detail-body {
-  height: 550px;
+  min-height: 550px;
   border: 1px solid #e2e2e2;
   border-top: none;
   /* padding: 35px 80px; */
@@ -110,6 +110,9 @@ section.support .contact-detail .detail-body {
 }
 section.support .contact-detail .detail-body .detail-wrap {
   padding: 35px 80px 40px;
+}
+section.support .contact-detail .detail-body .detail-wrap img {
+  max-width: 100%;
 }
 section.support .contact-detail .detail-body .detail-body-info {
   display: flex;
@@ -199,6 +202,7 @@ section.search .search-icon {
   right: 15px;
   transform: translateY(-50%);
   font-size: 23px;
+  cursor: pointer;
 }
 
 
@@ -295,10 +299,19 @@ section.video .video-wrap .video-item .text-wrap .title {
   font-weight: 400;
   color: #0d0d0d;
   margin: 30px 0 15px;
+  height: 28px;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
 }
 section.video .video-wrap .video-item .text-wrap .description {
   font-size: 18px;
   color: #656565;
+  height: 100px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  white-space: normal;
 }
 section.video .video-wrap .video-item .text-wrap .bottom {
   margin-top: 25px;

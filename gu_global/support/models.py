@@ -39,6 +39,12 @@ class Notice(models.Model):
         db_table = "notice"
         ordering = ['-date']
 
+# 공지사항
+class NoticeImage(models.Model):
+    image = models.ImageField(upload_to="media/images/notice", db_column="image", null=True)
+    class Meta:
+        db_table = "notice_image"
+
 
 # 동영상
 class Video(models.Model):

@@ -45,6 +45,14 @@ def download(request):
     'software':'active' if request.GET.get('type') == '소프트웨어' else '',
   }
 
+  selected_dict ={
+    'codec':'selected' if request.GET.get('type') == '코덱' else '',
+    'camera':'selected' if request.GET.get('type') == '카메라' else '',
+    'speaker_phone':'selected' if request.GET.get('type') == '스피커폰' else '',
+    'guide':'selected' if request.GET.get('type') == '사용자 가이드' else '',
+    'software':'selected' if request.GET.get('type') == '소프트웨어' else '',
+  }
+
   type_dict = {
     '코덱':'codec',
     '카메라':'camera',
@@ -53,20 +61,25 @@ def download(request):
     '소프트웨어':'software',
   }  
 
-  if request.GET.get('type'):
-        if request.GET.get('type') == '전체':
-              active_dict = None
-        else:
-              product_list = product_list.filter(type=type_dict[request.GET.get('type')])
+  type = request.GET.get('type') if request.GET.get('type') else None
+  keyword = request.GET.get('keyword') if request.GET.get('keyword') else None
+
+  if type and type not in ['전체', 'all']:
+    product_list = product_list.filter(type=type_dict[type])
+  else:
+    active_dict = None
   
-  if request.GET.get('keyword'):
-        product_list = product_list.filter(title__contains=request.GET.get('keyword'))
+  if keyword:
+      product_list = product_list.filter(name__icontains=keyword)
     
-  context = get_common_context('Support','다운로드 센터', request.GET.get('type'))
+  context = get_common_context('Support','다운로드 센터', type)
   context['product_list'] = get_paginated_list(request, product_list)['list']
   context['page_obj'] = get_paginated_list(request, product_list)['page_obj']
   context['my_range'] = get_paginated_list(request, product_list)['my_range']
   context['active'] = active_dict
+  context['selected'] = selected_dict
+
+  context['keyword'] = keyword
   
   return render(request, "support_download.html", context=context)
 

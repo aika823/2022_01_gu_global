@@ -1,8 +1,12 @@
+import json
+from django.http import JsonResponse
+
+
 from multiprocessing import context
 from django.shortcuts import redirect, render
 from products.models import BestProduct, Category, Product, ProductDetailImage, ProductImage
 
-from support.models import Contact, Notice, Popup, Video
+from support.models import Contact, Notice, NoticeImage, Popup, Video
 from .models import Admin
 from django.contrib.auth.hashers import make_password, check_password
 
@@ -195,10 +199,6 @@ def create(request):
             elif action == 'create':
                 item = Popup()
             item.image = request.FILES.get('image')
-        
-
-        print(request.POST)
-        print(table)
 
         if table == 'best_product':
             if id:
@@ -290,6 +290,10 @@ def delete(request):
         Popup.objects.get(id=id).delete()
         return redirect("/admin/popup")
 
+    if table == 'notice':
+        Notice.objects.get(id=id).delete()
+        return redirect("/admin/notice")
+
 def update_image(request):
     api.api_image.update_image(request)
     table = request.POST.get('table')
@@ -301,3 +305,13 @@ def update_detail_image(request):
     table = request.POST.get('table')
     id = request.POST.get('id')
     return redirect("/admin/{}/{}".format(table, id))
+
+def upload_image(request):  
+    print(request.FILES.get('image'))
+    image = NoticeImage()
+    image.image = request.FILES.get('image')
+    image.save()
+
+    
+    return JsonResponse({'url':str(image.image)})
+    

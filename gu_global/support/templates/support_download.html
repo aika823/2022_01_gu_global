@@ -30,14 +30,20 @@
 <section class="search">
   <form action="" id="searchForm">
     <select name="type">
-      <option value="all">전체</option>
-      <option value="codec">코덱</option>
-      <option value="camera">카메라</option>
-      <option value="speaker_phone">스피커폰</option>
-      <option value="guide">사용자 가이드</option>
-      <option value="software">소프트웨어</option>
+      <option value="전체">전체</option>
+      <option value="코덱" {{selected.codec}}>코덱</option>
+      <option value="카메라" {{selected.camera}}>카메라</option>
+      <option value="스피커폰" {{selected.speaker_phone}}>스피커폰</option>
+      <option value="사용자 가이드" {{selected.guide}}>사용자 가이드</option>
+      <option value="소프트웨어" {{selected.software}}>소프트웨어</option>
     </select>
+    
+    {% if keyword %}
+    <input type="text" name="keyword" value="{{keyword}}"/>
+    {% else %}
     <input type="text" name="keyword"/>
+    {% endif %}
+    
   </form>
   <div class="search-icon" onclick="document.getElementById('searchForm').submit();">
     <i class="fas fa-search"></i>
