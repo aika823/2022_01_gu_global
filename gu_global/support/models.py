@@ -37,7 +37,7 @@ class Notice(models.Model):
 
     class Meta:
         db_table = "notice"
-        ordering = ['-id']
+        ordering = ['-date']
 
 class NoticeImage(models.Model):
     image = models.ImageField(upload_to="media/images/notice", db_column="image", null=True)
