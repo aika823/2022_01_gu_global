@@ -237,7 +237,7 @@
                 <a href="/support/notice/{{notice.id}}" class="more" onclick=""><i class="fas fa-plus"></i></a>
             </div>
             <div class="line"></div>
-            <p>{{notice.content}}</p>
+            {{notice.content |safe }}
             <p class="date">{{notice.date |date:'Y-m-d'}}</p>
         </div>
         {% endfor %}
