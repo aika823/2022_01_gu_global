@@ -254,6 +254,22 @@ section.news .grid-wrap {
   max-width: 1280px;
   margin: 90px auto 0;
 }
+section.news .grid-wrap .news-item img {
+  display: none;
+}
+section.news .grid-wrap .news-item {
+  word-break: break-all;
+}
+section.news .grid-wrap .news-item .news-content {
+  height: 150px;
+  overflow: hidden;
+  word-break: break-all;
+}
+section.news .grid-wrap .news-item .news-content p {
+  text-overflow: ellipsis;
+  word-break: break-all;
+  /* white-space: nowrap; */
+}
 section.news .grid-wrap .news-item .news-title {
   display: grid;
   grid-template-columns: 80% 20%;
