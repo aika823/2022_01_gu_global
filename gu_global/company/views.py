@@ -8,7 +8,7 @@ from django.contrib.auth.hashers import make_password
 
 def index(request):
     context = api_common.get_common_context('Company')
-    context['notice_list'] = Notice.objects.all().order_by('order')[:3]
+    context['notice_list'] = Notice.objects.all().order_by('-date')[:3]
     context['best_product_list'] = BestProduct.objects.all().order_by('order')
     today = date.today()
     
