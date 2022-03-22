@@ -294,6 +294,10 @@ def delete(request):
         Notice.objects.get(id=id).delete()
         return redirect("/admin/notice")
 
+    if table == 'contact':
+        Contact.objects.get(id=id).delete()
+        return redirect("/admin/contact")
+
 def update_image(request):
     api.api_image.update_image(request)
     table = request.POST.get('table')

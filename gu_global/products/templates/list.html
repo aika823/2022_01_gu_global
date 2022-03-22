@@ -28,7 +28,13 @@
 <section class="product-list page-start max-1280">
 
     {% for product in product_list %}
+
+    {% if product.show_detail %}
     <div class="product-item" onclick="location.href='/products/detail/{{product.id}}'">
+    {% else %}
+    <div class="product-item">
+    {% endif %}
+    
         <div class="product-img">
             <img src="/media/{{product.thumbnail}}" alt="">
         </div>

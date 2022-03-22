@@ -34,6 +34,8 @@ class Product(models.Model):
     brochure = models.FileField(upload_to="media/download", db_column="brochure", null=True)
     sheet = models.FileField(upload_to="media/download", db_column="sheet", null=True)
 
+    show_detail = models.BooleanField(null=False, default=True)
+
     class Meta:
         db_table = "product"
 
