@@ -217,8 +217,8 @@ section.solution.box-4 .grid-tech .tech-item .tech-content span.blue {
 ***/
 /* section.solution.ms.box-2 */
 section.solution.ms.box-2 {
-  background-image: none;
-  background-color: #2C3578;
+  background-image: url('/static/images/solution/ms/ms_main_image.png');
+  /* background-color: #2C3578; */
   height: 560px;
   padding: 0 100px;
   box-sizing: border-box;
@@ -241,6 +241,13 @@ section.solution.ms.box-2 .text-box p {
   line-height: 1.5;
   font-family: "Noto Sans KR";
 }
+section.solution.ms.box-2 .text-box p span {
+  font-weight: 700;
+  font-size: 25px;
+}
+section.solution.ms.box-2 .img-box {
+  display: none;
+}
 section.solution.ms.box-2 .img-box,
 section.solution.ms.box-2 .img-box img {
   width: 100%;
@@ -249,13 +256,21 @@ section.solution.ms.box-2 .img-box img {
 
 /* section.ms-list */
 section.ms-list .ms-teams {
-  margin: 150px auto;
+  margin: 150px auto 40px;
 }
 section.ms-list .ms-teams h2 {
-  font-size: 32px;
+  font-size: 30px;
+}
+section.ms-list.only-ms .ms-teams h2 {
+  color: #494da7;
 }
 section.ms-list .ms-teams h2.subtitle {
   font-weight: 300;
+}
+section.ms-list.only-ms .ms-teams h2.subtitle {
+  font-size: 20px;
+  color: #000;
+  margin-top: 10px;
 }
 section.ms-list .ms-teams h2 span {
   color: #1B35AB;
@@ -282,7 +297,92 @@ section.ms-list .ms-teams .teams-wrap .teams-content p {
 section.ms-list .ms-teams .teams-wrap .teams-content h4 {
   font-size: 19px;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 6px;
+}
+
+section.ms-phone-feature.only-ms {
+  padding-bottom: 200px;
+}
+
+
+section.solution.ms.usb.box-2 {
+  background-color: #0E26B1;
+}
+section.solution.ms.usb.box-2 p.usb-top-text {
+  font-size: 18px;
+}
+section.solution.ms.usb.box-2 p.usb-top-text strong {
+  font-size: 28px;
+}
+
+section.ms-list.usb.content {
+  padding-top: 0;
+}
+section.ms-list.usb .ms-teams h2 {
+  color: #0E26B1;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+section.ms-list.usb .ms-teams h2.subtitle {
+  color: #000;
+  font-weight: 700;
+  font-size: 32px;
+}
+section.ms-list.usb .ms-teams .teams-wrap .teams-content p {
+  font-size: 16px;
+  color: #000;
+}
+section.ms-list.usb .ms-teams .teams-wrap .teams-content h4 {
+  font-size: 21px;
+  color: #000;
+}
+section.usb-banner {
+  background-image: url("/static/images/solution/usb/middle_image.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section.usb-banner h2 {
+  padding: 130px 0;
+  font-size: 36px;
+  text-align: center;
+  color: #fff;
+}
+section.usb-package {
+  padding: 120px 50px 0;
+  box-sizing: border-box;
+}
+section.usb-package h2 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+section.usb-package h3 {
+  font-size: 32px;
+  font-weight: 300;
+}
+section.usb-package .package-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 20px;
+  margin: 70px 0 50px;
+}
+section.usb-package .package-wrap .package-item .img-wrap {
+  background-color: #F1F1F1;
+}
+section.usb-package .package-wrap .package-item .img-wrap img {
+  width: 100%;
+}
+section.usb-package .package-wrap .package-item .text-wrap {
+  padding: 20px 0 35px;
+  text-align: center;
+}
+section.usb-package .package-wrap .package-item .text-wrap p {
+  font-size: 20px;
+}
+section.usb-package .package-wrap .package-item .text-wrap h3 {
+  font-size: 22px;
+  font-weight: 700;
 }
 
 
@@ -948,6 +1048,215 @@ section.area .text-box p {
   line-height: 35px;
 }
 
+
+/***
+* ms_phone.html
+***/
+
+/* section.ms-phone-banner */
+section.ms-phone-banner {
+  background-image: url('/static/images/solution/ms_phone/ms_phone_main_image.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+section.ms-phone-banner .text-wrap {
+  padding: 200px 50px;
+  box-sizing: border-box;
+}
+section.ms-phone-banner .text-wrap h2 {
+  color: #fff;
+  font-size: 45px;
+  line-height: 1.4em;
+}
+
+/* section.ms-phone-product */
+section.ms-phone-product {
+  background-image: url('/static/images/solution/ms_phone/ms_phone_main_product_image.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+section.ms-phone-product.ms-product {
+  background-image: url('/static/images/solution/ms/ms_main_product_image.png');
+}
+section.ms-phone-product .text-wrap {
+  padding: 200px 50px;
+  box-sizing: border-box;
+}
+section.ms-phone-product .text-wrap img {
+  width: 200px;
+}
+section.ms-phone-product .text-wrap h3 {
+  font-size: 28px;
+  color: #535353;
+  font-weight: 400;
+  margin-top: 50px;
+}
+section.ms-phone-product .text-wrap h2 {
+  font-size: 45px;
+}
+section.ms-phone-product .text-wrap p {
+  font-size: 16px;
+  color: #535353;
+  margin-top: 50px;
+}
+
+/* section.ms-phone-feature */
+section.ms-phone-feature {
+  padding: 120px 50px;
+  box-sizing: border-box;
+}
+section.ms-phone-feature h2 {
+  font-size: 30px;
+  color: #fff;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  background-color: #494da7;
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+}
+section.ms-phone-feature .feature-wrap {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 50px;
+}
+section.ms-phone-feature .feature-wrap .feature {
+  text-align: center;
+  width: 100%;
+}
+section.ms-phone-feature .feature-wrap .feature .img-wrap,
+section.ms-phone-feature .feature-wrap .feature .img-wrap img {
+  width: 100%;
+}
+section.ms-phone-feature .feature-wrap .feature h3 {
+  margin: 20px 0;
+  font-size: 25px;
+}
+section.ms-phone-feature .feature-wrap .feature p {
+  font-size: 18px;
+  color: #3a3a3a;
+}
+
+/* section.ms-phone-device */
+section.ms-phone-device {
+  padding: 150px 50px 200px;
+  box-sizing: border-box;
+}
+section.ms-phone-device h3.title {
+  color: #494da7;
+  font-size: 30px;
+  text-align: center;
+}
+section.ms-phone-device .device-wrap {
+  padding-top: 150px;
+}
+section.ms-phone-device .device-wrap .device-title {
+  border-left: 4px solid #0019A7;
+  padding-left: 15px;
+}
+section.ms-phone-device .device-wrap .device-title h3 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+section.ms-phone-device .device-wrap .device-title p {
+  font-size: 20px;
+  color: #3f3f3f;
+}
+section.ms-phone-device .device-wrap .device-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  gap: 35px;
+  margin-top: 30px;
+}
+section.ms-phone-device .device-wrap .device-grid .device-item,
+section.ms-phone-device .device-wrap .device-grid .device-item img {
+  width: 100%;
+}
+section.ms-phone-device .device-wrap .device-grid .device-item .img1 {
+  margin-bottom: 15px;
+}
+section.ms-phone-device .device-wrap .device-grid .device-item .img2 img {
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* section.ms-phone-bottom */
+section.ms-phone-bottom {
+  background-image: url('/static/images/solution/ms_phone/ms_phone_bottom_image.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  height: 600px;
+  position: relative;
+  max-width: 2800px;
+  margin: 0 auto;
+}
+section.ms-phone-bottom .text-wrap {
+  text-align: left;
+  color: #fff;
+  position: absolute;
+  top: 50px;
+  left: 310px;
+  height: 380px;
+  padding: 62px 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+section.ms-phone-bottom .text-wrap .bottom {
+  display: flex;
+  gap: 10px;
+}
+section.ms-phone-bottom .text-wrap .empty {
+  width: 60px;
+  border-top: 2px solid #fff;
+}
+
+
+/* ms */
+section.service-room {
+  padding: 120px 50px;
+  box-sizing: border-box;
+}
+section.service-room h2 {
+  color: #494da7;
+  margin-bottom: 10px;
+}
+section.service-room .wrap {
+  padding: 100px 0 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+section.service-room .wrap img {
+  width: 100%;
+}
+section.service-room .wrap .product-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+section.service-room .wrap .product-wrap .products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+section.service-room .wrap .product-wrap .text-wrap h3 {
+  color: #494da7;
+  font-size: 24px;
+}
+section.service-room .wrap .product-wrap .text-wrap p {
+  font-size: 18px;
+}
+
+
 @media all and (max-width: 1920px) {
   /* section.solution.box-3.content {
     padding: 150px 150px 250px;
@@ -986,6 +1295,11 @@ section.area .text-box p {
   section.pricing .price-wrap {
     gap: 50px;
   }
+/* 
+  section.ms-phone-bottom .text-wrap h2 {
+    font-size: 20px;
+    line-height: 24px;
+  } */
 }
 @media all and (max-width: 1440px) {
   section.solution.box-1 .grid-3 .grid-item .item-content {
@@ -1128,6 +1442,40 @@ section.area .text-box p {
     top: -42px;
   }
 
+
+  section.solution.box-2.ms.usb .text-box {
+    padding: 0;
+  }
+
+  section.ms-phone-product .text-wrap {
+    padding: 60px 50px;
+  }
+
+  section.ms-phone-bottom {
+    height: 250px;
+  }
+  section.ms-phone-bottom .text-wrap {
+    height: auto;
+    top: 6px;
+    left: 120px;
+  }
+  section.ms-phone-bottom .text-wrap h2 {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  section.ms-phone-bottom .text-wrap .empty {
+    width: 30px;
+  }
+  section.ms-phone-bottom .text-wrap .bottom p {
+    font-size: 12px;
+  }
+
+  section.solution.ms.box-2 {
+    background-image: url('/static/images/solution/ms/ms_main_image2.png');
+  }
+  section.solution.ms.box-2 .img-box {
+    display: block;
+  }
 }
 @media all and (max-width: 1080px) {
   section.solution.box-1 h2 {
@@ -1266,6 +1614,36 @@ section.area .text-box p {
   section.yms-map.content {
     padding: 80px 20px 20px;
   }
+
+
+  section.usb-banner h2 {
+    padding: 90px 0;
+    font-size: 24px;
+  }
+
+  section.ms-phone-feature .feature-wrap .feature p {
+    word-break: keep-all;
+  }
+  section.ms-phone-feature .feature-wrap .feature p br {
+    display: none;
+  }
+
+  section.ms-phone-bottom {
+    background-image: url('/static/images/solution/ms_phone/ms_phone_bottom_image2.png');
+    height: 800px;
+  }
+  section.ms-phone-bottom .text-wrap {
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  section.ms-phone-bottom .text-wrap h2 {
+    font-size: 16px;
+    word-break: keep-all;
+  }
+  section.ms-phone-bottom .text-wrap h2 br {
+    display: none;
+  }
 }
 @media all and (max-width: 900px) {
   section.solution.yms.box-2 {
@@ -1281,6 +1659,10 @@ section.area .text-box p {
   }
   section.solution.yms.box-2 p br {
     display: none;
+  }
+
+  section.ms-phone-device h3.title {
+    font-size: 25px;
   }
 }
 @media all and (max-width: 768px) {
@@ -1485,6 +1867,82 @@ section.area .text-box p {
   section.solution.box-2.pt-0 .text-box h3 {
     margin-top: 0;
   }
+
+  section.solution.ms.usb.box-2 .ms-banner {
+    flex-direction: column;
+  }
+  section.usb-banner h2 {
+    padding: 65px 0;
+    font-size: 18px;
+  }
+  section.usb-package .package-wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+  section.ms-list.usb .ms-teams {
+    margin-bottom: 40px;
+  }
+  section.usb-package {
+    padding: 120px 20px 0;
+  }
+
+  section.ms-phone-banner .text-wrap {
+    padding: 100px 20px;
+  }
+  section.ms-phone-banner .text-wrap h2 {
+    font-size: 28px;
+  }
+
+  section.ms-phone-product .text-wrap {
+    padding: 60px 20px;
+  }
+  section.ms-phone-product .text-wrap img {
+    width: 100px;
+  }
+  section.ms-phone-product .text-wrap h3 {
+    font-size: 21px;
+    margin-top: 20px;
+  }
+  section.ms-phone-product .text-wrap h2 {
+    font-size: 28px;
+  }
+  section.ms-phone-product .text-wrap p {
+    margin-top: 20px;
+  }
+  section.ms-phone-product {
+    background-image: url('/static/images/solution/ms_phone/ms_phone_main_product_image2.png');
+    height: 600px;
+  }
+  section.ms-phone-product .text-wrap {
+    padding: 90px 20px;
+  }
+
+  section.ms-phone-feature .feature-wrap {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  section.ms-phone-feature {
+    padding: 120px 20px;
+  }
+
+  section.ms-phone-device .device-wrap {
+    padding-top: 100px;
+  }
+  section.ms-phone-device {
+    padding: 150px 20px 200px;
+  }
+
+  section.ms-phone-product.ms-product {
+    background-image: url('/static/images/solution/ms/ms_main_product_image2.png');
+    height: 800px;
+  }
+
+  section.service-room .wrap {
+    padding: 50px 0;
+    grid-template-columns: 1fr;
+  }
+  section.service-room {
+    padding: 120px 20px;
+  }
 }
 @media all and (max-width: 600px) {
   section.ym-function .ym-wrap .ym-function-content .content-row {
@@ -1533,6 +1991,10 @@ section.area .text-box p {
     font-size: 28px;
   }
   
+  section.ms-list {
+    padding: 50px 25px;
+    box-sizing: border-box;
+  }
 }
 @media all and (max-width: 450px) {
   section.solution.box-1 p {
@@ -1605,5 +2067,102 @@ section.area .text-box p {
 
   section.pricing p {
     margin-bottom: 75px;
+  }
+
+
+  section.ms-list.usb .ms-teams .teams-wrap {
+    grid-template-columns: 1fr;
+  }
+  section.usb-banner h2 {
+    padding: 65px 20px;
+    font-size: 15px;
+    word-break: keep-all;
+  }
+  section.usb-banner h2 br {
+    display: none;
+  }
+  section.usb-package h2 {
+    font-size: 28px;
+  }
+  section.usb-package h3 {
+    font-size: 25px;
+  }
+  section.usb-package .package-wrap {
+    grid-template-columns: 1fr;
+    margin: 30px 0 50px;
+  }
+  section.usb-package {
+    padding: 80px 20px 0;
+  }
+  section.solution.ms.usb.box-2 .img-box {
+    width: 100%;
+  }
+
+
+  section.ms-phone-banner .text-wrap {
+    padding: 70px 20px;
+  }
+  section.ms-phone-banner .text-wrap h2 {
+    font-size: 23px;
+  }
+
+  section.ms-phone-feature h2 {
+    font-size: 22px;
+  }
+  section.ms-phone-feature .feature-wrap {
+    padding-top: 30px;
+    grid-template-columns: 1fr;
+  }
+  section.ms-phone-feature .feature-wrap .feature h3 {
+    margin: 10px 0;
+    font-size: 21px;
+  }
+  section.ms-phone-feature {
+    padding: 120px 20px 0;
+  }
+  section.ms-phone-device .device-wrap .device-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  section.ms-phone-device .device-wrap {
+    padding-top: 50px;
+  }
+  section.ms-phone-bottom {
+    height: 450px;
+  }
+  section.ms-phone-bottom .text-wrap {
+    padding: 0;
+    top: 23px;
+  }
+  section.ms-phone-bottom .text-wrap h2 {
+    font-size: 11px;
+  }
+  section.ms-phone-bottom .text-wrap .bottom {
+    display: none;
+  }
+
+  section.ms-phone-product.ms-product {
+    height: 500px;
+  }
+  section.service-room .wrap .product-wrap .text-wrap p {
+    font-size: 16px;
+  }
+  section.service-room {
+    padding: 120px 20px 0;
+  }
+
+  section.ms-list.only-ms .ms-teams h2 {
+    font-size: 25px;
+  }
+  section.ms-list.only-ms .ms-teams h2.subtitle {
+    font-size: 15px;
+  }
+  section.ms-list.only-ms .ms-teams .teams-wrap {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  section.ms-phone-feature.only-ms {
+    padding-top: 0;
+    padding-bottom: 200px;
   }
 }

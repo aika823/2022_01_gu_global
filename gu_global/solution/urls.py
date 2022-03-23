@@ -11,4 +11,6 @@ urlpatterns = [
     path('MS', views.ms),
     path('YMS', views.yms),
     path('SONY', views.sony),
+    path('USB', views.usb),
+    path('MS_PHONE',views.ms_phone),
 ]

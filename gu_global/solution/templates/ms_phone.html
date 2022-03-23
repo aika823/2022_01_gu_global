@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block extraheads %}
+<link rel="stylesheet" href="/static/css/subpage.css">
+<link rel="stylesheet" href="/static/css/solution.css">
+{% endblock extraheads %}
+
+{% block content %}
+
+<!-- section.sub-banner -->
+{% include "sub_banner.html" %}
+
+<!-- section.ms-phone-banner -->
+<section class="ms-phone-banner page-start">
+  <div class="max-1280">
+    <div class="text-wrap">
+      <h2>Yealink Voice Device Solutions
+        <br>for Microsoft Teams</h2>
+    </div>
+  </div>
+</section>
+
+
+<!-- section.ms-phone-product -->
+<section class="ms-phone-product">
+  <div class="max-1280">
+    <div class="text-wrap">
+      <img src="/static/images/solution/ms_phone/logo.png" alt="">
+      <h3>Microsoft Teams Phone Series</h3>
+      <h2>DeskPhone MP54/56/58</h2>
+      <p>Enable Productivity-enhancing Commumication</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- section.ms-phone-feature -->
+<section class="ms-phone-feature">
+  <div class="max-1280">
+    <h2>MS Teams Phone 글로벌 1위!</h2>
+    <div class="feature-wrap">
+      <div class="feature">
+        <div class="img-wrap">
+          <img src="/static/images/solution/ms_phone/ms_phone_icon01.png" alt="">
+        </div>
+        <h3>Feature 1</h3>
+        <p>
+          최초의 마이크로소프트 Teams 인증 
+          <br>데스크탑 전화기
+        </p>
+      </div>
+      <div class="feature">
+        <div class="img-wrap">
+          <img src="/static/images/solution/ms_phone/ms_phone_icon02.png" alt="">
+        </div>
+        <h3>Feature 2</h3>
+        <p>
+          최초이자 최고 완성도의 MS Teams 인증 
+          <br>제품으로 보급형으로부터 임원용까지 
+          <br>다양한 제품 라인업
+        </p>
+      </div>
+      <div class="feature">
+        <div class="img-wrap">
+          <img src="/static/images/solution/ms_phone/ms_phone_icon03.png" alt="">
+        </div>
+        <h3>Feature 3</h3>
+        <p>
+          업계 최초의 원스톱 MS Teams
+          <br>오디오 디바이스 공급사로 사무공간, 
+          <br>공용공간, 소형에서 대형회의실까지 커버
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- section.ms-phone-device -->
+<section class="ms-phone-device">
+  <div class="max-1280">
+    <h3 class="title">사용자의 모든 업무 환경에 대응 가능한 MS Teams 인증 제품</h3>
+    <div class="device-wrap">
+      <div class="device-title">
+        <h3>개인용 디바이스</h3>
+        <p>DeskPhone</p>
+      </div>
+      <div class="device-grid">
+        <div class="device-item">
+          <div class="img1">
+            <img src="/static/images/solution/ms_phone/ms_device_image_01.png" alt="">
+          </div>
+          <div class="img2">
+            <img src="/static/images/solution/ms_phone/ms_device_image_01_p.png" alt="">
+          </div>
+        </div>
+        <div class="device-item">
+          <div class="img1">
+            <img src="/static/images/solution/ms_phone/ms_device_image_02.png" alt="">
+          </div>
+          <div class="img2">
+            <img src="/static/images/solution/ms_phone/ms_device_image_02_p.png" alt="">
+          </div>
+        </div>
+        <div class="device-item">
+          <div class="img1">
+            <img src="/static/images/solution/ms_phone/ms_device_image_03.png" alt="">
+          </div>
+          <div class="img2">
+            <img src="/static/images/solution/ms_phone/ms_device_image_03_p.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="device-wrap">
+      <div class="device-title">
+        <h3>회의용 디바이스</h3>
+        <p>Speakerphone/Conference Phone</p>
+      </div>
+      <div class="device-grid">
+        <div class="device-item">
+          <div class="img1">
+            <img src="/static/images/solution/ms_phone/ms_device_image_04.png" alt="">
+          </div>
+          <div class="img2">
+            <img src="/static/images/solution/ms_phone/ms_device_image_04_p.png" alt="">
+          </div>
+        </div>
+        <div class="device-item">
+          <div class="img1">
+            <img src="/static/images/solution/ms_phone/ms_device_image_05.png" alt="">
+          </div>
+          <div class="img2">
+            <img src="/static/images/solution/ms_phone/ms_device_image_05_p.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- section.ms-phone-bottom -->
+<section class="ms-phone-bottom">
+  <div class="text-wrap">
+    <h2>
+      Yealink는 Microsoft 팀을 위한 전체 디바이스 
+      <br>포트폴리오와 함께 고객에게 Microsoft Teams 환경을 
+      <br>모든 공간과 사용자에게 제공할 수 있는 고품질의 옵션을 제공합니다.
+    </h2>
+    <div class="bottom">
+      <div class="empty"></div>
+      <p>
+        Bob Davis Corporate VP
+        <br>Microsoft O365
+      </p>
+    </div>
+  </div>
+</section>
+
+
+{% endblock content %}
+
+
+{% block extrascripts %}
+<script>
+  $(function() {
+    $('.sub-banner').css('background-image', "url('/static/images/solution/solution_bg.png')");
+  });
+</script>
+{% endblock extrascripts %}

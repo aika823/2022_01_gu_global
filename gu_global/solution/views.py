@@ -29,3 +29,15 @@ def sony(request):
     context = api_common.get_common_context('Solution','스마트 강의')
     context['solution_name'] = request.GET.get('name')
     return render(request, "sony.html", context=context)
+
+
+def usb(request):
+    context = api_common.get_common_context('Solution','범용 USB 화상회의')
+    context['solution_name'] = request.GET.get('name')
+    return render(request, "usb.html", context=context)
+
+
+def ms_phone(request):
+    context = api_common.get_common_context('Solution','MS Teams Phone')
+    context['solution_name'] = request.GET.get('name')
+    return render(request, "ms_phone.html", context=context)
