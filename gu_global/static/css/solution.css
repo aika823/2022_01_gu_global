@@ -307,6 +307,10 @@ section.ms-phone-feature.only-ms {
 
 section.solution.ms.usb.box-2 {
   background-color: #0E26B1;
+  background-image: none;
+}
+section.solution.ms.usb.box-2 .img-box {
+  display: block;
 }
 section.solution.ms.usb.box-2 p.usb-top-text {
   font-size: 18px;
