@@ -27,7 +27,7 @@
 
       {% for notice in notice_list %}
       <div class="table-row" onclick="location.href='/support/notice/{{notice.id}}'">
-        <p>{{forloop.counter}}</p>
+        <p>{{notice.number}}</p>
         <p class="notice-title">{{notice.title}}</p>
         <p>{{notice.author}}</p>
         <p>{{notice.date |date:'Y-m-d'}}</p>
