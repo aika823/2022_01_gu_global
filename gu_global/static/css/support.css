@@ -383,10 +383,11 @@ section.video .video-wrap .video-item .text-wrap .bottom img {
   }
   section.support .support-table .table-head p:nth-child(2),
   section.support .support-table .table-body .table-row p:nth-child(2) {
-    height: 24px;
+    /* height: 24px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap; */
+    text-align: left;
   }
 
   section.video .video-wrap {
@@ -449,10 +450,10 @@ section.video .video-wrap .video-item .text-wrap .bottom img {
   section.support .support-table .table-head p:nth-child(4), section.support .support-table .table-body .table-row p:nth-child(4), section.support .support-table .table-head p:nth-child(3), section.support .support-table .table-body .table-row p:nth-child(3) {
     width: 81px;
   }
-  section.support .support-table .table-head p:nth-child(2),
+  /* section.support .support-table .table-head p:nth-child(2),
   section.support .support-table .table-body .table-row p:nth-child(2) {
     height: 20px;
-  }
+  } */
   section.support .support-table .table-head p:nth-child(3),
   section.support .support-table .table-body .table-row p:nth-child(3) {
     width: 60px;
