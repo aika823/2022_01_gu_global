@@ -11,7 +11,12 @@ from api.api_common import get_paginated_list, get_common_context
 
 
 def notice(request):
-  notice_list = Notice.objects.all()
+  notice_list = Notice.objects.all().order_by('-date')
+  # 역순 카운트
+  i=0
+  for notice in notice_list:
+        notice.number = notice_list.count()-i
+        i = i+1
   context = get_common_context('Support','공지사항')
   context['notice_list'] = get_paginated_list(request, notice_list)['list']
   context['page_obj'] = get_paginated_list(request, notice_list)['page_obj']
@@ -72,14 +77,22 @@ def download(request):
   if keyword:
       product_list = product_list.filter(name__icontains=keyword)
     
+  
+  # 역순 카운트
+  i=0
+  for product in product_list:
+        product.number = product_list.count()-i
+        i = i+1
+        
+    
   context = get_common_context('Support','다운로드 센터', type)
   context['product_list'] = get_paginated_list(request, product_list)['list']
   context['page_obj'] = get_paginated_list(request, product_list)['page_obj']
   context['my_range'] = get_paginated_list(request, product_list)['my_range']
   context['active'] = active_dict
   context['selected'] = selected_dict
-
   context['keyword'] = keyword
+  context['total_count'] = product_list.count()
   
   return render(request, "support_download.html", context=context)
 

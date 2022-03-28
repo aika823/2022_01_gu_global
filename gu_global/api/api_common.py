@@ -52,14 +52,14 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
     }
 
     banner_solution = {
-        '범용 USB 화상회의': '',
+        '범용 USB 화상회의': '/solution/USB?name=범용 USB 화상회의',
         '스탠다드 화상회의':'/solution/?name=스탠다드 화상회의',
         'MS Teams 화상회의':'/solution/MS?name=MS Teams 화상회의',
         'SIP Phone': '',
         '스마트 강의':'/solution/SONY?name=스마트 강의',
         '구축형 화상회의':'/solution/YMS?name=구축형 화상회의',
         '클라우드 화상회의':'/solution/YM?name=클라우드 화상회의',
-        'MS Teams Phone': '',
+        'MS Teams Phone': '/solution/MS_PHONE?name=MS Teams Phone',
         '화자 추적 회의실 마이크 시스템': '',
         '스튜디오': ''
     }
