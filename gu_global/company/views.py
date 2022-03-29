@@ -74,7 +74,7 @@ def contact(request):
         contact.save()
         
         # Send Email
-        admin_email = "guglobal@guglobal.com"
+        admin_email = "help@guglobal.com"
         html_message = render_to_string('email.html', {'content':content,'contact':contact})
         plain_message = strip_tags(html_message)
 
