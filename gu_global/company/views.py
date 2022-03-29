@@ -74,7 +74,7 @@ def contact(request):
         contact.save()
         
         # Send Email
-        admin_email = "aika823@naver.com"
+        admin_email = "guglobal@guglobal.com"
         html_message = render_to_string('email.html', {'content':content,'contact':contact})
         plain_message = strip_tags(html_message)
 
@@ -87,7 +87,7 @@ def contact(request):
                 <a href="https://guglobal.gabia.io/admin/contact/{}">관리자 페이지에서 확인하기</a>
             </body>
             </html>
-        """.format(contact.title, contact.content, contact.id)
+        """.format(contact.title, contact.id)
 
         email_message = EmailMessage(
             subject="[{}] {}".format(type, title),
