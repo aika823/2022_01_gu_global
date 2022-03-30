@@ -21,6 +21,7 @@ def notice(request):
   context['notice_list'] = get_paginated_list(request, notice_list)['list']
   context['page_obj'] = get_paginated_list(request, notice_list)['page_obj']
   context['my_range'] = get_paginated_list(request, notice_list)['my_range']
+  context['total_count'] = notice_list.count()
   return render(request, 'support_notice.html', context=context)
 
 
