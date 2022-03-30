@@ -55,7 +55,7 @@
 
         <div class="form-row">
           <label for="">문의 내용</label>
-          <input name="content" type="text"/>
+          <textarea name="content" type="text" maxlength="400"></textarea>
         </div>
 
         <!-- <div class="form-row">
@@ -63,10 +63,7 @@
           <input name="password" type="password"/>
         </div> -->
 
-        <div class="checkbox-wrap">
-          <input type="checkbox" required>
-          <span>위 내용에 동의합니다.</span>
-        </div>
+        
 
         <div class="table-wrap">
           <div class="table-header">
@@ -80,6 +77,11 @@
             <p>문의•요청•불편사항 및 처리결과 회신</p>
             <p>문의 민원 해결 이후 파기</p>
           </div>
+        </div>
+
+        <div class="checkbox-wrap">
+          <input type="checkbox" required>
+          <span>위 내용에 동의합니다.</span>
         </div>
 
         <button type="submit" href="javascript:void(0)" class="btn-submit">문의하기</button>

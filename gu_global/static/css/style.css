@@ -396,6 +396,7 @@ section.contact-form .form-wrap form .form-row label {
   margin-bottom: 10px;
   display: block;
 }
+section.contact-form .form-wrap form .form-row textarea,
 section.contact-form .form-wrap form .form-row input,
 section.contact-form .form-wrap form .form-row select {
   background-color: transparent;
@@ -406,6 +407,7 @@ section.contact-form .form-wrap form .form-row select {
   box-sizing: border-box;
   display: block;
   width: 100%;
+  font-family: 'NanumBarunGothic', sans-serif;
 }
 section.contact-form .form-wrap form .form-row .select-dropdown {
   background-color: transparent;
