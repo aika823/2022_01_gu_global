@@ -33,19 +33,24 @@
           </p>
           <div class="icon-box pc">
             <a href="" class="">
-              <img src="/static/images/yealinkmeeting 2.png" alt="">
+              <img src="/static/images/btn_yealinkmeeting2.png" alt="" style="cursor:pointer;"
+                onclick="window.open('http://www.yealinkmeeting.co.kr/')">
             </a>
             <a href="" class="">
-              <img src="/static/images/youtube.png" alt="">
+              <img src="/static/images/btn_youtube2.png" alt="" style="cursor:pointer;"
+                onclick="window.open('https://www.youtube.com/channel/UCvaT8qpTkYz-JWjA-FVlG1g')">
             </a>
             <a href="" class="">
-              <img src="/static/images/instagram.png" alt="">
+              <img src="/static/images/btn_insta2.png" alt="" style="cursor:pointer;"
+                onclick="window.open('https://www.instagram.com/gu.global_official/?hl=ko')">
             </a>
             <a href="" class="">
-              <img src="/static/images/blog11.png" alt="">
+              <img src="/static/images/btn_blog2.png" alt="" style="cursor:pointer;"
+                onclick="window.open('https://blog.naver.com/gu_global/222184022631')">
             </a>
             <a href="" class="">
-              <img src="/static/images/yealink2.png" alt="">
+              <img src="/static/images/btn_yealink2.png" alt="" style="cursor:pointer;"
+                onclick="window.open('https://www.yealink.com/')">
             </a>
           </div>
         </div>
@@ -115,15 +120,15 @@
     content: contentString
   });
 
-  naver.maps.Event.addListener(marker, "click", function(e) {
+  naver.maps.Event.addListener(marker, "click", function (e) {
     if (infowindow.getMap()) {
-        infowindow.close();
+      infowindow.close();
     } else {
-        infowindow.open(map, marker);
+      infowindow.open(map, marker);
     }
   });
-  </script>
-  
+</script>
+
 
 <!-- <script>
   var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
