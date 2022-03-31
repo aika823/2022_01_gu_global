@@ -51,7 +51,7 @@ def portfolio(request):
     return render(request, "portfolio.html", context=context)
 
 def location(request):
-    context = api_common.get_common_context('Company','Location')
+    context = api_common.get_common_context('Company','Contact Us')
     return render(request, "location.html", context=context)
 
 def contact(request):
