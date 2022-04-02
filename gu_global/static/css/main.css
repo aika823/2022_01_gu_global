@@ -662,7 +662,8 @@ footer .sns-wrap img {
 
 @media all and (max-width: 1080px) {
   header .logo {
-    width: 200px;
+    /* width: 200px; */
+    width: 280px;
   }
   header .menu {
     display: none;
