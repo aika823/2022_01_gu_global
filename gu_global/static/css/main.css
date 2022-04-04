@@ -251,7 +251,8 @@ header.black {
 }
 
 header .logo {
-    width: 240px;
+    /* width: 240px; */
+    width: 280px;
     /* margin-right: 80px; */
 }
 
