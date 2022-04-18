@@ -42,7 +42,7 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
         '연혁':'/company/history', 
         # '파트너사':'/company/partner', 
         '포트폴리오':'/company/portfolio',
-        # 'Contact Us':'/company/contact', 
+        'Contact Us':'/company/contact', 
     }
 
     banner_product = {
