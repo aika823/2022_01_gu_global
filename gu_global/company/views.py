@@ -101,5 +101,5 @@ def contact(request):
             email_message.attach_file(str(contact.file))
         email_message.send()
     
-    context = api_common.get_common_context('Company','문의하기')
+    context = api_common.get_common_context('Support','문의하기')
     return render(request, "contact_page.html", context=context)
