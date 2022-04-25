@@ -40,9 +40,8 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
         '회사소개':'/company', 
         '조직도':'/company/org', 
         '연혁':'/company/history', 
-        # '파트너사':'/company/partner', 
         '포트폴리오':'/company/portfolio',
-        'Contact Us':'/company/contact', 
+        'Contact Us':'/company/location', 
     }
 
     banner_product = {
@@ -55,7 +54,7 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
         '범용 USB 화상회의': '/solution/USB?name=범용 USB 화상회의',
         '스탠다드 화상회의':'/solution/?name=스탠다드 화상회의',
         'MS Teams 화상회의':'/solution/MS?name=MS Teams 화상회의',
-        'SIP Phone': '',
+        'SIP Phone': '/products/Yealink/SIP Phone',
         '스마트 강의':'/solution/SONY?name=스마트 강의',
         '구축형 화상회의':'/solution/YMS?name=구축형 화상회의',
         '클라우드 화상회의':'/solution/YM?name=클라우드 화상회의',
@@ -119,40 +118,40 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
 
 
 
-def get_banner(page=None):
+# def get_banner(page=None):
 
-    yealink_list = Category.objects.filter(main_category='Yealink').order_by('order')
+#     yealink_list = Category.objects.filter(main_category='Yealink').order_by('order')
 
-    banner_common = {
-        'Company':'/company', 
-        'Products':'/products/Yealink/{}'.format(yealink_list.first().name), 
-        'Solution':'/solution', 
-        'Support':'/support', 
-    }
+#     banner_common = {
+#         'Company':'/company', 
+#         'Products':'/products/Yealink/{}'.format(yealink_list.first().name), 
+#         'Solution':'/solution', 
+#         'Support':'/support', 
+#     }
     
-    banner_company = {
-        '회사소개':'/company', 
-        '조직도':'/company/org', 
-        '연혁':'/company/history', 
-        '파트너사':'/company/partner', 
-        '포트폴리오':'/company/portfolio', 
-        '문의하기':'/company/contact', 
-    }
+#     banner_company = {
+#         '회사소개':'/company', 
+#         '조직도':'/company/org', 
+#         '연혁':'/company/history', 
+#         '파트너사':'/company/partner', 
+#         '포트폴리오':'/company/portfolio', 
+#         '문의하기':'/company/location', 
+#     }
 
-    banner_partner = {
-        '파트너사':'/company/partner?type=partner',
-        '고객사':'/company/partner?type=customer',
-        '시/정부기관':'/company/partner?type=government',
-        '협력사':'/company/partner?type=cooperate',
-    }
+#     banner_partner = {
+#         '파트너사':'/company/partner?type=partner',
+#         '고객사':'/company/partner?type=customer',
+#         '시/정부기관':'/company/partner?type=government',
+#         '협력사':'/company/partner?type=cooperate',
+#     }
 
-    banner_dict = {
-        'common':banner_common,
-        'company':banner_company,
-        'partner':banner_partner
-    }
+#     banner_dict = {
+#         'common':banner_common,
+#         'company':banner_company,
+#         'partner':banner_partner
+#     }
     
-    return banner_dict[page]
+#     return banner_dict[page]
 
 
 def get_paginated_list(request, list, item_per_page=10):
