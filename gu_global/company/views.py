@@ -19,8 +19,9 @@ def index(request):
     today = date.today()
     
     popup_list = list()
+    print(Popup.objects.all())
     for popup in Popup.objects.all():
-        if popup.start < today < popup.end :
+        if popup.start <= today <= popup.end :
             popup_list.append(popup)
             
     context['popup_list'] = popup_list[:1]
