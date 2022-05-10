@@ -154,15 +154,26 @@ def get_common_context(page_1=None, page_2=None, page_3=None, title=None, sub_ti
 #     return banner_dict[page]
 
 
-def get_paginated_list(request, list, item_per_page=10):
+# def get_paginated_list(request, list, item_per_page=10):
+#     page = request.GET.get('page', '1')
+#     paginator = Paginator(list, item_per_page)
+#     page_obj = paginator.page(page)
+#     current_page = page_obj.number
+#     min_num = max(1, current_page-2)
+#     max_num = min(current_page+3, paginator.num_pages+1)
+#     my_range  = range(min_num, max_num)
+#     return {'list':page_obj.object_list, 'page_obj':page_obj, 'my_range':my_range}
 
+def get_paginated_list(request, list, item_per_page=10, page_prev=2, page_next=2):
     page = request.GET.get('page', '1')
     paginator = Paginator(list, item_per_page)
     page_obj = paginator.page(page)
-
     current_page = page_obj.number
-    min_num = max(1, current_page-2)
-    max_num = min(current_page+3, paginator.num_pages+1)
+    min_num = max(1, current_page-page_prev) if page_prev else 1
+    max_num = min(current_page+page_next+1, paginator.num_pages+1) if page_next else paginator.num_pages
+    if paginator.num_pages >= 5 and current_page<3:
+        max_num = 6
+    if paginator.num_pages >= 5 and (paginator.num_pages - current_page < 2 ):
+        min_num = paginator.num_pages -4
     my_range  = range(min_num, max_num)
-
     return {'list':page_obj.object_list, 'page_obj':page_obj, 'my_range':my_range}
