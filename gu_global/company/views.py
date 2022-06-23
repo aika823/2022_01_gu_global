@@ -19,12 +19,13 @@ def index(request):
     today = date.today()
     
     popup_list = list()
-    print(Popup.objects.all())
     for popup in Popup.objects.all():
         if popup.start <= today <= popup.end :
             popup_list.append(popup)
-            
-    context['popup_list'] = popup_list[:1]
+
+    # 팝업 여러개 나오도록 수정            
+    # context['popup_list'] = popup_list[:1]
+    context['popup_list'] = popup_list
     return render(request, "index.html", context=context)
 
 def intro(request):

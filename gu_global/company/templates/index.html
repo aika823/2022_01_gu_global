@@ -6,9 +6,9 @@
 
 {% block content %}
 
-{% for popup in popup_list %}
 <!-- popup -->
 <div id="pop" class="pop">
+{% for popup in popup_list %}
     <div class="layerBox">
         <div class="cont">
             <img src="/media/{{popup.image}}" alt="">
@@ -19,8 +19,8 @@
             <span id="" class="btnClose"> <a href="#0">Close</a></span>
         </div>
     </div>
-</div>
 {% endfor %}
+</div>
 
 <!-- section.main -->
 <section class="main">
